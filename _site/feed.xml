@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>Diary of a Developer</title>
+    <description>A blog following my journey through makers academy and beyond...
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 22 May 2015 11:04:41 +0000</pubDate>
-    <lastBuildDate>Fri, 22 May 2015 11:04:41 +0000</lastBuildDate>
+    <pubDate>Fri, 22 May 2015 16:13:19 +0000</pubDate>
+    <lastBuildDate>Fri, 22 May 2015 16:13:19 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -35,6 +35,33 @@
         <category>jekyll</category>
         
         <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>The calm before the storm</title>
+        <description>&lt;p&gt;Calm? There was no calm! I was expecting the weeks leading up to our first day to consist of a bit of light reading and a few challenges here and there, but 3 days into the pre-course we seem to be in the thick of it already, and I’m already scared of falling behind. But I am already loving it 😊 Here are my thoughts on the last couple of weeks.&lt;/p&gt;
+
+&lt;p&gt;The moment I booked my interview at makers I was presented with 12 hours worth of interview prep work, so I guess that was the point at which I said goodbye to my old life. After passing the interview Nikesh sent me some pre-pre-course material which kept me busy up until the pre-course meet up. At the time I thought it would save me some time later on, but I’ve now realised that the actual advantage is that I can delve deeper into the pre-course week 1 material and do a lot more research.&lt;/p&gt;
+
+&lt;p&gt;It seems everything I’ve read and everyone I’ve spoken to has emphasised the same points really:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can say goodbye to your social life. Makers is your life now.&lt;/li&gt;
+&lt;li&gt;This is one of the hardest things you&#39;ll ever do but it will be totally worth it!&lt;/li&gt;
+&lt;li&gt;The staff and your fellow students will become a very important part of your life. They&#39;ll constantly be there with you for the next 16 weeks and will help you when you&#39;re close to giving up and crying in the corner.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ve already learnt not to take this advice lightly, and that everyone, without exception, needs to take it seriously!&lt;/p&gt;
+
+&lt;p&gt;So let’s address the first point, the one about giving up your life and all that…&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 May 2015 09:46:34 +0000</pubDate>
+        <link>http://natstar93.github.io//pre-course/2015/05/18/the-calm-before-the-storm.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//pre-course/2015/05/18/the-calm-before-the-storm.html</guid>
+        
+        
+        <category>pre-course</category>
         
       </item>
     

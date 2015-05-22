@@ -1,5 +1,5 @@
 # Site settings
-title: <Diary of a Developer>
+title: Diary of a Developer
 email: natalie.akam@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A blog following my journey through makers academy and beyond...
@@ -10,4 +10,5 @@ github_username:  natstar93
 
 # Build settings
 markdown: kramdown
-Server address: http://0.0.0.0:3000/
+port:    3000
+host:    0.0.0.0
