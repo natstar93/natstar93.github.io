@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The calm before the storm"
-date:   2015-05-18 09:46:34
+date:   2015-05-14 21:46:34
 categories: pre-course
 ---
 
@@ -18,5 +18,3 @@ It seems everything I've read and everyone I've spoken to has emphasised the sam
 </ul>
 
 I've already learnt not to take this advice lightly, and that everyone, without exception, needs to take it seriously!
-
-So let's address the first point, the one about giving up your life and all that...

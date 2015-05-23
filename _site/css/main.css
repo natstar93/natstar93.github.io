@@ -16,13 +16,9 @@ body {
   line-height: 1.5;
   font-weight: 300;
   color: #111;
-  background-color: #d3ffd7;
+  background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%; }
 
-.home {
-  width:50%;
-  float:left;
-}
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -68,13 +64,13 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #4f4d4e;
+  color: #2a7ae2;
   text-decoration: none; }
   a:visited {
-    color: #4f4d4e; }
+    color: #1756a9; }
   a:hover {
     color: #111;
-    text-decoration: none; }
+    text-decoration: underline; }
 
 /**
  * Blockquotes
@@ -156,18 +152,13 @@ pre {
   position: relative; }
 
 .site-title {
-  font-size: 36px;
-  line-height: 66px;
+  font-size: 26px;
+  line-height: 56px;
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left; }
   .site-title, .site-title:visited {
-    color: #e32ba5;
-    text-decoration:none;}
-  .site-title:hover {
-    color: #4f4d4e;
-    text-decoration:none;
-  }
+    color: #424242; }
 
 .site-nav {
   float: right;
