@@ -8,12 +8,15 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
+      <li class="posts-li">
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+        <p>
+          {{ post.content | truncatewords:45}}
+        </p>
       </li>
     {% endfor %}
   </ul>
@@ -24,6 +27,6 @@ layout: default
 
 <div class="home">
 
-  <img src="https://scontent-lhr3-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/988446_10101383200843218_8201613544132369759_n.jpg?oh=1f3dfeb788c376078b173cf41835c9e3&oe=56058C47" width="200">
+  <img src="http://www.makersacademy.com/images/logo-two-lines.png">
 
 </div>

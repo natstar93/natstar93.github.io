@@ -54,6 +54,9 @@ li > ul,
 li > ol {
   margin-bottom: 0; }
 
+.posts-li {
+  background-color:#F0F0F0;
+}
 /**
  * Headings
  */
