@@ -141,7 +141,10 @@ pre {
   vertical-align: middle; }
   .icon > svg path {
     fill: #828282; }
-
+ .logo {
+   padding:10px 30px 10px 0px;
+   float:left;
+ }
 /**
  * Site header
  */
