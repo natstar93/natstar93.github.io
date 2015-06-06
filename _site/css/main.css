@@ -19,7 +19,6 @@ body {
   background-color: #fdfdfd;
   -webkit-text-size-adjust: 100%; }
 
-
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -55,9 +54,6 @@ li > ul,
 li > ol {
   margin-bottom: 0; }
 
-.posts-li {
-  background-color:#F0F0F0; 
-}
 /**
  * Headings
  */
@@ -145,10 +141,7 @@ pre {
   vertical-align: middle; }
   .icon > svg path {
     fill: #828282; }
- .logo {
-   padding:10px 30px 10px 0px;
-   float:left;
- }
+
 /**
  * Site header
  */
