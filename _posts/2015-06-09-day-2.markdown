@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "Day 2 | TDD. Success == Failure"
+date:   2015-06-09 21:46:34
+categories: week1, TDD, pair programming
+---
+
+Today was our first 'proper' day as Makers students. I feel like the day flew by, but when I look back at what we've actually achieved today I know the reason I am so tired now is that we did a hell of a lot. Here's a bit of a summary of the day... 
+
+The day started with a stand up in groups led by one of the coach engineers (who are what normal people would call teachers) where we discussed what we'd achieved yesterday, what things may be blocking our progression and what we were aiming to do next. This is the format of all our twice daily stand ups from now on. Since yesterday was quite a laid back introduction day, we mentioned things like that we'd got to know people better and had seen the value in and challenges of teamwork from our pseudo code and spaghetti-marshmallow exercises. 
+
+The morning's group talk focussed on TDD (Test Driven Development), then after a brief overview of the task we were quickly rushed off in our pairs to figure it out and complete it.
+
+I'm happy with how Kirsten and I completed the task. We worked through it in quite a considerate and methodical way, making sure to read everything and bear in mind the objectives of the task. The thing to remember about TDD and pairing is that it's not necessarily about being the first to finish, it's about taking into account any possible input and making sure you a) have tests in place that cover any type of input and b) that you buid your code up slowly making sure not to miss anything. That way you'll end up with a truly robust program and hopefully won't have to rewrite anything, just refactor it. 
+
+TDD involves writing a test, running it on your code and watching it fail, then writing a line or two of code in your program to make that test pass. You then create a new test and repeat until, voila, you have a page full of tests and a program that does all kinds of cool stuff without a single bug. The incremental method can sometimes seems a bit trivial, for example if you want to write a program 'fizzbuzz' that outputs 'fizz' every time 3 is entered..
+
+
+```
+Common approach:
+Write code to output 'fizz' when a multiple of 3 is entered
+```
+
+```
+TDD approach: 
+Write test to output 'fizz' when 3 is entered. Test (test passes). Write test to output 'fizz' when 9 is entered. Test (test fails). Rewrite original line of code to output 'fizz' when a MUTIPLE of 3 is entered.
+```
+
+So, I hear you ask, why on earth would you want to do in 5 steps what you could easily do in 1? Isn't the first method a lot quicker? Are you some sort of moron who doesn't know their 3 times table? All valid questions.. But the point of the TDD approach is to capture any situation and make sure it is logically thought out. It's not going to be long before we're writing much larger programs which don't have such obvious solutions, so it's best to get in good habits now. Another example helps illustrate this..
+
+
+Task: Write a program that enters 'fizz' when a multiple of 3 is entered, 'buzz' when a multiple of 5 is entered and 'fizzbuzz' when a multiple of 15 is entered.
+
+```
+Possible common approach:
+Write code to output 'fizz' when a multiple of 3 is entered
+Write code to output 'fizz' when a multiple of 5 is entered
+Write code to output 'fizzbuzz' when a multiple of 15 is entered
+```
+
+But there's an error here... 15 is also a multiple of 3 and 5, so which output does it return? 
+
+If the code had been written using TDD there would be a test case for 15 and a handy error message would be outputted letting you know why the build had failed (assuming you'd set up a descriptive and specific error message). You would then be able to examine the issue with your code and write it so that ALL tests passed at the same time. Only then you would be sure that your code was able to satisfy all three cases simultaneously. 
+
+The real value was shown to us when we decided to do a test case for a string and found that all but the test we'd just set up - to test whether the input was not an integer - failed. This led us to realise that we needed to test for this first then exit the program if the input was proven to be something other than an integer. Otherwise the program would try and see what happened when a string was divided by 3... (Try it, it doesn't make sense)
+
+Of course, the TDD relies on you writing your tests correctly (which is where your pair partner comes in handy!) and making sure you've covered all scenarios e.g. negative integers, zero, strings/floats/any other non-integer. 
+
+So that's TDD part 1 in a nutshell. I feel like I've gone off on one and written a very long post about it. Today also included some variations on the original challenge and a yoga session part way through the afternoon which really helped clear my mind and help me refocus. It's amazing how much energy you can get from standing on one leg, arms outstretched and pretending to be a tree... But I'll write a post about yoga another day as I'm going to make time to be a regular in those sessions :) 
+
+I'm going to finish by giving a big shout out to my awesome first ever pairing partner Kirsten for her humour, patience, intelligence, down-to-earthedness and diligence. We rocked it today!
+
+Nat x
