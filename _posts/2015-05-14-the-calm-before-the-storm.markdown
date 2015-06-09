@@ -3,6 +3,7 @@ layout: post
 title:  "The calm before the storm"
 date:   2015-05-14 21:46:34
 categories: pre-course
+image: http://www.makersacademy.com/images/logo-two-lines.png
 ---
 
 Calm? There was no calm! I was expecting the weeks leading up to our first day to consist of a bit of light reading and a few challenges here and there, but 3 days into the pre-course we seem to be in the thick of it already, and I'm already scared of falling behind. But I am already loving it 😊 Here are my thoughts on the last couple of weeks.

@@ -3,9 +3,10 @@ layout: post
 title:  "Day 1 | And we're off!"
 date:   2015-06-08 21:46:34
 categories: week1
+image: http://www.natalie-akam.com/images/day1.JPG
 ---
 
-Today was the day I had been waiting for for... several weeks. The good people at Makers decided to be nice to us and ease us in gently, which wasn't what I was expecting considering that with the pre-course material they dropped us in the deep end (of a pool of gasoline, then set it on fire in week 3 and watched us suffer). 
+Today was the day I had been waiting for for... several weeks since I passed my interview. The good people at Makers decided to be nice to us and ease us in gently, which wasn't what I was expecting considering that with the pre-course material they dropped us in the deep end (of a pool of gasoline, then set it on fire in week 3 and watched us suffer). 
 
 After our free breakfast, the day started off with some getting-to-know-you games and teamwork exercises, then continued with some brilliant talks on how to do well at Makers and on how to look after your body and mind during the Hardest Thing You'll Ever Do (TM). 
 

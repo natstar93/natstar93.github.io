@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 09 Jun 2015 21:18:49 +0000</pubDate>
-    <lastBuildDate>Tue, 09 Jun 2015 21:18:49 +0000</lastBuildDate>
+    <pubDate>Tue, 09 Jun 2015 22:08:13 +0000</pubDate>
+    <lastBuildDate>Tue, 09 Jun 2015 22:08:13 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -74,7 +74,7 @@ Write code to output &#39;fizzbuzz&#39; when a multiple of 15 is entered
     
       <item>
         <title>Day 1 | And we&#39;re off!</title>
-        <description>&lt;p&gt;Today was the day I had been waiting for for… several weeks. The good people at Makers decided to be nice to us and ease us in gently, which wasn’t what I was expecting considering that with the pre-course material they dropped us in the deep end (of a pool of gasoline, then set it on fire in week 3 and watched us suffer).&lt;/p&gt;
+        <description>&lt;p&gt;Today was the day I had been waiting for for… several weeks since I passed my interview. The good people at Makers decided to be nice to us and ease us in gently, which wasn’t what I was expecting considering that with the pre-course material they dropped us in the deep end (of a pool of gasoline, then set it on fire in week 3 and watched us suffer).&lt;/p&gt;
 
 &lt;p&gt;After our free breakfast, the day started off with some getting-to-know-you games and teamwork exercises, then continued with some brilliant talks on how to do well at Makers and on how to look after your body and mind during the Hardest Thing You’ll Ever Do (TM).&lt;/p&gt;
 
@@ -100,7 +100,7 @@ Write code to output &#39;fizzbuzz&#39; when a multiple of 15 is entered
 
 &lt;p&gt;The last four weeks have been spent learning how to effectively use Github &amp;amp; Bash and trying to cram as much Ruby knowledge into my head as possible via tutorials, documentation and a rather fun site called &lt;a href=&quot;http://www.codewars.com/about&quot;&gt;Codewars&lt;/a&gt;. The work really ramped up in the 3rd week and I’m still desperately trying to finish bits before we start on Monday. Admittedly half way through pre-course week 3 wasn’t exactly the best time to go off on holiday to Barcelona…&lt;/p&gt;
 
-&lt;p&gt;In addition to the scheduled programming I’ve also been working on this blog quite a bit, which may not be apparent from the number of posts (or lack thereof). I decided to be adventurous and set it up using Jekyll and Github rather than a pre-made template (since I’m a developer, not a blogger, right?). Thanks to this wise decision I’ve had to solve a number of issues including getting the preview server to work (finally worked out you have to change the config file) and discovering that the css stylesheets don’t work exactly how I thought they would. I think you have to create a stylesheet separate from the main one if you want to add new classes in… So depending on when you view my blog it may look like the most beautiful thing you’ve ever seen, a polished turd or something in between.&lt;/p&gt;
+&lt;p&gt;In addition to the massive pile of pre-course work I’ve also been working on this blog quite a bit, which may not be apparent from the number of posts (or lack thereof). I decided to be adventurous and set it up using Jekyll and Github rather than a pre-made template (since I’m a developer, not a blogger, right?). Thanks to this wise decision I’ve had to solve a number of issues including getting the preview server to work (finally worked out you have to change the config file). I’ve also recently discovered that the css stylesheets don’t work exactly how I thought they would. I think you have to create a stylesheet separate from the main one if you want to add new classes in… So depending on when you view my blog it may look like the most beautiful thing you’ve ever seen, a polished turd still, or something in between.&lt;/p&gt;
 
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
