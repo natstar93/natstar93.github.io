@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Day 3 | Boris Bikes"
-date:   2015-06-09 21:46:34
+date:   2015-06-10 22:41:42
 categories: week1 TDD 'pair programming' 'boris bikes'
 image: http://www.natalie-akam.com/images/boris-bikes.JPG
 image-subtitle: A nice array of Boris Bikes...
