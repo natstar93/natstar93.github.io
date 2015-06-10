@@ -4,6 +4,7 @@ title:  "Day 3 || Boris Bikes"
 date:   2015-06-09 21:46:34
 categories: week1 TDD 'pair programming' 'boris bikes'
 image: http://www.natalie-akam.com/images/boris-bikes.JPG
+image-subtitle: A nice array of Boris Bikes...
 ---
 
 Today started by being locked out of the building and catching up with the rest of the cohort and seniors while stuck in the stairwell. I met my mentor in person for the first time and found out about which bits of the course are the hardest (week 7 apparently, and week 3 is a big step up from weeks 1 & 2). Eventually the person with keys arrived (should we call them a.. hash..? Sorry, geeky joke. You can't live and breathe code every day without it infiltrating everything including your humour) and we made our way in to start day 3...
