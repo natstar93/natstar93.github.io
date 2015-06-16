@@ -78,29 +78,23 @@
 
 <p>Here’s my new favourite little array method (using a ‘destructive selector’.. ooh sounds exciting)</p>
 
-<p>arr.delete_at(index { block })</p>
+<p><code>arr.delete_at(index { block })</code></p>
 
 <p>Used to detect the first working bike of an array, remove it from the array and return it to the method call:</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>@bikes.delete_at(@bikes.index {</td>
-      <td>bike</td>
-      <td>bike.working? })</td>
-    </tr>
-  </tbody>
-</table>
+<p><code>@bikes.delete_at(@bikes.index { |bike| bike.working? })</code></p>
 
 <p>And another line I really liked is this super easy to read ‘if’ statement</p>
 
-<p>fail ‘No bikes available’ if no_working_bikes?</p>
+<p><code>fail 'No bikes available' if no_working_bikes?</code></p>
 
 <p>and here’s that working? method, if you’re interested. It’s packaged away in a private method. It’s good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very ‘plain english’ code that’s easy for others to understand.</p>
 
-<p>def no_working_bikes?
-    bikes.none? { |bike| bike.working? }
-  end</p>
+<p><code>ruby
+    def no_working_bikes?
+      bikes.none? { |bike| bike.working? }
+    end
+</code></p>
 
 <p>Simples, right?</p>
 

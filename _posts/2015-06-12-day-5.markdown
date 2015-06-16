@@ -16,7 +16,7 @@ Doubles are objects that you can give certain properties to in order for them to
 
 In the example mentioned above, if we were wanting to check that the release_bike method released broken bikes only we might use the following double:
 
-  bike = double :bike, broken? true
+``bike = double :bike, broken? true``
 
 That way we could be sure that we were testing the behaviour of the method only, not the behaviour of the bike.
 

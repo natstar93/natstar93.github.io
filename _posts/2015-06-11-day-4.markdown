@@ -18,21 +18,23 @@ This evening went amazingly well. In my quiet and peaceful lounge I managed to w
 
 Here's my new favourite little array method (using a 'destructive selector'.. ooh sounds exciting)
 
-arr.delete_at(index { block })
+``arr.delete_at(index { block })``
 
 Used to detect the first working bike of an array, remove it from the array and return it to the method call:
 
-  @bikes.delete_at(@bikes.index { |bike| bike.working? })
+``@bikes.delete_at(@bikes.index { |bike| bike.working? })``
 
 And another line I really liked is this super easy to read 'if' statement
 
-  fail 'No bikes available' if no_working_bikes?
+``fail 'No bikes available' if no_working_bikes?``
 
 and here's that working? method, if you're interested. It's packaged away in a private method. It's good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very 'plain english' code that's easy for others to understand.
 
-  def no_working_bikes?
-    bikes.none? { |bike| bike.working? }
-  end
+```ruby
+    def no_working_bikes?
+      bikes.none? { |bike| bike.working? }
+    end
+```
 
 Simples, right?
 

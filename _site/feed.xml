@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Jun 2015 21:17:56 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Jun 2015 21:17:56 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jun 2015 21:32:26 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Jun 2015 21:32:26 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -64,7 +64,7 @@
 
 &lt;p&gt;In the example mentioned above, if we were wanting to check that the release_bike method released broken bikes only we might use the following double:&lt;/p&gt;
 
-&lt;p&gt;bike = double :bike, broken? true&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bike = double :bike, broken? true&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;That way we could be sure that we were testing the behaviour of the method only, not the behaviour of the bike.&lt;/p&gt;
 
@@ -95,29 +95,23 @@
 
 &lt;p&gt;Here’s my new favourite little array method (using a ‘destructive selector’.. ooh sounds exciting)&lt;/p&gt;
 
-&lt;p&gt;arr.delete_at(index { block })&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;arr.delete_at(index { block })&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Used to detect the first working bike of an array, remove it from the array and return it to the method call:&lt;/p&gt;
 
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;@bikes.delete_at(@bikes.index {&lt;/td&gt;
-      &lt;td&gt;bike&lt;/td&gt;
-      &lt;td&gt;bike.working? })&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;@bikes.delete_at(@bikes.index { |bike| bike.working? })&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;And another line I really liked is this super easy to read ‘if’ statement&lt;/p&gt;
 
-&lt;p&gt;fail ‘No bikes available’ if no_working_bikes?&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;fail &#39;No bikes available&#39; if no_working_bikes?&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;and here’s that working? method, if you’re interested. It’s packaged away in a private method. It’s good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very ‘plain english’ code that’s easy for others to understand.&lt;/p&gt;
 
-&lt;p&gt;def no_working_bikes?
-    bikes.none? { |bike| bike.working? }
-  end&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ruby
+    def no_working_bikes?
+      bikes.none? { |bike| bike.working? }
+    end
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Simples, right?&lt;/p&gt;
 
