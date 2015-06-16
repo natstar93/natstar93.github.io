@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Jun 2015 21:32:26 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Jun 2015 21:32:26 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jun 2015 21:38:41 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Jun 2015 21:38:41 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -107,11 +107,10 @@
 
 &lt;p&gt;and here’s that working? method, if you’re interested. It’s packaged away in a private method. It’s good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very ‘plain english’ code that’s easy for others to understand.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;ruby
-    def no_working_bikes?
-      bikes.none? { |bike| bike.working? }
-    end
-&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def no_working_bikes?
+  bikes.none? { |bike| bike.working? }
+end
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Simples, right?&lt;/p&gt;
 

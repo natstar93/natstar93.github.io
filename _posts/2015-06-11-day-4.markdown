@@ -30,11 +30,9 @@ And another line I really liked is this super easy to read 'if' statement
 
 and here's that working? method, if you're interested. It's packaged away in a private method. It's good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very 'plain english' code that's easy for others to understand.
 
-```ruby
     def no_working_bikes?
       bikes.none? { |bike| bike.working? }
     end
-```
 
 Simples, right?
 
