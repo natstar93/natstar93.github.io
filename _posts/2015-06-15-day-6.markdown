@@ -2,8 +2,9 @@
 layout: post
 title:  "Day 6 | Uphill Battleships"
 date:   2015-06-15 20:51:52
-categories: week2 TDD 'pair programming' 'battleships'
-image: http://www.natalie-akam.com/images/boris-bikes.JPG
+categories: week2 
+keywords: TDD 'pair programming' battleships
+image: 
 image-subtitle:
 ---
 

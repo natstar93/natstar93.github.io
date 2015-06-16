@@ -2,7 +2,7 @@
 title: Diary of a Developer
 email: natalie.akam@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A blog following my journey through makers academy and beyond...
+  A blog following my journey through Makers Academy and beyond...
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://natstar93.github.io/" # the base hostname & protocol for your site
 twitter_username: natstar77
