@@ -9,7 +9,7 @@ image-subtitle:
 ---
 
 
-`` A minimum viable product (MVP) is the simplest system you can build to validate the fundamental concept of what you want to build. An MVP sequence is a series of systems of gradually increasing complexity that take you slowly towards a more complex system that supports more features. There is no absolute way of determining what an MVP should be as it depends on the domain, what you are trying to build, what the stakeholder needs are and so on. However, if you are building lots of components that do not work independently and are looking to hook them together later in order to build a complex system then you are probably doing things wrong. ``
+``A minimum viable product (MVP) is the simplest system you can build to validate the fundamental concept of what you want to build. An MVP sequence is a series of systems of gradually increasing complexity that take you slowly towards a more complex system that`` ``supports more features. There is no absolute way of determining what an MVP should be as it depends on the domain, what you are trying to build, what the stakeholder needs are and so on. However, if you are building lots of components that do not work independently and are looking to hook them together later in order to build a complex system then you are probably doing things wrong.``
 
 Due to my designated partner not being around today I ended up working in a three again. Since we were all at different stages we dedided to start again and follow the MVP approach, focussing on really getting the essential functionality down and not worrying about speed.
 
