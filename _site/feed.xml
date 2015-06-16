@@ -6,12 +6,137 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Jun 2015 22:50:21 +0000</pubDate>
-    <lastBuildDate>Wed, 10 Jun 2015 22:50:21 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jun 2015 14:45:16 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Jun 2015 14:45:16 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Day 3 || Boris Bikes</title>
+        <title>Day 6 | Uphill Battleships</title>
+        <description>&lt;p&gt;Week two already? My how time flies! Speaking of flying, this weekend I completed the Airport Challenge which was our cohort’s weekend homework. At first I massively overcomplicated it by adding in methods that I later realised might not be necessary to satisfy the user stories, so I did have to do a bit of refactoring and removing. I’m pretty comfortable with doubles and stubs now, but I think I still need to do a bit of work on identifying appropriate tests. My builds passed (3/3 with 100% test coverage) so I’m happy about that.&lt;/p&gt;
+
+&lt;p&gt;Today we started work on the Battleships project. It is similar in theory to last week’s work, expect this time we have no guidance and it uses game logic and is generally a lot more complex!&lt;/p&gt;
+
+&lt;p&gt;We started with a bit of domain modelling and [insert name of other thing], then got started on building the tests and corresponding methods for a 1 x 1 board and a single ship. That all went well and it seems the things we learnt last week about TDD, logical baby steps, doubles, git pong, attr_accessors, constants, naming, DRY, feature testing and a load of other topics has really stuck and become almost second nature at times. Battleships is a difficult project but we made good progress today.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Jun 2015 20:51:52 +0000</pubDate>
+        <link>http://natstar93.github.io//week2/tdd/'pair/programming'/'battleships'/2015/06/15/day-6.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week2/tdd/'pair/programming'/'battleships'/2015/06/15/day-6.html</guid>
+        
+        
+        <category>week2</category>
+        
+        <category>tdd</category>
+        
+        <category>&#39;pair</category>
+        
+        <category>programming&#39;</category>
+        
+        <category>&#39;battleships&#39;</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 5 | Double Trouble</title>
+        <description>&lt;p&gt;Since there are an odd number in our cohort, today I ended up in a three instead of a pair for the day’s activities. I was a little aprehensive about this because I’d been told it was quite difficult. In actual fact it turned out to be an incredibly productive day and opened up a lot of discussion about various concepts we were studying. I feel like I learned so much today just from talking things though with my little group!&lt;/p&gt;
+
+&lt;p&gt;A concept we were introduced to yesterday and began using today was ‘doubles’. When performing any kind of testing it’s really important to only test/vary one element at a time to ensure you are truly testing the correct thing. However, it turned out a lot of the docking station methods we had built relied on bikes being created correctly or returning from a method call with certain properties, so our docking station unit tests weren’t really fair. If there was an error in the bike’s report_broken method this could propagate though and affect the result of release_bike method.&lt;/p&gt;
+
+&lt;p&gt;Doubles are objects that you can give certain properties to in order for them to accurately impersonate your objects.&lt;/p&gt;
+
+&lt;p&gt;In the example mentioned above, if we were wanting to check that the release_bike method released broken bikes only we might use the following double:&lt;/p&gt;
+
+&lt;p&gt;bike = double :bike, broken? true&lt;/p&gt;
+
+&lt;p&gt;That way we could be sure that we were testing the behaviour of the method only, not the behaviour of the bike.&lt;/p&gt;
+
+&lt;p&gt;It sounds very simple but there were some complications around ensuring your tests are actually testing your method, and not the double itself! We also briefly looked at stubs and mocks, which can be used to simulate the behaviour an object might display after having certain methods called on it.&lt;/p&gt;
+
+&lt;p&gt;We did some activities to assess our progress so far this afternoon and consolidated the learning objectives. I can safely say it’s been a hell of a week and I’ve learnt absolutely loads! I made a few little second week resolutions to myself to ensure that I stay on track and went home happy and looking forward to the weekend and the ‘airport challenge’ which is due on Monday morning!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Jun 2015 20:51:52 +0000</pubDate>
+        <link>http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/12/day-5.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/12/day-5.html</guid>
+        
+        
+        <category>week1</category>
+        
+        <category>tdd</category>
+        
+        <category>&#39;pair</category>
+        
+        <category>programming&#39;</category>
+        
+        <category>&#39;boris</category>
+        
+        <category>bikes&#39;</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 4 | BROKEN Boris Bikes</title>
+        <description>&lt;p&gt;Today was a day of ups and downs. I’ve discovered that it’s incredibly difficult to switch pairing partners part way through a project. It’s all good experience and practice of course, as there will be plenty of times in our future jobs when we have to jump in, understand someone else’s repo and just get on with it. It really pushes you to make sure you understand the code, especially when you’re presented with a solution (or part solution) to the same problem that someone’s approached from a really different angle.&lt;/p&gt;
+
+&lt;p&gt;My partner and I have pretty different styles of working, so it was great experience in adapting to someone else’s way of doing things. At times I didn’t feel like I was being that good a partner as I sometimes find it difficult to explain concepts or ideas that make sense to me in my head. I’ll bring this up in my 1:1 next week as I’d like to improve on this.&lt;/p&gt;
+
+&lt;p&gt;Today we covered off a lot of the material I was doing yesterday, and started to work on the problem of broken bikes mid-afternoon. Mid-afternoon is that strange time when sometimes information overload hits you and complicated concepts start to not make sense anymore. We made some progress but on the whole I wasn;t that happy with the amount I achieved today. I went home a bit unhappy, and decided to get stuck into it again as soon as I got back.&lt;/p&gt;
+
+&lt;p&gt;This evening went amazingly well. In my quiet and peaceful lounge I managed to work things out in clear, logical steps and build the functionality I needed in what I think is the best way I could have. I’m really happy it went so well and that I ended the day on a high!&lt;/p&gt;
+
+&lt;p&gt;Here’s my new favourite little array method (using a ‘destructive selector’.. ooh sounds exciting)&lt;/p&gt;
+
+&lt;p&gt;arr.delete_at(index { block })&lt;/p&gt;
+
+&lt;p&gt;Used to detect the first working bike of an array, remove it from the array and return it to the method call:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;@bikes.delete_at(@bikes.index {&lt;/td&gt;
+      &lt;td&gt;bike&lt;/td&gt;
+      &lt;td&gt;bike.working? })&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;And another line I really liked is this super easy to read ‘if’ statement&lt;/p&gt;
+
+&lt;p&gt;fail ‘No bikes available’ if no_working_bikes?&lt;/p&gt;
+
+&lt;p&gt;and here’s that working? method, if you’re interested. It’s packaged away in a private method. It’s good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very ‘plain english’ code that’s easy for others to understand.&lt;/p&gt;
+
+&lt;p&gt;def no_working_bikes?
+    bikes.none? { |bike| bike.working? }
+  end&lt;/p&gt;
+
+&lt;p&gt;Simples, right?&lt;/p&gt;
+
+&lt;p&gt;Anyway, I’ll sign off now. Looking forward to whatever challenges Friday brings!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Thu, 11 Jun 2015 20:15:00 +0000</pubDate>
+        <link>http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/11/day-4.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/11/day-4.html</guid>
+        
+        
+        <category>week1</category>
+        
+        <category>tdd</category>
+        
+        <category>&#39;pair</category>
+        
+        <category>programming&#39;</category>
+        
+        <category>&#39;boris</category>
+        
+        <category>bikes&#39;</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 3 | Boris Bikes</title>
         <description>&lt;p&gt;Today started by being locked out of the building and catching up with the rest of the cohort and seniors while stuck in the stairwell. I met my mentor in person for the first time and found out about which bits of the course are the hardest (week 7 apparently, and week 3 is a big step up from weeks 1 &amp;amp; 2). Eventually the person with keys arrived (should we call them a.. hash..? Sorry, geeky joke. You can’t live and breathe code every day without it infiltrating everything including your humour) and we made our way in to start day 3…&lt;/p&gt;
 
 &lt;p&gt;Stand ups were the first order of the day and it turned out that everyone had quite different experiences yesterday. Some pairs completed all of the tasks, and some spent longer delving into different solutions to the first problem, experimenting with different types of solution and refactoring them. I think it’s pretty cool that we’re paired with different people every day and so will naturally have some quite different experiences every day with people who think and act in different ways. There doesn’t seem to be a single way of approaching the problem either. I think everyone found a lot of value in what they did but also appreciated that other pairs’ approaches were completely different and very valuable in a different way.&lt;/p&gt;
@@ -36,9 +161,9 @@
 &lt;p&gt;Nat x&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 09 Jun 2015 21:46:34 +0000</pubDate>
-        <link>http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/09/day-3.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/09/day-3.html</guid>
+        <pubDate>Wed, 10 Jun 2015 22:41:42 +0000</pubDate>
+        <link>http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/10/day-3.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/10/day-3.html</guid>
         
         
         <category>week1</category>

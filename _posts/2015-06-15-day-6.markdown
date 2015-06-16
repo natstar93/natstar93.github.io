@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Day 6 | Uphill Battleships"
+date:   2015-06-15 20:51:52
+categories: week2 TDD 'pair programming' 'battleships'
+image: http://www.natalie-akam.com/images/boris-bikes.JPG
+image-subtitle:
+---
+
+Week two already? My how time flies! Speaking of flying, this weekend I completed the Airport Challenge which was our cohort's weekend homework. At first I massively overcomplicated it by adding in methods that I later realised might not be necessary to satisfy the user stories, so I did have to do a bit of refactoring and removing. I'm pretty comfortable with doubles and stubs now, but I think I still need to do a bit of work on identifying appropriate tests. My builds passed (3/3 with 100% test coverage) so I'm happy about that.
+
+Today we started work on the Battleships project. It is similar in theory to last week's work, expect this time we have no guidance and it uses game logic and is generally a lot more complex! 
+
+We started with a bit of domain modelling and [insert name of other thing], then got started on building the tests and corresponding methods for a 1 x 1 board and a single ship. That all went well and it seems the things we learnt last week about TDD, logical baby steps, doubles, git pong, attr_accessors, constants, naming, DRY, feature testing and a load of other topics has really stuck and become almost second nature at times. Battleships is a difficult project but we made good progress today.

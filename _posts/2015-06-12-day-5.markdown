@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Day 5 | Double Trouble"
+date:   2015-06-12 20:51:52
+categories: week1 TDD 'pair programming' 'boris bikes'
+image: http://www.natalie-akam.com/images/boris-bikes.JPG
+image-subtitle:
+---
+
+Since there are an odd number in our cohort, today I ended up in a three instead of a pair for the day's activities. I was a little aprehensive about this because I'd been told it was quite difficult. In actual fact it turned out to be an incredibly productive day and opened up a lot of discussion about various concepts we were studying. I feel like I learned so much today just from talking things though with my little group!
+
+A concept we were introduced to yesterday and began using today was 'doubles'. When performing any kind of testing it's really important to only test/vary one element at a time to ensure you are truly testing the correct thing. However, it turned out a lot of the docking station methods we had built relied on bikes being created correctly or returning from a method call with certain properties, so our docking station unit tests weren't really fair. If there was an error in the bike's report_broken method this could propagate though and affect the result of release_bike method. 
+
+Doubles are objects that you can give certain properties to in order for them to accurately impersonate your objects. 
+
+In the example mentioned above, if we were wanting to check that the release_bike method released broken bikes only we might use the following double:
+
+  bike = double :bike, broken? true
+
+That way we could be sure that we were testing the behaviour of the method only, not the behaviour of the bike.
+
+It sounds very simple but there were some complications around ensuring your tests are actually testing your method, and not the double itself! We also briefly looked at stubs and mocks, which can be used to simulate the behaviour an object might display after having certain methods called on it.
+
+We did some activities to assess our progress so far this afternoon and consolidated the learning objectives. I can safely say it's been a hell of a week and I've learnt absolutely loads! I made a few little second week resolutions to myself to ensure that I stay on track and went home happy and looking forward to the weekend and the 'airport challenge' which is due on Monday morning!
+
+Nat x
