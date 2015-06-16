@@ -4,8 +4,8 @@ title:  "Day 5 | Double Trouble"
 date:   2015-06-12 20:51:52
 categories: week1 
 keywords: TDD 'pair programming' 'boris bikes'
-image: http://www.natalie-akam.com/images/boris-bikes.JPG
-image-subtitle:
+image: http://www.natalie-akam.com/images/day5.JPG
+image-subtitle: Things we struggled with this week (lots of things)
 ---
 
 Since there are an odd number in our cohort, today I ended up in a three instead of a pair for the day's activities. I was a little aprehensive about this because I'd been told it was quite difficult. In actual fact it turned out to be an incredibly productive day and opened up a lot of discussion about various concepts we were studying. I feel like I learned so much today just from talking things though with my little group!

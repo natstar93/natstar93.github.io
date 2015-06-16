@@ -4,8 +4,8 @@ title:  "Day 7 | A new approach"
 date:   2015-06-16 19:56:22
 categories: week2 
 keywords: TDD 'pair programming' battleships
-image: 
-image-subtitle:
+image: http://www.natalie-akam.com/images/day6.JPG
+image-subtitle: Motivational thought of the day!
 ---
 
 

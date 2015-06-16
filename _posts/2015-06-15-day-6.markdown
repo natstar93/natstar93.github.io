@@ -4,8 +4,8 @@ title:  "Day 6 | Uphill Battleships"
 date:   2015-06-15 20:51:52
 categories: week2 
 keywords: TDD 'pair programming' battleships
-image: 
-image-subtitle:
+image: http://www.natalie-akam.com/images/simon_tv.png
+image-subtitle: Oh, and we were briefly on the telly box today!
 ---
 
 Week two already? My how time flies! Speaking of flying, this weekend I completed the Airport Challenge which was our cohort's weekend homework. At first I massively overcomplicated it by adding in methods that I later realised might not be necessary to satisfy the user stories, so I did have to do a bit of refactoring and removing. I'm pretty comfortable with doubles and stubs now, but I think I still need to do a bit of work on identifying appropriate tests. My builds passed (3/3 with 100% test coverage) so I'm happy about that. And I got a new sticker. YAY STICKERS!
