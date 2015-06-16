@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Jun 2015 21:51:31 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Jun 2015 21:51:31 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jun 2015 22:33:37 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Jun 2015 22:33:37 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -174,26 +174,23 @@ end
 
 &lt;p&gt;TDD involves writing a test, running it on your code and watching it fail, then writing a line or two of code in your program to make that test pass. You then create a new test and repeat until, voila, you have a page full of tests and a program that does all kinds of cool stuff without a single bug. The incremental method can sometimes seems a bit trivial, for example if you want to write a program ‘fizzbuzz’ that outputs ‘fizz’ every time 3 is entered..&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-Common approach:
+&lt;pre&gt;&lt;code&gt;Common approach:
 Write code to output &#39;fizz&#39; when a multiple of 3 is entered
-&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
+
 TDD approach: 
 Write test to output &#39;fizz&#39; when 3 is entered. Test (test passes). Write test to output &#39;fizz&#39; when 9 is entered. Test (test fails). Rewrite original line of code to output &#39;fizz&#39; when a MUTIPLE of 3 is entered.
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;So, I hear you ask, why on earth would you want to do in 5 steps what you could easily do in 1? Isn’t the first method a lot quicker? Are you some sort of moron who doesn’t know their 3 times table? All valid questions.. But the point of the TDD approach is to capture any situation and make sure it is logically thought out. It’s not going to be long before we’re writing much larger programs which don’t have such obvious solutions, so it’s best to get in good habits now. Another example helps illustrate this..&lt;/p&gt;
 
 &lt;p&gt;Task: Write a program that enters ‘fizz’ when a multiple of 3 is entered, ‘buzz’ when a multiple of 5 is entered and ‘fizzbuzz’ when a multiple of 15 is entered.&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-Possible common approach:
+&lt;pre&gt;&lt;code&gt;Possible common approach:
 Write code to output &#39;fizz&#39; when a multiple of 3 is entered
 Write code to output &#39;fizz&#39; when a multiple of 5 is entered
 Write code to output &#39;fizzbuzz&#39; when a multiple of 15 is entered
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;But there’s an error here… 15 is also a multiple of 3 and 5, so which output does it return?&lt;/p&gt;
 

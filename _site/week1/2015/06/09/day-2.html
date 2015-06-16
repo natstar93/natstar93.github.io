@@ -78,26 +78,23 @@
 
 <p>TDD involves writing a test, running it on your code and watching it fail, then writing a line or two of code in your program to make that test pass. You then create a new test and repeat until, voila, you have a page full of tests and a program that does all kinds of cool stuff without a single bug. The incremental method can sometimes seems a bit trivial, for example if you want to write a program ‘fizzbuzz’ that outputs ‘fizz’ every time 3 is entered..</p>
 
-<p><code>
-Common approach:
+<pre><code>Common approach:
 Write code to output 'fizz' when a multiple of 3 is entered
-</code></p>
 
-<p><code>
+
 TDD approach: 
 Write test to output 'fizz' when 3 is entered. Test (test passes). Write test to output 'fizz' when 9 is entered. Test (test fails). Rewrite original line of code to output 'fizz' when a MUTIPLE of 3 is entered.
-</code></p>
+</code></pre>
 
 <p>So, I hear you ask, why on earth would you want to do in 5 steps what you could easily do in 1? Isn’t the first method a lot quicker? Are you some sort of moron who doesn’t know their 3 times table? All valid questions.. But the point of the TDD approach is to capture any situation and make sure it is logically thought out. It’s not going to be long before we’re writing much larger programs which don’t have such obvious solutions, so it’s best to get in good habits now. Another example helps illustrate this..</p>
 
 <p>Task: Write a program that enters ‘fizz’ when a multiple of 3 is entered, ‘buzz’ when a multiple of 5 is entered and ‘fizzbuzz’ when a multiple of 15 is entered.</p>
 
-<p><code>
-Possible common approach:
+<pre><code>Possible common approach:
 Write code to output 'fizz' when a multiple of 3 is entered
 Write code to output 'fizz' when a multiple of 5 is entered
 Write code to output 'fizzbuzz' when a multiple of 15 is entered
-</code></p>
+</code></pre>
 
 <p>But there’s an error here… 15 is also a multiple of 3 and 5, so which output does it return?</p>
 
