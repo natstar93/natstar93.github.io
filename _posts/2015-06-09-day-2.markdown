@@ -2,7 +2,8 @@
 layout: post
 title:  "Day 2 | TDD. Success == Failure"
 date:   2015-06-09 21:46:34
-categories: week1, TDD, pair programming
+categories: week1
+keywords: TDD, pair programming
 ---
 
 Today was our first 'proper' day as Makers students. I feel like the day flew by, but when I look back at what we've actually achieved today I know the reason I am so tired now is that we did a hell of a lot. Here's a bit of a summary of the day... 

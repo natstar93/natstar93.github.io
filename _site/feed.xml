@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Jun 2015 18:36:47 +0000</pubDate>
-    <lastBuildDate>Tue, 16 Jun 2015 18:36:47 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jun 2015 18:40:24 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Jun 2015 18:40:24 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -48,21 +48,11 @@
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
         <pubDate>Fri, 12 Jun 2015 20:51:52 +0000</pubDate>
-        <link>http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/12/day-5.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/12/day-5.html</guid>
+        <link>http://natstar93.github.io//week1/2015/06/12/day-5.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/12/day-5.html</guid>
         
         
         <category>week1</category>
-        
-        <category>tdd</category>
-        
-        <category>&#39;pair</category>
-        
-        <category>programming&#39;</category>
-        
-        <category>&#39;boris</category>
-        
-        <category>bikes&#39;</category>
         
       </item>
     
@@ -109,21 +99,11 @@
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
         <pubDate>Thu, 11 Jun 2015 20:15:00 +0000</pubDate>
-        <link>http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/11/day-4.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/11/day-4.html</guid>
+        <link>http://natstar93.github.io//week1/2015/06/11/day-4.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/11/day-4.html</guid>
         
         
         <category>week1</category>
-        
-        <category>tdd</category>
-        
-        <category>&#39;pair</category>
-        
-        <category>programming&#39;</category>
-        
-        <category>&#39;boris</category>
-        
-        <category>bikes&#39;</category>
         
       </item>
     
@@ -154,21 +134,11 @@
 
 </description>
         <pubDate>Wed, 10 Jun 2015 22:41:42 +0000</pubDate>
-        <link>http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/10/day-3.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/tdd/'pair/programming'/'boris/bikes'/2015/06/10/day-3.html</guid>
+        <link>http://natstar93.github.io//week1/2015/06/10/day-3.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/10/day-3.html</guid>
         
         
         <category>week1</category>
-        
-        <category>tdd</category>
-        
-        <category>&#39;pair</category>
-        
-        <category>programming&#39;</category>
-        
-        <category>&#39;boris</category>
-        
-        <category>bikes&#39;</category>
         
       </item>
     
@@ -220,17 +190,11 @@ Write code to output &#39;fizzbuzz&#39; when a multiple of 15 is entered
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Jun 2015 21:46:34 +0000</pubDate>
-        <link>http://natstar93.github.io//week1,/tdd,/pair/programming/2015/06/09/day-2.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1,/tdd,/pair/programming/2015/06/09/day-2.html</guid>
+        <link>http://natstar93.github.io//week1/2015/06/09/day-2.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/09/day-2.html</guid>
         
         
-        <category>week1,</category>
-        
-        <category>tdd,</category>
-        
-        <category>pair</category>
-        
-        <category>programming</category>
+        <category>week1</category>
         
       </item>
     
@@ -267,13 +231,11 @@ Write code to output &#39;fizzbuzz&#39; when a multiple of 15 is entered
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
         <pubDate>Sat, 06 Jun 2015 08:46:34 +0000</pubDate>
-        <link>http://natstar93.github.io//pre-course,/fear/2015/06/06/pre-course-summary.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//pre-course,/fear/2015/06/06/pre-course-summary.html</guid>
+        <link>http://natstar93.github.io//pre-course/2015/06/06/pre-course-summary.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//pre-course/2015/06/06/pre-course-summary.html</guid>
         
         
-        <category>pre-course,</category>
-        
-        <category>fear</category>
+        <category>pre-course</category>
         
       </item>
     

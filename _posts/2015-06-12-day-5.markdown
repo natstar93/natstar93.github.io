@@ -2,7 +2,8 @@
 layout: post
 title:  "Day 5 | Double Trouble"
 date:   2015-06-12 20:51:52
-categories: week1 TDD 'pair programming' 'boris bikes'
+categories: week1 
+keywords: TDD 'pair programming' 'boris bikes'
 image: http://www.natalie-akam.com/images/boris-bikes.JPG
 image-subtitle:
 ---

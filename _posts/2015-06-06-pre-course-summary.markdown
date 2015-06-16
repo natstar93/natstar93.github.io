@@ -2,7 +2,7 @@
 layout: post
 title:  "Pre-course Summary | T minus 2 days!"
 date:   2015-06-06 08:46:34
-categories: pre-course, fear
+categories: pre-course
 image: http://www.natalie-akam.com/images/precourse_badges.JPG
 ---
 

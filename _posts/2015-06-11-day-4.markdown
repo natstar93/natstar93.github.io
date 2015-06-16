@@ -2,7 +2,8 @@
 layout: post
 title:  "Day 4 | BROKEN Boris Bikes"
 date:   2015-06-11 20:15:00
-categories: week1 TDD 'pair programming' 'boris bikes'
+categories: week1
+keywords: TDD 'pair programming' 'boris bikes'
 image: http://www.natalie-akam.com/images/boris-bikes.JPG
 image-subtitle:
 ---
