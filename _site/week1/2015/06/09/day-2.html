@@ -17,6 +17,16 @@
    padding:10px 30px 10px 0px;
    float:left;}
   </style>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-64235608-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
 </head>
 
 
@@ -81,9 +91,12 @@
 <pre><code>Common approach:
 Write code to output 'fizz' when a multiple of 3 is entered
 
-
 TDD approach: 
-Write test to output 'fizz' when 3 is entered. Test (test passes). Write test to output 'fizz' when 9 is entered. Test (test fails). Rewrite original line of code to output 'fizz' when a MUTIPLE of 3 is entered.
+Write test to output 'fizz' when 3 is entered. 
+Test (test passes). 
+Write test to output 'fizz' when 9 is entered. 
+Test (test fails). 
+Rewrite original line of code to output 'fizz' when a MUTIPLE of 3 is entered.
 </code></pre>
 
 <p>So, I hear you ask, why on earth would you want to do in 5 steps what you could easily do in 1? Isn’t the first method a lot quicker? Are you some sort of moron who doesn’t know their 3 times table? All valid questions.. But the point of the TDD approach is to capture any situation and make sure it is logically thought out. It’s not going to be long before we’re writing much larger programs which don’t have such obvious solutions, so it’s best to get in good habits now. Another example helps illustrate this..</p>

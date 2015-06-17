@@ -19,7 +19,6 @@ TDD involves writing a test, running it on your code and watching it fail, then 
     Common approach:
     Write code to output 'fizz' when a multiple of 3 is entered
 
-
     TDD approach: 
     Write test to output 'fizz' when 3 is entered. 
     Test (test passes). 
