@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Day 11 | Takeaway injection</title>
-  <meta name="description" content="def injector  iterations = self.length - 1  result = self[0]  (1..iterations).each { |x| result = yield result, self[x] }  resultend">
+  <meta name="description" content="I spent a lot of this weekend working on the TWO challenges we were set. Do you know how long it took me to write the bit of code below? This code is most of...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://natstar93.github.io//week3/2015/06/22/day-11.html">
@@ -78,7 +78,9 @@
 
   <article class="post-content">
    
-      <pre><code>def injector
+      <p>I spent a lot of this weekend working on the TWO challenges we were set. Do you know how long it took me to write the bit of code below? This code is most of the answer to the ‘inject challenge’ (the other bit of the answer was a load of unit tests which I won’t bore you with).</p>
+
+<pre><code>def injector
   iterations = self.length - 1
   result = self[0]
   (1..iterations).each { |x| result = yield result, self[x] }
@@ -86,7 +88,7 @@
 end
 </code></pre>
 
-<p>I spent a lot of this weekend working on the TWO challenges we were set. Do you know how long it took me to write the bit of code above? This code is most of the answer to the ‘inject challenge’ (the other bit of the answer was a load of unit tests which I won’t bore you with). The point was to model the <a href="http://ruby-doc.org/core-2.2.2/Enumerable.html#method-i-inject" target="_blank">inject method</a> for arrays only. Inject basically grabs each item of a series and does whatever the block you’ve specified dicatates using the the next item and the cummulative result of the process so far. It’s very handy for adding things up, multiplying, finding the longest item in a series etc… I now love inject, as it provides me with a shortcut to the above without having to write my own method, which I’ve now realised is a bit of a pain to write!</p>
+<p>The point was to model the <a href="http://ruby-doc.org/core-2.2.2/Enumerable.html#method-i-inject" target="_blank">inject method</a> for arrays only. Inject basically grabs each item of a series and does whatever the block you’ve specified dicatates using the the next item and the cummulative result of the process so far. It’s very handy for adding things up, multiplying, finding the longest item in a series etc… I now love inject, as it provides me with a shortcut to the above without having to write my own method, which I’ve now realised is a bit of a pain to write!</p>
 
 <p>The other challenge was to model a takeaway ordering system, then kick out a text from the Twilio API if the order is satisfactory. I read a great deal of an awesome book called <a href="http://www.poodr.com/" target="_blank">Practical Object Oriented Design in Ruby</a> (POODR) which really consolidated last week’s learnings but also make each decision more painstaking.</p>
 

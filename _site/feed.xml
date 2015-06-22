@@ -6,13 +6,15 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Jun 2015 23:30:58 +0100</pubDate>
-    <lastBuildDate>Mon, 22 Jun 2015 23:30:58 +0100</lastBuildDate>
+    <pubDate>Mon, 22 Jun 2015 23:35:08 +0100</pubDate>
+    <lastBuildDate>Mon, 22 Jun 2015 23:35:08 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Day 11 | Takeaway injection</title>
-        <description>&lt;pre&gt;&lt;code&gt;def injector
+        <description>&lt;p&gt;I spent a lot of this weekend working on the TWO challenges we were set. Do you know how long it took me to write the bit of code below? This code is most of the answer to the ‘inject challenge’ (the other bit of the answer was a load of unit tests which I won’t bore you with).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def injector
   iterations = self.length - 1
   result = self[0]
   (1..iterations).each { |x| result = yield result, self[x] }
@@ -20,7 +22,7 @@
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I spent a lot of this weekend working on the TWO challenges we were set. Do you know how long it took me to write the bit of code above? This code is most of the answer to the ‘inject challenge’ (the other bit of the answer was a load of unit tests which I won’t bore you with). The point was to model the &lt;a href=&quot;http://ruby-doc.org/core-2.2.2/Enumerable.html#method-i-inject&quot; target=&quot;_blank&quot;&gt;inject method&lt;/a&gt; for arrays only. Inject basically grabs each item of a series and does whatever the block you’ve specified dicatates using the the next item and the cummulative result of the process so far. It’s very handy for adding things up, multiplying, finding the longest item in a series etc… I now love inject, as it provides me with a shortcut to the above without having to write my own method, which I’ve now realised is a bit of a pain to write!&lt;/p&gt;
+&lt;p&gt;The point was to model the &lt;a href=&quot;http://ruby-doc.org/core-2.2.2/Enumerable.html#method-i-inject&quot; target=&quot;_blank&quot;&gt;inject method&lt;/a&gt; for arrays only. Inject basically grabs each item of a series and does whatever the block you’ve specified dicatates using the the next item and the cummulative result of the process so far. It’s very handy for adding things up, multiplying, finding the longest item in a series etc… I now love inject, as it provides me with a shortcut to the above without having to write my own method, which I’ve now realised is a bit of a pain to write!&lt;/p&gt;
 
 &lt;p&gt;The other challenge was to model a takeaway ordering system, then kick out a text from the Twilio API if the order is satisfactory. I read a great deal of an awesome book called &lt;a href=&quot;http://www.poodr.com/&quot; target=&quot;_blank&quot;&gt;Practical Object Oriented Design in Ruby&lt;/a&gt; (POODR) which really consolidated last week’s learnings but also make each decision more painstaking.&lt;/p&gt;
 
