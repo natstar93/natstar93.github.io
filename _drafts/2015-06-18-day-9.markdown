@@ -1,0 +1,8 @@
+---
+layout: post
+title:  "Day 9 | Promiscuous Pairing"
+date:   2015-06-18 20:10:15
+categories: week2
+image: 
+---
+

@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Day 8 | Promiscuous Pairing"
+date:   2015-06-18 20:10:15
+categories: week2
+image: http://www.natalie-akam.com/Blog/images/pairing.jpg
+---
+
+Quote of the day: "The hiring partners tell us the characteristics they prize most in makers graduates are the ability to pair, work in a team, and be able to learn new things.  Those skills comes from highly promiscuous pairing practices. I've paired with over 500 people!"

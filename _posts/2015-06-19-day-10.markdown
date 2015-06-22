@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Day 10 | Summing up the week"
+date:   2015-06-19 17:46:34
+categories: week2
+image: 
+---
+
+**Most Important Things I Learned:**
+
+&bull; Pairing is really hard! Tansaku, thanks for your advice on this<br>
+&bull; It's not about finishing the task, it's about how much you learnt on the way<br>
+&bull; The seniors struggled too, and most of my cohort are finding this as difficult as I am but the key (I think!) is communicating well with your pair partner and helping each other out
+
+**Things I Struggled With The Most:**
+
+&bull; I think I am a person who likes to plan work out, so the agile way of working is quite hard for me! I find it strange working on something when I don't know what the exact stages ahead are going to be. I can really see the value in the MVP approach though.<br>
+&bull; Retaining all the knowledge from lectures and knowing how to apply them to my code
+
+**Changes I Plan to Make Next Week:**
+
+&bull; I need to be clear to my partner about what I do and don't understand and clear when I need some time to reread something or understand how the codebase all works before beginning.<br>
+&bull; I need to also get beter at explaining things to others and researching things together when neither of us is sure.<br>
+&bull; Read, read read POODR & WGR and practice implementing the concepts
+
+**Other Experiences or General Feedback This Week:**
+
+&bull; The Q&A session with the seniors was really really useful! Many of them said they had thought about dropping out at some point and are all really glad they didn't. It's very reassuring to know that everyone finds this difficult and if you have a really bad day you're not the first one! All the seniors are saying things are falling into place more now which gives me confidence that what I've learnt so far is being retained and I will be able to do this!<br>
+&bull; I'm looking forward to being a mentor next week! Happy to have someone who asks loads of questions etc. 
