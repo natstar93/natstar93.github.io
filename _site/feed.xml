@@ -6,9 +6,49 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 22 Jun 2015 23:35:08 +0100</pubDate>
-    <lastBuildDate>Mon, 22 Jun 2015 23:35:08 +0100</lastBuildDate>
+    <pubDate>Wed, 24 Jun 2015 23:02:30 +0100</pubDate>
+    <lastBuildDate>Wed, 24 Jun 2015 23:02:30 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 13 | Looking up</title>
+        <description>&lt;p&gt;Today was a pretty good day. For the last week or so I’ve been a bit worried about whether I’ve been understanding enough and whether I’ve been implementing the concepts correctly but today I feel pretty good about everything! The three things that really pleased me today were my 1:1, making some real progress with this week’s work and some chats and tips from the awesome alumni helpers. So my blog post is basically about those things in turn.&lt;/p&gt;
+
+&lt;p&gt;I’ve been looking forward to my 1:1 since Monday. Each week we sign up for 1:1s with a coachineer to discuss how the weekend challenge was. I had so many questions and doubts after last weekend’s, so was happy for the opportunity to get some feedback. The main advice I gained was that the implementation doesn’t have to be perfect the first time you have a go at it. Junior (and even senior) devs don’t get it right first time but will then go back and try another approach based on their learnings. It’s better to have had a go than to have spent a long time planning things out and have tried nothing. It’s also better to do a hard reset after 3 commits than after a hundred, so questioning what you’re doing at all times is really important! The Single Responsibility Principle is the most important thing to bear in mind. As long as each method only does one thing and they’re all named correctly it will be easier to see how things fit into place.&lt;/p&gt;
+
+&lt;p&gt;Other points that came up were:&lt;/p&gt;
+
+&lt;p&gt;• &lt;strong&gt;Methods should have one word names.&lt;/strong&gt;
+This can flag if the method is definitely supposed to belong to that class or not&lt;br /&gt;
+e.g. my add_dishes class should just be add, which will help determine if add is the responsibility of that class&lt;/p&gt;
+
+&lt;p&gt;• &lt;strong&gt;Give classes and methods very specific names.&lt;/strong&gt;
+So that you don’t get confused about what their purpose is…&lt;/p&gt;
+
+&lt;p&gt;• &lt;strong&gt;No overly fancy code.&lt;/strong&gt; Keep it simple. Simple == readable. I was really proud of the following neat little line (Codewars people seem to love this kind of stuff), but when my coachineer asked me to explain it it took me a minute or two to remember! A simpler code snippet with explicit names for variables would have explained itself.
+    @dishes.map{ |k,v| “#{k} (£#{‘%.2f’ % v})”}.join(‘, ‘)&lt;/p&gt;
+
+&lt;p&gt;• &lt;strong&gt;Try not to output strings (apart from when raising errors).&lt;/strong&gt; Symbols are usually a good bet. Text is outputted to the interface when you start developing the fron end parts properly. Which leads nicely on to my next point…&lt;/p&gt;
+
+&lt;p&gt;• &lt;strong&gt;Ruby will make more and more sense as we progress through other topics.&lt;/strong&gt; I’m starting to get a better picture already through studying views, controllers, REST and all the http request stuff we’re doing at the moment.&lt;/p&gt;
+
+&lt;p&gt;The battleships front end implementation went very well today. The tests are lovely (and are all passing) and the game interface is shaping up nicely and doing what it’s supposed to do. (It doesn’t look beautiful, but I’m resisting the temptation to bash out a quick stylesheet as I know I’ll get in trouble for doing something that’s not an MVP!). Drawing diagrams of what messages you want to pass to the server and get back really helped with all this. I left feeling really pleased with what we’d produced and the BDD approach we followed. All the more so because of the blockers we ran into and overcame. Makers always say that trying, failing and overcoming is one of the best ways to learn.&lt;/p&gt;
+
+&lt;p&gt;We had a few visits to the alumni help desk today which were fantastic. Sarah in particular helped a lot by never providing the direct answer to a problem, but asking us questions and prompting us to use particular debugging methods in order to work the problems out ourselves. I understand so much more than I would have had I been told the answer. For example when an error of ‘object has nil class’ was being returned, we wrote code to output all of the objects used by that method and quickly identified the one which was behaing incorrectly. The detailed examination of error messages and ways to debug we practiced are really crucial and will transcend other languages and technologies.&lt;/p&gt;
+
+&lt;p&gt;Can’t wait for tomorrow!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 24 Jun 2015 20:44:37 +0100</pubDate>
+        <link>http://natstar93.github.io//week3/2015/06/24/day-13.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/24/day-13.html</guid>
+        
+        
+        <category>week3</category>
+        
+      </item>
     
       <item>
         <title>Day 11 | Takeaway injection</title>
@@ -26,12 +66,13 @@ end
 
 &lt;p&gt;The other challenge was to model a takeaway ordering system, then kick out a text from the Twilio API if the order is satisfactory. I read a great deal of an awesome book called &lt;a href=&quot;http://www.poodr.com/&quot; target=&quot;_blank&quot;&gt;Practical Object Oriented Design in Ruby&lt;/a&gt; (POODR) which really consolidated last week’s learnings but also make each decision more painstaking.&lt;/p&gt;
 
-&lt;p&gt;The thing I’ve discovered about OOD is there are no hard and fast rules. This is both it’s beauty and it’s, er.. beast? You have to aim for as simple a structure as possible by ensuring each method has only one responsibility, injecting dependecy to write loosely coupled classes, reversing dependency if necessary, making each method respond to ‘ducks’ (I’ll explain in another post), having abstract interfaces… the list goes on. Most of these do fit nicely together to satisfy the overall aim, but I find it quite hard to ensure none of them are going wrong and that ‘bad things’ are not creeping in at any given time. All the while you have to make sure you’re only doing what the spec requires. Oh, but you should bear in mind likely potential future developments too and assume that various bits need to be amenable to change. But at the same time don’t overcomplicate things. Sometimes it really hurts my head.&lt;/p&gt;
+&lt;p&gt;The thing I’ve discovered about OOD is there are no hard and fast rules. This is both it’s beauty and it’s, er.. beast? You have to aim for as simple a structure as possible by ensuring each method has only one responsibility, injecting dependecy to write loosely coupled classes, reversing dependency if necessary, making each method respond to ‘ducks’ (I’ll explain in another post), having abstract interfaces… the list goes on. Most of these do fit nicely together to satisfy the overall aim, but I find it quite hard to ensure none of them are going wrong and that ‘bad things’ are not creeping in at any given time. All the while I have to make sure I’m only doing what the spec requires. Oh, but you should bear in mind likely potential future developments too and assume that various bits need to be amenable to change. But at the same time don’t overcomplicate things. Sometimes it really hurts my head.&lt;/p&gt;
 
-&lt;p&gt;I don’t claim to be an expert in the above YET, but at least the concept of OOD is taking shape in my mind. &lt;strong&gt;I surmise that the result of a well made program should have simple, highly readable code that can be worked on and changed in the future by others when requirements change. It should be built to satisfy user stories. Unit tests should be used both to test methods and to guide the developer to realise when a process is too complicated or relies on dependencies that are too rigid. Feature tests at every stage of the process can ensure unit tests are testing something that matters. Oh, and you must be sure to unit test only the behaviour of the class you’re testing and stub out methods that interfere&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;I don’t claim to be an expert in the above YET, but at least the concept of OOD is taking shape in my mind. &lt;strong&gt;I surmise that the result of a well made OO program should have simple, highly readable code that can be worked on and changed in the future by others when requirements change. It should be built to satisfy user stories. Unit tests should be used both to test methods and to guide the developer to realise when a process is too complicated or relies on dependencies that are too rigid. Feature tests at every stage of the process can ensure unit tests are testing something that matters. Oh, and you must be sure to unit test only the behaviour of the class you’re testing and stub out methods that interfere&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;After a pretty hectic weekend full of challenges and programming the object that is my mind, it was nice to have a day of following tutorials today. Until the line that basically said ‘now work out how to do everything else (ie the really hard stuff) on your own’. No rest for the wicked, wicked Makers students…&lt;/p&gt;
 
+&lt;p&gt;Nat x&lt;/p&gt;
 </description>
         <pubDate>Mon, 22 Jun 2015 18:46:34 +0100</pubDate>
         <link>http://natstar93.github.io//week3/2015/06/22/day-11.html</link>
@@ -65,6 +106,8 @@ end
 
 &lt;p&gt;• The Q&amp;amp;A session with the seniors was really really useful! Many of them said they had thought about dropping out at some point and are all really glad they didn’t. It’s very reassuring to know that everyone finds this difficult and if you have a really bad day you’re not the first one! All the seniors are saying things are falling into place more now which gives me confidence that what I’ve learnt so far is being retained and I will be able to do this!&lt;br /&gt;
 • I’m looking forward to being a mentor next week! Happy to have someone who asks loads of questions etc.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
 </description>
         <pubDate>Fri, 19 Jun 2015 18:46:34 +0100</pubDate>
         <link>http://natstar93.github.io//week2/2015/06/19/day-10.html</link>
@@ -290,28 +333,6 @@ Write code to output &#39;fizzbuzz&#39; when a multiple of 15 is entered
         <pubDate>Tue, 09 Jun 2015 22:46:34 +0100</pubDate>
         <link>http://natstar93.github.io//week1/2015/06/09/day-2.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/09/day-2.html</guid>
-        
-        
-        <category>week1</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 1 | And we&#39;re off!</title>
-        <description>&lt;p&gt;Today was the day I had been waiting for for… several weeks since I passed my interview. The good people at Makers decided to be nice to us and ease us in gently, which wasn’t what I was expecting considering that with the pre-course material they dropped us in the deep end (of a pool of gasoline, then set it on fire in week 3 and watched us suffer).&lt;/p&gt;
-
-&lt;p&gt;After our free breakfast, the day started off with some getting-to-know-you games and teamwork exercises, then continued with some brilliant talks on how to do well at Makers and on how to look after your body and mind during the Hardest Thing You’ll Ever Do (TM).&lt;/p&gt;
-
-&lt;p&gt;In a way the ‘body and mind’ talk sticks with me the most, because I wasn’t really expecting it. I’ve realised I’m going to have to eat well, exercise a bit and sleep well in order to get the most out of this experience. Makes sense really. Also, yoga and meditation have been suggested. I’ve never fully understood the benefits of either, but Dana (our wonderful Chief Joy Officer) explained that they are brilliant ways of facilitating the synapses in your brain to connect in new ways while your mind refocusses itself. At last, a scientific explanation that resonates with me. On top of that, they’ve been proven to energise you, reduce anxiety, ward off illnesses and many other cool health benefits. Sign me up for yoga 101 please!&lt;/p&gt;
-
-&lt;p&gt;Another great thing Dana discussed was Mindfulness. No matter how hard you’re working or how much pressure you’re under, you must not lose track of this. Be courteous to others, and address your issues. A walk home today which involved seeing people in a rush pushing past each other and swearing at complete strangers, and seeing a man in Sainsbury’s shout at a timid cashier for suggesting he use the self-service tills (she wasn’t to know he was queuing at the kiosk so he could buy his fags) made me think there should be more of this in every institution or company…&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Nat x&lt;/strong&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 08 Jun 2015 22:46:34 +0100</pubDate>
-        <link>http://natstar93.github.io//week1/2015/06/08/day-1.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/08/day-1.html</guid>
         
         
         <category>week1</category>

@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Day 13 | Looking up"
+date:   2015-06-24 19:44:37
+categories: week3
+image: 
+---
+
+Today was a pretty good day. For the last week or so I've been a bit worried about whether I've been understanding enough and whether I've been implementing the concepts correctly but today I feel pretty good about everything! The three things that really pleased me today were my 1:1, making some real progress with this week's work and some chats and tips from the awesome alumni helpers. So my blog post is basically about those things in turn.
+
+I've been looking forward to my 1:1 since Monday. Each week we sign up for 1:1s with a coachineer to discuss how the weekend challenge was. I had so many questions and doubts after last weekend's, so was happy for the opportunity to get some feedback. The main advice I gained was that the implementation doesn't have to be perfect the first time you have a go at it. Junior (and even senior) devs don't get it right first time but will then go back and try another approach based on their learnings. It's better to have had a go than to have spent a long time planning things out and have tried nothing. It's also better to do a hard reset after 3 commits than after a hundred, so questioning what you're doing at all times is really important! The Single Responsibility Principle is the most important thing to bear in mind. As long as each method only does one thing and they're all named correctly it will be easier to see how things fit into place.
+
+Other points that came up were:
+
+&bull; **Methods should have one word names.**
+This can flag if the method is definitely supposed to belong to that class or not  
+e.g. my add_dishes class should just be add, which will help determine if add is the responsibility of that class
+
+&bull; **Give classes and methods very specific names.**
+So that you don't get confused about what their purpose is...
+
+&bull; **No overly fancy code.** Keep it simple. Simple == readable. I was really proud of the following neat little line (Codewars people seem to love this kind of stuff), but when my coachineer asked me to explain it it took me a minute or two to remember! A simpler code snippet with explicit names for variables would have explained itself.
+    @dishes.map{ |k,v| "#{k} (£#{'%.2f' % v})"}.join(', ')
+
+&bull; **Try not to output strings (apart from when raising errors).** Symbols are usually a good bet. Text is outputted to the interface when you start developing the fron end parts properly. Which leads nicely on to my next point...
+
+&bull; **Ruby will make more and more sense as we progress through other topics.** I'm starting to get a better picture already through studying views, controllers, REST and all the http request stuff we're doing at the moment. 
+
+The battleships front end implementation went very well today. The tests are lovely (and are all passing) and the game interface is shaping up nicely and doing what it's supposed to do. (It doesn't look beautiful, but I'm resisting the temptation to bash out a quick stylesheet as I know I'll get in trouble for doing something that's not an MVP!). Drawing diagrams of what messages you want to pass to the server and get back really helped with all this. I left feeling really pleased with what we'd produced and the BDD approach we followed. All the more so because of the blockers we ran into and overcame. Makers always say that trying, failing and overcoming is one of the best ways to learn.
+
+We had a few visits to the alumni help desk today which were fantastic. Sarah in particular helped a lot by never providing the direct answer to a problem, but asking us questions and prompting us to use particular debugging methods in order to work the problems out ourselves. I understand so much more than I would have had I been told the answer. For example when an error of 'object has nil class' was being returned, we wrote code to output all of the objects used by that method and quickly identified the one which was behaing incorrectly. The detailed examination of error messages and ways to debug we practiced are really crucial and will transcend other languages and technologies.
+
+Can't wait for tomorrow!
+
+Nat x
+
+

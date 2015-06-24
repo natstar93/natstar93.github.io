@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Day 9 | Promiscuous Pairing"
-date:   2015-06-18 20:10:15
+title:  "Day 9 | If it quacks like a duck.."
+date:   2015-06-18 23:57:31
 categories: week2
 image: 
 ---
