@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Jun 2015 23:02:30 +0100</pubDate>
-    <lastBuildDate>Wed, 24 Jun 2015 23:02:30 +0100</lastBuildDate>
+    <pubDate>Wed, 24 Jun 2015 23:09:15 +0100</pubDate>
+    <lastBuildDate>Wed, 24 Jun 2015 23:09:15 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -25,8 +25,10 @@ e.g. my add_dishes class should just be add, which will help determine if add is
 &lt;p&gt;• &lt;strong&gt;Give classes and methods very specific names.&lt;/strong&gt;
 So that you don’t get confused about what their purpose is…&lt;/p&gt;
 
-&lt;p&gt;• &lt;strong&gt;No overly fancy code.&lt;/strong&gt; Keep it simple. Simple == readable. I was really proud of the following neat little line (Codewars people seem to love this kind of stuff), but when my coachineer asked me to explain it it took me a minute or two to remember! A simpler code snippet with explicit names for variables would have explained itself.
-    @dishes.map{ |k,v| “#{k} (£#{‘%.2f’ % v})”}.join(‘, ‘)&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;No overly fancy code.&lt;/strong&gt; Keep it simple. Simple == readable. I was really proud of the following neat little line (Codewars people seem to love this kind of stuff), but when my coachineer asked me to explain it it took me a minute or two to remember! A simpler code snippet with explicit names for variables would have explained itself.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@dishes.map{ |k,v| &quot;#{k} (£#{&#39;%.2f&#39; % v})&quot;}.join(&#39;, &#39;)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;• &lt;strong&gt;Try not to output strings (apart from when raising errors).&lt;/strong&gt; Symbols are usually a good bet. Text is outputted to the interface when you start developing the fron end parts properly. Which leads nicely on to my next point…&lt;/p&gt;
 

@@ -20,6 +20,7 @@ e.g. my add_dishes class should just be add, which will help determine if add is
 So that you don't get confused about what their purpose is...
 
 &bull; **No overly fancy code.** Keep it simple. Simple == readable. I was really proud of the following neat little line (Codewars people seem to love this kind of stuff), but when my coachineer asked me to explain it it took me a minute or two to remember! A simpler code snippet with explicit names for variables would have explained itself.
+    
     @dishes.map{ |k,v| "#{k} (£#{'%.2f' % v})"}.join(', ')
 
 &bull; **Try not to output strings (apart from when raising errors).** Symbols are usually a good bet. Text is outputted to the interface when you start developing the fron end parts properly. Which leads nicely on to my next point...
