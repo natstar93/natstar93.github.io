@@ -1,26 +1,26 @@
-HTTP
-Requests out, responses back
+---
+layout: post
+title:  "Day 12 | Jen, this box is the internet"
+date:   2015-06-23 21:01:40
+categories: week3
+image: 
+image-subtitle: Said diagram of boxes and arrows
+---
 
+This week we're learning about a newfangled invention called... the 'internet'. We played a game in our stand up to help illustrate how http requests are sent out to servers, what controllers and views do to build pages and retrieve app logic, and how responses are sent back to the client. This involved Theo and Lucy (requests and reponses) running between the client and server and pretending to die, and other parties shouting messages. Probably the best way ever to learn the roles of all the constitent parts, and so much more memorable than a diagram full of boxes and arrows!
+
+The most important points so far which relate to this week's work (using Sinatra) are:
+
+HTTP: Requests out, responses back
+
+Controller uses the following methods:
 get: read data
-
 post: change state of system
 
+Controller takes an incoming request and decides if it needs to consult app logic to illicit a response. It then uses views to build its pages. Views (in our case) contain erb (embedded ruby) which is evaluated and turned into html.
 
-Can use global variable for $game this week but then never again
+We are allowed to use a global variable for a new instance of our Game class this week but then never again after that or we'll be shot. We're going to find out better ways of allowing our data to persist (cue databases, presumably) next week.
 
+Ooh and HTML and CSS are due to pop up at various points, yay!
 
-post '/shoot' do
-  $game.p1.shoot params[:coordinate]
-end
-
-post '/place_ship' do
-  coordinate = params[:coordinate]
-  type = params[:ship_type]
-end
-
-POST localhost:4567/shoot
-
-params => { coordinate: 'A1', ship_type: 'submarine' }
-
-
-
+Nat x

@@ -6,9 +6,34 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Jun 2015 23:09:15 +0100</pubDate>
-    <lastBuildDate>Wed, 24 Jun 2015 23:09:15 +0100</lastBuildDate>
+    <pubDate>Thu, 25 Jun 2015 23:26:56 +0100</pubDate>
+    <lastBuildDate>Thu, 25 Jun 2015 23:26:56 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 14 | Why is my test like an NHS ward? It&#39;s full of bugs</title>
+        <description>&lt;p&gt;Today was another great day. Kate and I were super excited to combine forces and create a game which allowed the placement &lt;em&gt;and&lt;/em&gt; striking of battleships. That probably doesn’t sound very exciting but every little win not only resulted in tests going green and passing, we could see our results visually on the local server too. Ok, it probably still doesn’t sound very exciting. I guess it just depends on what you’re into.&lt;/p&gt;
+
+&lt;p&gt;Some real progress was made today and we learnt a load of new stuff about cookies and error handling. Everything is really starting to come together. We managed to implement a multiplayer game and played it using two browsers that each took a cookie to keep track of which browser was being used by which player.&lt;/p&gt;
+
+&lt;p&gt;Our joy at the above successes was marred slightly by our test still not passing. I spent the evening trying to work out why and had a bit of remote help from Mihai, an member of the awesome Makers alumni.&lt;/p&gt;
+
+&lt;p&gt;I’ve learnt so much about debugging in the last few days I’m starting to embrace these problems. I wouldn’t say I exactly enjoy seeing error messages, but now I have more ideas on how to go about trying to identify issues and fix them, which is very satisfying. I don’t spend so much time feeling annoyed and scratching my head whilst looking at the error messages, hoping they’ll go away. Following BDD ensures that the problems are small and managable too. If you do it correctly and rigourously you can be quite confident your problem originates from the part you’ve just implemented, not something you should have tested earlier.&lt;/p&gt;
+
+&lt;p&gt;Mihai identified that the problem was definitely with the testing, not the code, and told me how to run just the failing test on its own. I did just that and it went green at last! This prompt lead me to realise that one or more other tests must be interfering, i.e. it/they had set something that needed to be reset before any other tests were initialised. This is a bit of a breakthrough. I haven’t fixed the issue yet (will save that for tomorrow when Kate is there), but the more important outcome is that I know WHY the problem is happening and what approach we need to take to rectify it.&lt;/p&gt;
+
+&lt;p&gt;Great week :) Makers &amp;lt;3&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Jun 2015 23:50:44 +0100</pubDate>
+        <link>http://natstar93.github.io//week3/2015/06/25/day-14.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/25/day-14.html</guid>
+        
+        
+        <category>week3</category>
+        
+      </item>
     
       <item>
         <title>Day 13 | Looking up</title>
@@ -36,7 +61,7 @@ So that you don’t get confused about what their purpose is…&lt;/p&gt;
 
 &lt;p&gt;The battleships front end implementation went very well today. The tests are lovely (and are all passing) and the game interface is shaping up nicely and doing what it’s supposed to do. (It doesn’t look beautiful, but I’m resisting the temptation to bash out a quick stylesheet as I know I’ll get in trouble for doing something that’s not an MVP!). Drawing diagrams of what messages you want to pass to the server and get back really helped with all this. I left feeling really pleased with what we’d produced and the BDD approach we followed. All the more so because of the blockers we ran into and overcame. Makers always say that trying, failing and overcoming is one of the best ways to learn.&lt;/p&gt;
 
-&lt;p&gt;We had a few visits to the alumni help desk today which were fantastic. Sarah in particular helped a lot by never providing the direct answer to a problem, but asking us questions and prompting us to use particular debugging methods in order to work the problems out ourselves. I understand so much more than I would have had I been told the answer. For example when an error of ‘object has nil class’ was being returned, we wrote code to output all of the objects used by that method and quickly identified the one which was behaing incorrectly. The detailed examination of error messages and ways to debug we practiced are really crucial and will transcend other languages and technologies.&lt;/p&gt;
+&lt;p&gt;We had a few visits to the alumni help desk today which were fantastic. Sarah in particular helped a lot by never providing the direct answer to a problem, but asking us questions and prompting us to use particular debugging methods in order to work the problems out ourselves. I understand so much more than I would have had I been told the answer. For example when an error of ‘object has nil class’ was being returned, we wrote code to output all of the objects used by that method and quickly identified the one which was behaving incorrectly. The detailed examination of error messages and ways to debug we practiced are really crucial and will transcend other languages and technologies.&lt;/p&gt;
 
 &lt;p&gt;Can’t wait for tomorrow!&lt;/p&gt;
 
@@ -279,62 +304,6 @@ end
         <pubDate>Wed, 10 Jun 2015 23:41:42 +0100</pubDate>
         <link>http://natstar93.github.io//week1/2015/06/10/day-3.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/10/day-3.html</guid>
-        
-        
-        <category>week1</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 2 | TDD. Success == Failure</title>
-        <description>&lt;p&gt;Today was our first ‘proper’ day as Makers students. I feel like the day flew by, but when I look back at what we’ve actually achieved today I know the reason I am so tired now is that we did a hell of a lot. Here’s a bit of a summary of the day…&lt;/p&gt;
-
-&lt;p&gt;The day started with a stand up in groups led by one of the coach engineers (who are what normal people would call teachers) where we discussed what we’d achieved yesterday, what things may be blocking our progression and what we were aiming to do next. This is the format of all our twice daily stand ups from now on. Since yesterday was quite a laid back introduction day, we mentioned things like that we’d got to know people better and had seen the value in and challenges of teamwork from our pseudo code and spaghetti-marshmallow exercises.&lt;/p&gt;
-
-&lt;p&gt;The morning’s group talk focussed on TDD (Test Driven Development), then after a brief overview of the task we were quickly rushed off in our pairs to figure it out and complete it.&lt;/p&gt;
-
-&lt;p&gt;I’m happy with how Kirsten and I completed the task. We worked through it in quite a considerate and methodical way, making sure to read everything and bear in mind the objectives of the task. The thing to remember about TDD and pairing is that it’s not necessarily about being the first to finish, it’s about taking into account any possible input and making sure you a) have tests in place that cover any type of input and b) that you buid your code up slowly making sure not to miss anything. That way you’ll end up with a truly robust program and hopefully won’t have to rewrite anything, just refactor it.&lt;/p&gt;
-
-&lt;p&gt;TDD involves writing a test, running it on your code and watching it fail, then writing a line or two of code in your program to make that test pass. You then create a new test and repeat until, voila, you have a page full of tests and a program that does all kinds of cool stuff without a single bug. The incremental method can sometimes seems a bit trivial, for example if you want to write a program ‘fizzbuzz’ that outputs ‘fizz’ every time 3 is entered..&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Common approach:
-Write code to output &#39;fizz&#39; when a multiple of 3 is entered
-
-TDD approach: 
-Write test to check if &#39;fizz&#39; is returned when 3 is entered. 
-Test (test passes). 
-Write test to check if &#39;buzz&#39; is returned when 9 is entered. 
-Test (test fails). 
-Rewrite original line of code to output &#39;fizz&#39; when a MUTIPLE of 3 is entered.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So, I hear you ask, why on earth would you want to do in 5 steps what you could easily do in 1? Isn’t the first method a lot quicker? Are you some sort of moron who doesn’t know their 3 times table? All valid questions.. But the point of the TDD approach is to capture any situation and make sure it is logically thought out. It’s not going to be long before we’re writing much larger programs which don’t have such obvious solutions, so it’s best to get in good habits now. Another example helps illustrate this..&lt;/p&gt;
-
-&lt;p&gt;Task: Write a program that enters ‘fizz’ when a multiple of 3 is entered, ‘buzz’ when a multiple of 5 is entered and ‘fizzbuzz’ when a multiple of 15 is entered.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Possible common approach:
-Write code to output &#39;fizz&#39; when a multiple of 3 is entered
-Write code to output &#39;fizz&#39; when a multiple of 5 is entered
-Write code to output &#39;fizzbuzz&#39; when a multiple of 15 is entered
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But there’s an error here… 15 is also a multiple of 3 and 5, so which output does it return?&lt;/p&gt;
-
-&lt;p&gt;If the code had been written using TDD there would be a test case for 15 and a handy error message would be outputted letting you know why the build had failed (assuming you’d set up a descriptive and specific error message). You would then be able to examine the issue with your code and write it so that ALL tests passed at the same time. Only then you would be sure that your code was able to satisfy all three cases simultaneously.&lt;/p&gt;
-
-&lt;p&gt;The real value was shown to us when we decided to do a test case for a string and found that all but the test we’d just set up - to test whether the input was not an integer - failed. This led us to realise that we needed to test for this first then exit the program if the input was proven to be something other than an integer. Otherwise the program would try and see what happened when a string was divided by 3… (Try it, it doesn’t make sense)&lt;/p&gt;
-
-&lt;p&gt;Of course, the TDD relies on you writing your tests correctly (which is where your pair partner comes in handy!) and making sure you’ve covered all scenarios e.g. negative integers, zero, strings/floats/any other non-integer.&lt;/p&gt;
-
-&lt;p&gt;So that’s TDD part 1 in a nutshell. I feel like I’ve gone off on one and written a very long post about it. Today also included some variations on the original challenge and a yoga session part way through the afternoon which really helped clear my mind and help me refocus. It’s amazing how much energy you can get from standing on one leg, arms outstretched and pretending to be a tree… But I’ll write a post about yoga another day as I’m going to make time to be a regular in those sessions :)&lt;/p&gt;
-
-&lt;p&gt;I’m going to finish by giving a big shout out to my awesome first ever pairing partner Kirsten for her humour, patience, intelligence, down-to-earthedness and diligence. We rocked it today!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Tue, 09 Jun 2015 22:46:34 +0100</pubDate>
-        <link>http://natstar93.github.io//week1/2015/06/09/day-2.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/09/day-2.html</guid>
         
         
         <category>week1</category>

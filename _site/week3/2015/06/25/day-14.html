@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Day 13 | Looking up</title>
-  <meta name="description" content="Today was a pretty good day. For the last week or so I’ve been a bit worried about whether I’ve been understanding enough and whether I’ve been implementing ...">
+  <title>Day 14 | Why is my test like an NHS ward? It's full of bugs</title>
+  <meta name="description" content="Today was another great day. Kate and I were super excited to combine forces and create a game which allowed the placement and striking of battleships. That ...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//week3/2015/06/24/day-13.html">
+  <link rel="canonical" href="http://natstar93.github.io//week3/2015/06/25/day-14.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,42 +72,25 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Day 13 | Looking up</h1>
-    <p class="post-meta">Jun 24, 2015</p>
+    <h1 class="post-title">Day 14 | Why is my test like an NHS ward? It's full of bugs</h1>
+    <p class="post-meta">Jun 25, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>Today was a pretty good day. For the last week or so I’ve been a bit worried about whether I’ve been understanding enough and whether I’ve been implementing the concepts correctly but today I feel pretty good about everything! The three things that really pleased me today were my 1:1, making some real progress with this week’s work and some chats and tips from the awesome alumni helpers. So my blog post is basically about those things in turn.</p>
+      <p>Today was another great day. Kate and I were super excited to combine forces and create a game which allowed the placement <em>and</em> striking of battleships. That probably doesn’t sound very exciting but every little win not only resulted in tests going green and passing, we could see our results visually on the local server too. Ok, it probably still doesn’t sound very exciting. I guess it just depends on what you’re into.</p>
 
-<p>I’ve been looking forward to my 1:1 since Monday. Each week we sign up for 1:1s with a coachineer to discuss how the weekend challenge was. I had so many questions and doubts after last weekend’s, so was happy for the opportunity to get some feedback. The main advice I gained was that the implementation doesn’t have to be perfect the first time you have a go at it. Junior (and even senior) devs don’t get it right first time but will then go back and try another approach based on their learnings. It’s better to have had a go than to have spent a long time planning things out and have tried nothing. It’s also better to do a hard reset after 3 commits than after a hundred, so questioning what you’re doing at all times is really important! The Single Responsibility Principle is the most important thing to bear in mind. As long as each method only does one thing and they’re all named correctly it will be easier to see how things fit into place.</p>
+<p>Some real progress was made today and we learnt a load of new stuff about cookies and error handling. Everything is really starting to come together. We managed to implement a multiplayer game and played it using two browsers that each took a cookie to keep track of which browser was being used by which player.</p>
 
-<p>Other points that came up were:</p>
+<p>Our joy at the above successes was marred slightly by our test still not passing. I spent the evening trying to work out why and had a bit of remote help from Mihai, an member of the awesome Makers alumni.</p>
 
-<p>• <strong>Methods should have one word names.</strong>
-This can flag if the method is definitely supposed to belong to that class or not<br />
-e.g. my add_dishes class should just be add, which will help determine if add is the responsibility of that class</p>
+<p>I’ve learnt so much about debugging in the last few days I’m starting to embrace these problems. I wouldn’t say I exactly enjoy seeing error messages, but now I have more ideas on how to go about trying to identify issues and fix them, which is very satisfying. I don’t spend so much time feeling annoyed and scratching my head whilst looking at the error messages, hoping they’ll go away. Following BDD ensures that the problems are small and managable too. If you do it correctly and rigourously you can be quite confident your problem originates from the part you’ve just implemented, not something you should have tested earlier.</p>
 
-<p>• <strong>Give classes and methods very specific names.</strong>
-So that you don’t get confused about what their purpose is…</p>
+<p>Mihai identified that the problem was definitely with the testing, not the code, and told me how to run just the failing test on its own. I did just that and it went green at last! This prompt lead me to realise that one or more other tests must be interfering, i.e. it/they had set something that needed to be reset before any other tests were initialised. This is a bit of a breakthrough. I haven’t fixed the issue yet (will save that for tomorrow when Kate is there), but the more important outcome is that I know WHY the problem is happening and what approach we need to take to rectify it.</p>
 
-<p>• <strong>No overly fancy code.</strong> Keep it simple. Simple == readable. I was really proud of the following neat little line (Codewars people seem to love this kind of stuff), but when my coachineer asked me to explain it it took me a minute or two to remember! A simpler code snippet with explicit names for variables would have explained itself.</p>
-
-<pre><code>@dishes.map{ |k,v| "#{k} (£#{'%.2f' % v})"}.join(', ')
-</code></pre>
-
-<p>• <strong>Try not to output strings (apart from when raising errors).</strong> Symbols are usually a good bet. Text is outputted to the interface when you start developing the fron end parts properly. Which leads nicely on to my next point…</p>
-
-<p>• <strong>Ruby will make more and more sense as we progress through other topics.</strong> I’m starting to get a better picture already through studying views, controllers, REST and all the http request stuff we’re doing at the moment.</p>
-
-<p>The battleships front end implementation went very well today. The tests are lovely (and are all passing) and the game interface is shaping up nicely and doing what it’s supposed to do. (It doesn’t look beautiful, but I’m resisting the temptation to bash out a quick stylesheet as I know I’ll get in trouble for doing something that’s not an MVP!). Drawing diagrams of what messages you want to pass to the server and get back really helped with all this. I left feeling really pleased with what we’d produced and the BDD approach we followed. All the more so because of the blockers we ran into and overcame. Makers always say that trying, failing and overcoming is one of the best ways to learn.</p>
-
-<p>We had a few visits to the alumni help desk today which were fantastic. Sarah in particular helped a lot by never providing the direct answer to a problem, but asking us questions and prompting us to use particular debugging methods in order to work the problems out ourselves. I understand so much more than I would have had I been told the answer. For example when an error of ‘object has nil class’ was being returned, we wrote code to output all of the objects used by that method and quickly identified the one which was behaving incorrectly. The detailed examination of error messages and ways to debug we practiced are really crucial and will transcend other languages and technologies.</p>
-
-<p>Can’t wait for tomorrow!</p>
+<p>Great week :) Makers &lt;3</p>
 
 <p>Nat x</p>
-
 
 
       <img src="">
