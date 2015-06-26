@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Jun 2015 11:52:52 +0100</pubDate>
-    <lastBuildDate>Fri, 26 Jun 2015 11:52:52 +0100</lastBuildDate>
+    <pubDate>Fri, 26 Jun 2015 12:19:25 +0100</pubDate>
+    <lastBuildDate>Fri, 26 Jun 2015 12:19:25 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -175,6 +175,42 @@ end
       </item>
     
       <item>
+        <title>Day 15 | Friday learning plan</title>
+        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• How the internet works!&lt;br /&gt;
+• How to use BDD, controllers, views and sessions&lt;br /&gt;
+• Debugging is awesome. The alumni helpers helped me a lot with this and I’m now a lot more able to identify the cause of issues myself. I’m really happy about how this week went, I definitely found it easier than last week.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Being ok with moving through the first stages slowly, but I’m glad I did because it really helped me understand everything well and probably helped me progress through the later stuff a bit more rapidly&lt;br /&gt;
+• Listening to talks. I don’t know if there’s something wrong with me but after a certain amount of time I find it hard to listen if it’s not related to what I’m doing at that exact time&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Not really a change, but persevere as I did this week and keep making sure that both members of a pair are at the same level of understanding about a various topic before progressing onto the next bit of code&lt;br /&gt;
+• Make time for yoga!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• I quite liked being able to choose pair partners.. I’m not sure how other people feel about this but I enjoyed partnering with someone who was at the same stage of the program and going through all the issues together for the first time at the same pace. I feel like maybe I learnt more that way? Maybe it’s just that this week wasn’t as hard as week 2. You could argue that having random pairings allows more opportunity for people to explain things though. Hmm.&lt;br /&gt;
+• I LOVED the game we played in our standup (http://natstar93.github.io/week3/2015/06/23/day-12.html). I feel like I will now retain that info forever&lt;br /&gt;
+• Can we have more cereal, bread, milk and fruit on fridays? :)&lt;br /&gt;
+• I would prefer if the challenge came out earlier on a Friday. I occassionally have some unavoidable weekend plans (weddings etc) and it would be great to get a good start on it before Friday lunchtime and all the afternoon talks, sessions and er.. beers being handed round&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 19 Jun 2015 13:14:47 +0100</pubDate>
+        <link>http://natstar93.github.io//week3/2015/06/19/day-15.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/19/day-15.html</guid>
+        
+        
+        <category>week3</category>
+        
+      </item>
+    
+      <item>
         <title>Day 8 | Promiscuous Pairing</title>
         <description>&lt;p&gt;Quote of the day: “The hiring partners tell us the characteristics they prize most in makers graduates are the ability to pair, work in a team, and be able to learn new things.  Those skills comes from highly promiscuous pairing practices. I’ve paired with over 500 people!”&lt;/p&gt;
 </description>
@@ -254,50 +290,6 @@ end
         <pubDate>Fri, 12 Jun 2015 21:51:52 +0100</pubDate>
         <link>http://natstar93.github.io//week1/2015/06/12/day-5.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/12/day-5.html</guid>
-        
-        
-        <category>week1</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 4 | BROKEN Boris Bikes</title>
-        <description>&lt;p&gt;Today was a day of ups and downs. I’ve discovered that it’s incredibly difficult to switch pairing partners part way through a project. It’s all good experience and practice of course, as there will be plenty of times in our future jobs when we have to jump in, understand someone else’s repo and just get on with it. It really pushes you to make sure you understand the code, especially when you’re presented with a solution (or part solution) to the same problem that someone’s approached from a really different angle.&lt;/p&gt;
-
-&lt;p&gt;My partner and I have pretty different styles of working, so it was great experience in adapting to someone else’s way of doing things. At times I didn’t feel like I was being that good a partner as I sometimes find it difficult to explain concepts or ideas that make sense to me in my head. I’ll bring this up in my 1:1 next week as I’d like to improve on this.&lt;/p&gt;
-
-&lt;p&gt;Today we covered off a lot of the material I was doing yesterday, and started to work on the problem of broken bikes mid-afternoon. Mid-afternoon is that strange time when sometimes information overload hits you and complicated concepts start to not make sense anymore. We made some progress but on the whole I wasn;t that happy with the amount I achieved today. I went home a bit unhappy, and decided to get stuck into it again as soon as I got back.&lt;/p&gt;
-
-&lt;p&gt;This evening went amazingly well. In my quiet and peaceful lounge I managed to work things out in clear, logical steps and build the functionality I needed in what I think is the best way I could have. I’m really happy it went so well and that I ended the day on a high!&lt;/p&gt;
-
-&lt;p&gt;Here’s my new favourite little array method (using a ‘destructive selector’.. ooh sounds exciting)&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;arr.delete_at(index { block })&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Used to detect the first working bike of an array, remove it from the array and return it to the method call:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;@bikes.delete_at(@bikes.index { |bike| bike.working? })&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;And another line I really liked is this super easy to read ‘if’ statement&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;fail &#39;No bikes available&#39; if no_working_bikes?&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;and here’s that working? method, if you’re interested. It’s packaged away in a private method. It’s good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very ‘plain english’ code that’s easy for others to understand.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def no_working_bikes?
-  bikes.none? { |bike| bike.working? }
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Simples, right?&lt;/p&gt;
-
-&lt;p&gt;Anyway, I’ll sign off now. Looking forward to whatever challenges Friday brings!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Thu, 11 Jun 2015 21:15:00 +0100</pubDate>
-        <link>http://natstar93.github.io//week1/2015/06/11/day-4.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/11/day-4.html</guid>
         
         
         <category>week1</category>
