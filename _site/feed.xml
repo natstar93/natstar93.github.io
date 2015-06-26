@@ -6,9 +6,45 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Jun 2015 12:19:25 +0100</pubDate>
-    <lastBuildDate>Fri, 26 Jun 2015 12:19:25 +0100</lastBuildDate>
+    <pubDate>Fri, 26 Jun 2015 12:21:24 +0100</pubDate>
+    <lastBuildDate>Fri, 26 Jun 2015 12:21:24 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 15 | Friday learning plan</title>
+        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• How the internet works!&lt;br /&gt;
+• How to use BDD, controllers, views and sessions&lt;br /&gt;
+• Debugging is awesome. The alumni helpers helped me a lot with this and I’m now a lot more able to identify the cause of issues myself. I’m really happy about how this week went, I definitely found it easier than last week.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Being ok with moving through the first stages slowly, but I’m glad I did because it really helped me understand everything well and probably helped me progress through the later stuff a bit more rapidly&lt;br /&gt;
+• Listening to talks. I don’t know if there’s something wrong with me but after a certain amount of time I find it hard to listen if it’s not related to what I’m doing at that exact time&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Not really a change, but persevere as I did this week and keep making sure that both members of a pair are at the same level of understanding about a various topic before progressing onto the next bit of code&lt;br /&gt;
+• Make time for yoga!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• I quite liked being able to choose pair partners.. I’m not sure how other people feel about this but I enjoyed partnering with someone who was at the same stage of the program and going through all the issues together for the first time at the same pace. I feel like maybe I learnt more that way? Maybe it’s just that this week wasn’t as hard as week 2. You could argue that having random pairings allows more opportunity for people to explain things though. Hmm.&lt;br /&gt;
+• I LOVED the game we played in our standup (http://natstar93.github.io/week3/2015/06/23/day-12.html). I feel like I will now retain that info forever&lt;br /&gt;
+• Can we have more cereal, bread, milk and fruit on fridays? :)&lt;br /&gt;
+• I would prefer if the challenge came out earlier on a Friday. I occassionally have some unavoidable weekend plans (weddings etc) and it would be great to get a good start on it before Friday lunchtime and all the afternoon talks, sessions and er.. beers being handed round&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 26 Jun 2015 13:14:47 +0100</pubDate>
+        <link>http://natstar93.github.io//week3/2015/06/26/day-15.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/26/day-15.html</guid>
+        
+        
+        <category>week3</category>
+        
+      </item>
     
       <item>
         <title>Day 14 | Why is my test like an NHS ward? It&#39;s full of bugs</title>
@@ -171,42 +207,6 @@ end
         
         
         <category>week2</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 15 | Friday learning plan</title>
-        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• How the internet works!&lt;br /&gt;
-• How to use BDD, controllers, views and sessions&lt;br /&gt;
-• Debugging is awesome. The alumni helpers helped me a lot with this and I’m now a lot more able to identify the cause of issues myself. I’m really happy about how this week went, I definitely found it easier than last week.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Being ok with moving through the first stages slowly, but I’m glad I did because it really helped me understand everything well and probably helped me progress through the later stuff a bit more rapidly&lt;br /&gt;
-• Listening to talks. I don’t know if there’s something wrong with me but after a certain amount of time I find it hard to listen if it’s not related to what I’m doing at that exact time&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Not really a change, but persevere as I did this week and keep making sure that both members of a pair are at the same level of understanding about a various topic before progressing onto the next bit of code&lt;br /&gt;
-• Make time for yoga!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• I quite liked being able to choose pair partners.. I’m not sure how other people feel about this but I enjoyed partnering with someone who was at the same stage of the program and going through all the issues together for the first time at the same pace. I feel like maybe I learnt more that way? Maybe it’s just that this week wasn’t as hard as week 2. You could argue that having random pairings allows more opportunity for people to explain things though. Hmm.&lt;br /&gt;
-• I LOVED the game we played in our standup (http://natstar93.github.io/week3/2015/06/23/day-12.html). I feel like I will now retain that info forever&lt;br /&gt;
-• Can we have more cereal, bread, milk and fruit on fridays? :)&lt;br /&gt;
-• I would prefer if the challenge came out earlier on a Friday. I occassionally have some unavoidable weekend plans (weddings etc) and it would be great to get a good start on it before Friday lunchtime and all the afternoon talks, sessions and er.. beers being handed round&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 19 Jun 2015 13:14:47 +0100</pubDate>
-        <link>http://natstar93.github.io//week3/2015/06/19/day-15.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/19/day-15.html</guid>
-        
-        
-        <category>week3</category>
         
       </item>
     

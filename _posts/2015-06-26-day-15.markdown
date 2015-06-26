@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Day 15 | Friday learning plan"
-date:   2015-06-19 12:14:47
+date:   2015-06-26 12:14:47
 categories: week3
 image: 
 ---
