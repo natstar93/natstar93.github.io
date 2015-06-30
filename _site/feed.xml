@@ -6,9 +6,81 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Jun 2015 12:21:24 +0100</pubDate>
-    <lastBuildDate>Fri, 26 Jun 2015 12:21:24 +0100</lastBuildDate>
+    <pubDate>Tue, 30 Jun 2015 22:42:10 +0100</pubDate>
+    <lastBuildDate>Tue, 30 Jun 2015 22:42:10 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 17 | Building a real thing</title>
+        <description>&lt;p&gt;This week I was excited to start learning about databases. The last two days have been spent getting to grips with the setup and using Heroku, a super awesome tool that takes about 2 minutes to set up and gets your app online just as quickly.&lt;/p&gt;
+
+&lt;p&gt;Having used a bit of SQL previously has helped a lot less than I thought it would so far. We’re more interested in the way DataMapper works with the regular Ruby files we build and the methods it provides to negate actually using SQL. Working through requiring files (simple translation: getting files to look at each other) and making sure settings are correct has been a bit of a minefield. An athletic restart (transalation: delete it and do it all again) was in order to make sure I could actually reproduce the setup.&lt;/p&gt;
+
+&lt;p&gt;The whole project is being built using the BDD method we know and love, and the tutorials actually lead us to make certain errors and then work out how to fix them. To say it’s quite challenging would be quite an accurate statement.&lt;/p&gt;
+
+&lt;p&gt;I’m pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what the differences were! Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you’re developing the product. So if you’re a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public.&lt;/p&gt;
+
+&lt;p&gt;Here are some cool things I’ve been using. Stop reading now if you’re not a fellow fan of code, you’ll just fall asleep otherwise.&lt;/p&gt;
+
+&lt;p&gt;This statement checks whether you’ve got an environmental variable called RACK_ENV (for testing), and if not concludes that env should be set to development. This happens because ENV[‘RACK_ENV’] returns nil, so the right hand side of the ‘or’ statement is returned.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;env = ENV[&#39;RACK_ENV&#39;] || &#39;development&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The ‘or’ operator used below then checks whether a prod database URL exists, and if not uses a local server (either test or dev, depending on the result of the above variable assignment) as an argument for the DataMapper setup method.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DataMapper.setup(:default, ENV[&#39;DATABASE_URL&#39;] || &quot;postgres://localhost/bookmark_manager_#{env}&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pretty clever, right?&lt;/p&gt;
+
+&lt;p&gt;I’ve also been using a lovely gem called database cleaner which uses the following code to clean up your database between tests so you can ensure the run of one test isn’t affecting that of another.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So we’re nearly able to build a really cool product! Looking forward to making some more progress on it tomorrow.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Tue, 30 Jun 2015 22:34:23 +0100</pubDate>
+        <link>http://natstar93.github.io//week4/2015/06/30/day-17.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/06/30/day-17.html</guid>
+        
+        
+        <category>week4</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 16 | Bad idea bear</title>
+        <description>&lt;p&gt;I spent the weekend having a lovely time in Copenhagen. The only non-lovely thing about it was that I spent several hours on a plane home that was going nowhere with no wifi or place to charge my laptop. Unable to look anything up, I fought my way through the first half of the challenge trying not to have a panic attack every time I noticed the status of my ever decreasing battery. Unsurprisingly, this greatly impacted my ability to do the weekend challenge. I’m not trying to make excuses, it’s totally my own fault for having time away, but I’ve realised over the last few weeks that social events really have to take a backseat if I’m going to do the best I can. The seniors who are 6 weeks ahead of us have started their final projects, a fact that has lead the June cohort to collectively and metaphorically soil itself.&lt;/p&gt;
+
+&lt;p&gt;I did the rest of the work when I got home, the next morning and this evening and now have a 1 player working rock, paper scissors web app (harder than it sounds). I’ve also completed part of the ‘extra work’ involving setting up a 2 player game using multiple sessions. So all in all it didn’t go too badly in the end.&lt;/p&gt;
+
+&lt;p&gt;Now to get my brain fully involved in the wonderful world of databases and make up for lost time!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Jun 2015 00:47:13 +0100</pubDate>
+        <link>http://natstar93.github.io//week4/2015/06/27/day-16.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/06/27/day-16.html</guid>
+        
+        
+        <category>week4</category>
+        
+      </item>
     
       <item>
         <title>Day 15 | Friday learning plan</title>
@@ -241,58 +313,6 @@ end
         
         
         <category>week2</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 6 | Uphill Battleships</title>
-        <description>&lt;p&gt;Week two already? My how time flies! Speaking of flying, this weekend I completed the Airport Challenge which was our cohort’s weekend homework. At first I massively overcomplicated it by adding in methods that I later realised might not be necessary to satisfy the user stories, so I did have to do a bit of refactoring and removing. I’m pretty comfortable with doubles and stubs now, but I think I still need to do a bit of work on identifying appropriate tests. My builds passed (3/3 with 100% test coverage) so I’m happy about that. And I got a new sticker. YAY STICKERS!&lt;/p&gt;
-
-&lt;p&gt;Today we started work on the Battleships project. It is similar in theory to last week’s work, except this time we have no guidance and it uses game logic and is generally a lot more complex!&lt;/p&gt;
-
-&lt;p&gt;We started with a bit of domain modelling and CRC, then got started on building the tests and corresponding methods for a 1 x 1 board and a single ship. That all went well and it seems the things we learnt last week about TDD, logical baby steps, doubles, git pong, attr_accessors, constants, naming, DRY, feature testing and a load of other topics has really stuck and become almost second nature at times. Battleships is a difficult project but we made good progress today and built a lot of cool methods.&lt;/p&gt;
-
-&lt;p&gt;The day was definitely enhanced by partaking in yoga and meditation. I’m really getting into these. At first I was a bit dubious, expecting to feel instant effects like I do after a run or a high intensity Samba class but I’ve realised the benefits are actually a bit more subtle and long lasting. When I reflect on a day I don’t recall feeling stressed, negative or anxious if I’ve taken part in wellbeing activities. This is really important when you’re learning a lot of new concepts and constantly feeling out of depth. You really need to ground yourself.&lt;/p&gt;
-
-&lt;p&gt;I’ll just finish today by saying.. “ommmmmmmmmm”&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Mon, 15 Jun 2015 21:51:52 +0100</pubDate>
-        <link>http://natstar93.github.io//week2/2015/06/15/day-6.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week2/2015/06/15/day-6.html</guid>
-        
-        
-        <category>week2</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 5 | Double Trouble</title>
-        <description>&lt;p&gt;Since there are an odd number in our cohort, today I ended up in a three instead of a pair for the day’s activities. I was a little aprehensive about this because I’d been told it was quite difficult. In actual fact it turned out to be an incredibly productive day and opened up a lot of discussion about various concepts we were studying. I feel like I learned so much today just from talking things though with my little group!&lt;/p&gt;
-
-&lt;p&gt;A concept we were introduced to yesterday and began using today was ‘doubles’. When performing any kind of testing it’s really important to only test/vary one element at a time to ensure you are truly testing the correct thing. However, it turned out a lot of the docking station methods we had built relied on bikes being created correctly or returning from a method call with certain properties, so our docking station unit tests weren’t really fair. If there was an error in the bike’s report_broken method this could propagate though and affect the result of release_bike method.&lt;/p&gt;
-
-&lt;p&gt;Doubles are objects that you can give certain properties to in order for them to accurately impersonate your objects.&lt;/p&gt;
-
-&lt;p&gt;In the example mentioned above, if we were wanting to check that the release_bike method released broken bikes only we might use the following double:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;bike = double :bike, broken? true&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;That way we could be sure that we were testing the behaviour of the method only, not the behaviour of the bike.&lt;/p&gt;
-
-&lt;p&gt;It sounds very simple but there were some complications around ensuring your tests are actually testing your method, and not the double itself! We also briefly looked at stubs and mocks, which can be used to simulate the behaviour an object might display after having certain methods called on it.&lt;/p&gt;
-
-&lt;p&gt;We did some activities to assess our progress so far this afternoon and consolidated the learning objectives. I can safely say it’s been a hell of a week and I’ve learnt absolutely loads! I made a few little second week resolutions to myself to ensure that I stay on track and went home happy and looking forward to the weekend and the ‘airport challenge’ which is due on Monday morning!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 12 Jun 2015 21:51:52 +0100</pubDate>
-        <link>http://natstar93.github.io//week1/2015/06/12/day-5.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week1/2015/06/12/day-5.html</guid>
-        
-        
-        <category>week1</category>
         
       </item>
     
