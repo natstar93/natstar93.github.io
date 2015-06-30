@@ -20,7 +20,7 @@ It seems everything I've read and everyone I've spoken to has emphasised the sam
 
 I've already learnt not to take this advice lightly, and that everyone, without exception, needs to take it seriously!
 
-Weeek 1 has been about command line/bash/shell scripting (I'm still getting to grips with the terminology). It's been great fun learning how to use the commands and feeling like we've already started learning something fundamental that will no doubt come in useful to do even cooler things very soon. 
+Week 1 has been about command line/bash/shell scripting (I'm still getting to grips with the terminology). It's been great fun learning how to use the commands and feeling like we've already started learning something fundamental that will no doubt come in useful to do even cooler things very soon. 
 
 The course material is fantastic, you can tell it's a tried and tested formula that's been improved upon for each iteration (a new cohort starts doing this every 6 weeks). We were provided with tutorials and challenges that increase in difficulty by just the right amount. Often you'll be presented with a question that you half know the answer to, which makes you refer back to the tutorial, really fully understand what you read initially and then apply that knowledge. I feel like I'm learning a lot and very quickly!
 
