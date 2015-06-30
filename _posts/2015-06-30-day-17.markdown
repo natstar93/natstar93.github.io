@@ -12,7 +12,7 @@ Having used a bit of SQL previously has helped a lot less than I thought it woul
 
 The whole project is being built using the BDD method we know and love, and the tutorials actually lead us to make certain errors and then work out how to fix them. To say it's quite challenging would be quite an accurate statement. 
 
-I'm pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what the differences were! Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you're developing the product. So if you're a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public. 
+I'm pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what they meant exactly! Luckily Makers Academy have a 'there are no stupid questions' policy. Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you're developing the product. So if you're a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public. 
 
 Here are some cool things I've been using. Stop reading now if you're not a fellow fan of code, you'll just fall asleep otherwise.
 
@@ -41,7 +41,7 @@ I've also been using a lovely gem called database cleaner which uses the followi
 	  config.after(:each) do
 	    DatabaseCleaner.clean
 	  end
-  
+
 So we're nearly able to build a really cool product! Looking forward to making some more progress on it tomorrow.
 
 Nat x
