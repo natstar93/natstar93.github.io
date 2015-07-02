@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Day 17 | Building a real thing</title>
-  <meta name="description" content="This week I was excited to start learning about databases. The last two days have been spent getting to grips with the setup and using Heroku, a super awesom...">
+  <title>Day 18 | Salty hashes</title>
+  <meta name="description" content="Today we mainly focussed on implementing user sign ups and password security. It’s kind of scary building things that actually require a layer of security an...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//week4/2015/06/30/day-17.html">
+  <link rel="canonical" href="http://natstar93.github.io//week4/2015/07/02/day-18.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,51 +72,21 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Day 17 | Building a real thing</h1>
-    <p class="post-meta">Jun 30, 2015</p>
+    <h1 class="post-title">Day 18 | Salty hashes</h1>
+    <p class="post-meta">Jul 2, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>This week I was excited to start learning about databases. The last two days have been spent getting to grips with the setup and using Heroku, a super awesome tool that takes about 2 minutes to set up and gets your app online just as quickly.</p>
+      <p>Today we mainly focussed on implementing user sign ups and password security. It’s kind of scary building things that actually require a layer of security and I’m trying to pay extra attention to that element.</p>
 
-<p>Having used a bit of SQL previously has helped a lot less than I thought it would so far. We’re more interested in the way DataMapper works with the regular Ruby files we build and the methods it provides to negate actually using SQL. Working through requiring files (simple translation: getting files to look at each other) and making sure settings are correct has been a bit of a minefield. An athletic restart (transalation: delete it and do it all again) was in order to make sure I could actually reproduce the setup.</p>
+<p>I found out about how passwords are encrypted (or hashed), which was something I’d been wondering about for a while. Basically the password you enter is encrypted, then the resulting hash is stored in the database. The encryption algorithm used is mathematically impossible to crack. The bit I’d wondered about was the decryption of the hash to check it matched the password input, and whether this was a security risk. It turns out that the password is <strong>never actually decrypted</strong>. Instead, the user’s input is encrypted using the same algorithm and compared to the stored encrypted password. If they match, you are logged in! If they don’t, the server and application don’t know which characters didn’t match, it just knows that they’re not exactly the same.</p>
 
-<p>The whole project is being built using the BDD method we know and love, and the tutorials actually lead us to make certain errors and then work out how to fix them. To say it’s quite challenging would be quite an accurate statement.</p>
+<p>A lot of people enter really lame passwords, such as ‘password’. It might be a clue to hackers that certain users are using common passwords if a lot of the hashes match each other. To get around this problem, passwords hashes can be ‘salted’ using a modification specific to that user. The salting algorithm is stored in the database alongside the user’s details. This doesn’t make the hash any easier to crack though, since once the hashes are salted they are all unique, so hackers have no idea which passwords match each other anymore.</p>
 
-<p>I’m pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what they meant exactly. Luckily Makers Academy have a ‘there are no stupid questions’ policy… Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you’re developing the product. So if you’re a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public.</p>
+<p>Today was very good. I had my 1:1 and got some helpful feedback about my rock, paper scissors game and pairing went well.</p>
 
-<p>Here are some cool things I’ve been using. Stop reading now if you’re not a fellow fan of code, you’ll just fall asleep otherwise.</p>
-
-<p>This statement checks whether you’ve got an environmental variable called RACK_ENV (for testing), and if not concludes that env should be set to development. This happens because ENV[‘RACK_ENV’] returns nil, so the right hand side of the ‘or’ statement is returned.</p>
-
-<pre><code>env = ENV['RACK_ENV'] || 'development'
-</code></pre>
-
-<p>The ‘or’ operator used below then checks whether a prod database URL exists, and if not uses a local server (either test or dev, depending on the result of the above variable assignment) as an argument for the DataMapper setup method.</p>
-
-<pre><code>DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{env}")
-</code></pre>
-
-<p>Pretty clever, right?</p>
-
-<p>I’ve also been using a lovely gem called database cleaner which uses the following code to clean up your database between tests so you can ensure the run of one test isn’t affecting that of another.</p>
-
-<pre><code> config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-</code></pre>
-
-<p>So we’re nearly able to build a really cool product! Looking forward to making some more progress on it tomorrow.</p>
+<p>It was 36*C today and I am very tired as a result of not sleeping properly, so I’d best call it a night now.</p>
 
 <p>Nat x</p>
 

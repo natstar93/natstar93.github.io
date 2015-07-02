@@ -6,9 +6,53 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 Jun 2015 22:42:10 +0100</pubDate>
-    <lastBuildDate>Tue, 30 Jun 2015 22:42:10 +0100</lastBuildDate>
+    <pubDate>Thu, 02 Jul 2015 22:55:03 +0100</pubDate>
+    <lastBuildDate>Thu, 02 Jul 2015 22:55:03 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 19 | Factory Girls working overtime</title>
+        <description>&lt;p&gt;I had a great time today. Thursdays are fast becoming my favourite day of the week at Makers. We usually spend the first day or two of the week getting stuck into a new topic, Wednesday making some good progress and Thursday marvelling at the things we’re suddenly able to create.&lt;/p&gt;
+
+&lt;p&gt;Elin and I started working through the material fairly slowly, wanting to examine and understand several details that we thought were important to our learning. By the end of the day we were absolutely flying and had created password sign ups, authentications, a login function, error messages and refactored using a handy gem called &lt;a href=&quot;https://github.com/thoughtbot/factory_girl&quot;&gt;Factory Girl&lt;/a&gt;. This DRYs your code out by effectively creating massive doubles of objects such as users, complete with preset properties (e.g. email, password, password confirmation etc). Nine hours and &lt;a href=&quot;https://github.com/natstar93/bookmark-manager-en/commits/master&quot;&gt;12 commits&lt;/a&gt; later we had to call it a day as we were starting to get brain melt.&lt;/p&gt;
+
+&lt;p&gt;After dinner I implemented a sign out function and used partials for the first time to tidy up my layout.&lt;/p&gt;
+
+&lt;p&gt;We really have learned a lot this week. I sometimes think my brain must be forgetting some other important knowledge in order to make space..&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jul 2015 23:27:31 +0100</pubDate>
+        <link>http://natstar93.github.io//week4/2015/07/02/day-19.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/07/02/day-19.html</guid>
+        
+        
+        <category>week4</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 18 | Salty hashes</title>
+        <description>&lt;p&gt;Today we mainly focussed on implementing user sign ups and password security. It’s kind of scary building things that actually require a layer of security and I’m trying to pay extra attention to that element.&lt;/p&gt;
+
+&lt;p&gt;I found out about how passwords are encrypted (or hashed), which was something I’d been wondering about for a while. Basically the password you enter is encrypted, then the resulting hash is stored in the database. The encryption algorithm used is mathematically impossible to crack. The bit I’d wondered about was the decryption of the hash to check it matched the password input, and whether this was a security risk. It turns out that the password is &lt;strong&gt;never actually decrypted&lt;/strong&gt;. Instead, the user’s input is encrypted using the same algorithm and compared to the stored encrypted password. If they match, you are logged in! If they don’t, the server and application don’t know which characters didn’t match, it just knows that they’re not exactly the same.&lt;/p&gt;
+
+&lt;p&gt;A lot of people enter really lame passwords, such as ‘password’. It might be a clue to hackers that certain users are using common passwords if a lot of the hashes match each other. To get around this problem, passwords hashes can be ‘salted’ using a modification specific to that user. The salting algorithm is stored in the database alongside the user’s details. This doesn’t make the hash any easier to crack though, since once the hashes are salted they are all unique, so hackers have no idea which passwords match each other anymore.&lt;/p&gt;
+
+&lt;p&gt;Today was very good. I had my 1:1 and got some helpful feedback about my rock, paper scissors game and pairing went well.&lt;/p&gt;
+
+&lt;p&gt;It was 36*C today and I am very tired as a result of not sleeping properly, so I’d best call it a night now.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jul 2015 00:03:31 +0100</pubDate>
+        <link>http://natstar93.github.io//week4/2015/07/02/day-18.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/07/02/day-18.html</guid>
+        
+        
+        <category>week4</category>
+        
+      </item>
     
       <item>
         <title>Day 17 | Building a real thing</title>
@@ -18,7 +62,7 @@
 
 &lt;p&gt;The whole project is being built using the BDD method we know and love, and the tutorials actually lead us to make certain errors and then work out how to fix them. To say it’s quite challenging would be quite an accurate statement.&lt;/p&gt;
 
-&lt;p&gt;I’m pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what the differences were! Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you’re developing the product. So if you’re a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public.&lt;/p&gt;
+&lt;p&gt;I’m pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what they meant exactly. Luckily Makers Academy have a ‘there are no stupid questions’ policy… Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you’re developing the product. So if you’re a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public.&lt;/p&gt;
 
 &lt;p&gt;Here are some cool things I’ve been using. Stop reading now if you’re not a fellow fan of code, you’ll just fall asleep otherwise.&lt;/p&gt;
 
@@ -64,7 +108,7 @@
       </item>
     
       <item>
-        <title>Day 16 | Bad idea bear</title>
+        <title>Day 16 | Bad idea bears like fun</title>
         <description>&lt;p&gt;I spent the weekend having a lovely time in Copenhagen. The only non-lovely thing about it was that I spent several hours on a plane home that was going nowhere with no wifi or place to charge my laptop. Unable to look anything up, I fought my way through the first half of the challenge trying not to have a panic attack every time I noticed the status of my ever decreasing battery. Unsurprisingly, this greatly impacted my ability to do the weekend challenge. I’m not trying to make excuses, it’s totally my own fault for having time away, but I’ve realised over the last few weeks that social events really have to take a backseat if I’m going to do the best I can. The seniors who are 6 weeks ahead of us have started their final projects, a fact that has lead the June cohort to collectively and metaphorically soil itself.&lt;/p&gt;
 
 &lt;p&gt;I did the rest of the work when I got home, the next morning and this evening and now have a 1 player working rock, paper scissors web app (harder than it sounds). I’ve also completed part of the ‘extra work’ involving setting up a 2 player game using multiple sessions. So all in all it didn’t go too badly in the end.&lt;/p&gt;
@@ -187,7 +231,7 @@ So that you don’t get confused about what their purpose is…&lt;/p&gt;
     
       <item>
         <title>Day 12 | Jen, this box is the internet</title>
-        <description>&lt;p&gt;This week we’re learning about a newfangled invention called… the ‘internet’. We played a game in our stand up to help illustrate how http requests are sent out to servers, what controllers and views do to build pages and retrieve app logic, and how responses are sent back to the client. This involved Theo and Lucy (requests and reponses) running between the client and server and pretending to die, and other parties shouting messages. Probably the best way ever to learn the roles of all the constitent parts, and so much more memorable than a diagram full of boxes and arrows!&lt;/p&gt;
+        <description>&lt;p&gt;This week we’re learning about a newfangled invention called… the ‘internet’. We played a game in our stand up to help illustrate how http requests are sent out to servers, what controllers and views do to build pages and retrieve app logic, and how responses are sent back to the client. This involved Theo and Lucy (requests and reponses) running between the client and server and pretending to die, and other parties shouting messages. Probably the best way ever to learn the roles of all the constituent parts, and so much more memorable than a diagram full of boxes and arrows!&lt;/p&gt;
 
 &lt;p&gt;The most important points so far which relate to this week’s work (using Sinatra) are:&lt;/p&gt;
 
@@ -276,40 +320,6 @@ end
         <pubDate>Fri, 19 Jun 2015 18:46:34 +0100</pubDate>
         <link>http://natstar93.github.io//week2/2015/06/19/day-10.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week2/2015/06/19/day-10.html</guid>
-        
-        
-        <category>week2</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 8 | Promiscuous Pairing</title>
-        <description>&lt;p&gt;Quote of the day: “The hiring partners tell us the characteristics they prize most in makers graduates are the ability to pair, work in a team, and be able to learn new things.  Those skills comes from highly promiscuous pairing practices. I’ve paired with over 500 people!”&lt;/p&gt;
-</description>
-        <pubDate>Thu, 18 Jun 2015 21:10:15 +0100</pubDate>
-        <link>http://natstar93.github.io//week2/2015/06/18/day-8.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week2/2015/06/18/day-8.html</guid>
-        
-        
-        <category>week2</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 7 | A new approach</title>
-        <description>&lt;p&gt;&lt;code&gt;A minimum viable product (MVP) is the simplest system you can build to validate the fundamental concept of what you want to build. An MVP sequence is a series of systems of gradually increasing complexity that take you slowly towards a more complex system that&lt;/code&gt; &lt;code&gt;supports more features. There is no absolute way of determining what an MVP should be as it depends on the domain, what you are trying to build, what the stakeholder needs are and so on. However, if you are building lots of components that do not work independently and are looking to hook them together later in order to build a complex system then you are probably doing things wrong.&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Due to my designated partner not being around today I ended up working in a three again. Since we were all at different stages we dedided to start again and follow the MVP approach, focussing on really getting the essential functionality down and not worrying about speed.&lt;/p&gt;
-
-&lt;p&gt;This way of working really suits me. I’ve realised I love TDD and getting to consider the logic of each baby step, and writing a good test and getting it to pass is very gratifying! Even if it your program doesn’t do that much yet it’s great knowing you have the foundations of something that has the potential to be awesome.&lt;/p&gt;
-
-&lt;p&gt;I’ve hashed a few things together in my time. My attempt to learn javascript last year resulted in some very cool hand-coded things such as &lt;a href=&quot;http://www.natalie-akam.com/carousel/carousel_template.html&quot;&gt;image carousels&lt;/a&gt; and jquery nav bars. I was thrilled to have created them on my own, but I never really knew if the code I’d written was any good or followed any decent design principles (Nikesh cheerfully confirmed to me in my Makers interview that it definitely didn’t). I’m just happy I’ve now got the opportunity to sort this all out.&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Tue, 16 Jun 2015 20:56:22 +0100</pubDate>
-        <link>http://natstar93.github.io//week2/2015/06/16/day-7.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week2/2015/06/16/day-7.html</guid>
         
         
         <category>week2</category>
