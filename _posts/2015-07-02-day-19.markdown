@@ -4,7 +4,7 @@ title:  "Day 19 | Factory Girls working overtime"
 date:   2015-07-02 22:27:31
 categories: week4
 image: http://i.imgur.com/DyFuqFK.jpg
-image-subtitle: What's that metal deely used to... dig... food?<br>Source - reddit.com
+image-subtitle: What's that metal deely used to... dig... food?
 ---
 
 I had a great time today. Thursdays are fast becoming my favourite day of the week at Makers. We usually spend the first day or two of the week getting stuck into a new topic, Wednesday making some good progress and Thursday marvelling at the things we're suddenly able to create.
