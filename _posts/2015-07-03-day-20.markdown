@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "Day 20 | Week 4 learning plan"
+date:   2015-07-03 12:27:13
+categories: week4
+image: 
+image-subtitle: 
+---
+
+**Most Important Things I Learned:**
+
+&bull; Lots of datamapper configuration details!<br>
+&bull; Testing with databases using factory girl and database cleaner<br>
+&bull; How passwords work<br>
+&bull; How controllers should be organised (e.g. users/new structure as a convention for creating something, delete methods being called using hidden fields)
+
+**Things I Struggled With The Most:**
+
+&bull; I was worried I didn't fully understand the setup properly. Hopefully having done an athletic restart and the weekend challenge will give me more confidence with this<br>
+&bull; DataMapper methods
+
+
+**Changes I Plan to Make Next Week:**
+
+&bull; Go to bed earlier<br>
+&bull; Complete weekend challenge earlier<br>
+&bull; Spend evenings going over what I've learnt in the day instead of trying to do all of the extra bits of the last weekend challenge - I will save these for lab week<br>
+&bull; Post on slack overflow more
+
+
+**Other Experiences or General Feedback This Week:**
+
+&bull; Really enjoying it! Confused about a few things as usual but I'm happy with the progress I made this week. I really can see the value in pairing with lots of different people now. Having a mix of people who like to get through things rapidly and people who like to talk through things and examine them in detail is a really great way to push yourself and learn loads.<br>
+&bull; More fruit and breakfast please! 
+
+Nat x

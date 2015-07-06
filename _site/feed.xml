@@ -6,15 +6,73 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Jul 2015 22:55:03 +0100</pubDate>
-    <lastBuildDate>Thu, 02 Jul 2015 22:55:03 +0100</lastBuildDate>
+    <pubDate>Mon, 06 Jul 2015 22:51:17 +0100</pubDate>
+    <lastBuildDate>Mon, 06 Jul 2015 22:51:17 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 21 | Chitter chatter &amp; JavaScript</title>
+        <description>&lt;p&gt;Hellooo week 5! We’re really in the thick of it now. In less than two weeks we will lose the ‘juniors’ label and be fast approaching our final projects. This is going way too quickly! I am having the time of my life and in a way I don’t want it to end. When I look back at what we’ve accomplished so far it does make me feel really proud of myself and everyone in my cohort.&lt;/p&gt;
+
+&lt;p&gt;The weekend was pretty Makers oriented. I started the weekend challenge on Friday and worked on it for several hours each day, interspersing the work with various little outings (two of which involved Makers people!). As with the rest of the course it’s about finding a balance and I think this weekend I finally did that. Reading over my last blog post has reminded me that I wasn’t that confident I’d understood all of the material by Friday. Having now built Chitter - a clone of Twitter - without any major problems and in one weekend I can now see that the knowledge really did stick.&lt;/p&gt;
+
+&lt;p&gt;Nicola hosted a dinner for the June ladies last night, which involved food, wine, chatter and er.. Chitter. Once dessert had been eaten the laptops were out and the lounge became bug fixing central. I implemented my last feature and tried to help identify some of the database and config issues people were having. I’m liking how collaborative our group has become, and a big part of that is down to our pairing experiences. It just seems so natural now to help each other out and discuss together what we’re doing to approach a problem.&lt;/p&gt;
+
+&lt;p&gt;Today was the first day of JavaScript week which went really, really well. Having taught myself a lot of JS last year obviously helps, and I’m really enjoying expanding that knowledge and understanding everything so much better. Everyone who has experience with the language seems to be very excited about JavaScript. Apparently once you’ve seen past all the crazy brackets and let go of having a handy Ruby method for just about everything you embrace the amount of power and importance it has. People at Makers can often be overheard raving about Ember or the awesomeness of callbacks and I can’t wait to get more stuck into it. Today I learnt about functions as objects, used Jasmine, built a JavaBuzz game, did yoga, built a thermostat, and played tennis after dinner. I would say the week is off to a very good start :)&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Mon, 06 Jul 2015 22:37:46 +0100</pubDate>
+        <link>http://natstar93.github.io//week5/2015/07/06/day-21.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week5/2015/07/06/day-21.html</guid>
+        
+        
+        <category>week5</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 20 | Week 4 learning plan</title>
+        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Lots of datamapper configuration details!&lt;br /&gt;
+• Testing with databases using factory girl and database cleaner&lt;br /&gt;
+• How passwords work&lt;br /&gt;
+• How controllers should be organised (e.g. users/new structure as a convention for creating something, delete methods being called using hidden fields)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• I was worried I didn’t fully understand the setup properly. Hopefully having done an athletic restart and the weekend challenge will give me more confidence with this&lt;br /&gt;
+• DataMapper methods&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Go to bed earlier&lt;br /&gt;
+• Complete weekend challenge earlier&lt;br /&gt;
+• Spend evenings going over what I’ve learnt in the day instead of trying to do all of the extra bits of the last weekend challenge - I will save these for lab week&lt;br /&gt;
+• Post on slack overflow more&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Really enjoying it! Confused about a few things as usual but I’m happy with the progress I made this week. I really can see the value in pairing with lots of different people now. Having a mix of people who like to get through things rapidly and people who like to talk through things and examine them in detail is a really great way to push yourself and learn loads.&lt;br /&gt;
+• More fruit and breakfast please!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jul 2015 13:27:13 +0100</pubDate>
+        <link>http://natstar93.github.io//week4/2015/07/03/day-20.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/07/03/day-20.html</guid>
+        
+        
+        <category>week4</category>
+        
+      </item>
     
       <item>
         <title>Day 19 | Factory Girls working overtime</title>
         <description>&lt;p&gt;I had a great time today. Thursdays are fast becoming my favourite day of the week at Makers. We usually spend the first day or two of the week getting stuck into a new topic, Wednesday making some good progress and Thursday marvelling at the things we’re suddenly able to create.&lt;/p&gt;
 
-&lt;p&gt;Elin and I started working through the material fairly slowly, wanting to examine and understand several details that we thought were important to our learning. By the end of the day we were absolutely flying and had created password sign ups, authentications, a login function, error messages and refactored using a handy gem called &lt;a href=&quot;https://github.com/thoughtbot/factory_girl&quot;&gt;Factory Girl&lt;/a&gt;. This DRYs your code out by effectively creating massive doubles of objects such as users, complete with preset properties (e.g. email, password, password confirmation etc). Nine hours and &lt;a href=&quot;https://github.com/natstar93/bookmark-manager-en/commits/master&quot;&gt;12 commits&lt;/a&gt; later we had to call it a day as we were starting to get brain melt.&lt;/p&gt;
+&lt;p&gt;Elin and I started working through the material fairly slowly, wanting to examine and understand several details we thought were important to our learning. By the end of the day we were absolutely flying and had created password sign ups, authentications, a login function, error messages and refactored using a handy gem called &lt;a href=&quot;https://github.com/thoughtbot/factory_girl&quot;&gt;Factory Girl&lt;/a&gt;. This DRYs your code out by effectively creating massive doubles of objects such as users, complete with preset properties (e.g. email, password, password confirmation etc). Nine hours and &lt;a href=&quot;https://github.com/natstar93/bookmark-manager-en/commits/master&quot;&gt;12 commits&lt;/a&gt; later we had to call it a day as we were starting to get brain melt.&lt;/p&gt;
 
 &lt;p&gt;After dinner I implemented a sign out function and used partials for the first time to tidy up my layout.&lt;/p&gt;
 
@@ -255,74 +313,6 @@ post: change state of system&lt;/p&gt;
         
         
         <category>week3</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 11 | Takeaway injection</title>
-        <description>&lt;p&gt;I spent a lot of this weekend working on the TWO challenges we were set. Do you know how long it took me to write the bit of code below? This code is most of the answer to the ‘inject challenge’ (the other bit of the answer was a load of unit tests which I won’t bore you with).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;def injector
-  iterations = self.length - 1
-  result = self[0]
-  (1..iterations).each { |x| result = yield result, self[x] }
-  result
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The point was to model the &lt;a href=&quot;http://ruby-doc.org/core-2.2.2/Enumerable.html#method-i-inject&quot; target=&quot;_blank&quot;&gt;inject method&lt;/a&gt; for arrays only. Inject basically grabs each item of a series and does whatever the block you’ve specified dicatates using the the next item and the cummulative result of the process so far. It’s very handy for adding things up, multiplying, finding the longest item in a series etc… I now love inject, as it provides me with a shortcut to the above without having to write my own method, which I’ve now realised is a bit of a pain to write!&lt;/p&gt;
-
-&lt;p&gt;The other challenge was to model a takeaway ordering system, then kick out a text from the Twilio API if the order is satisfactory. I read a great deal of an awesome book called &lt;a href=&quot;http://www.poodr.com/&quot; target=&quot;_blank&quot;&gt;Practical Object Oriented Design in Ruby&lt;/a&gt; (POODR) which really consolidated last week’s learnings but also make each decision more painstaking.&lt;/p&gt;
-
-&lt;p&gt;The thing I’ve discovered about OOD is there are no hard and fast rules. This is both it’s beauty and it’s, er.. beast? You have to aim for as simple a structure as possible by ensuring each method has only one responsibility, injecting dependecy to write loosely coupled classes, reversing dependency if necessary, making each method respond to ‘ducks’ (I’ll explain in another post), having abstract interfaces… the list goes on. Most of these do fit nicely together to satisfy the overall aim, but I find it quite hard to ensure none of them are going wrong and that ‘bad things’ are not creeping in at any given time. All the while I have to make sure I’m only doing what the spec requires. Oh, but you should bear in mind likely potential future developments too and assume that various bits need to be amenable to change. But at the same time don’t overcomplicate things. Sometimes it really hurts my head.&lt;/p&gt;
-
-&lt;p&gt;I don’t claim to be an expert in the above YET, but at least the concept of OOD is taking shape in my mind. &lt;strong&gt;I surmise that the result of a well made OO program should have simple, highly readable code that can be worked on and changed in the future by others when requirements change. It should be built to satisfy user stories. Unit tests should be used both to test methods and to guide the developer to realise when a process is too complicated or relies on dependencies that are too rigid. Feature tests at every stage of the process can ensure unit tests are testing something that matters. Oh, and you must be sure to unit test only the behaviour of the class you’re testing and stub out methods that interfere&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;After a pretty hectic weekend full of challenges and programming the object that is my mind, it was nice to have a day of following tutorials today. Until the line that basically said ‘now work out how to do everything else (ie the really hard stuff) on your own’. No rest for the wicked, wicked Makers students…&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Mon, 22 Jun 2015 18:46:34 +0100</pubDate>
-        <link>http://natstar93.github.io//week3/2015/06/22/day-11.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/22/day-11.html</guid>
-        
-        
-        <category>week3</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 10 | Summing up the week</title>
-        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Pairing is really hard! Tansaku, thanks for your advice on this&lt;br /&gt;
-• It’s not about finishing the task, it’s about how much you learnt on the way&lt;br /&gt;
-• The seniors struggled too, and most of my cohort are finding this as difficult as I am but the key (I think!) is communicating well with your pair partner and helping each other out&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• I think I am a person who likes to plan work out, so the agile way of working is quite hard for me! I find it strange working on something when I don’t know what the exact stages ahead are going to be. I can really see the value in the MVP approach though.&lt;br /&gt;
-• Retaining all the knowledge from lectures and knowing how to apply them to my code&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• I need to be clear to my partner about what I do and don’t understand and clear when I need some time to reread something or understand how the codebase all works before beginning.&lt;br /&gt;
-• I need to also get beter at explaining things to others and researching things together when neither of us is sure.&lt;br /&gt;
-• Read, read read POODR &amp;amp; WGR and practice implementing the concepts&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• The Q&amp;amp;A session with the seniors was really really useful! Many of them said they had thought about dropping out at some point and are all really glad they didn’t. It’s very reassuring to know that everyone finds this difficult and if you have a really bad day you’re not the first one! All the seniors are saying things are falling into place more now which gives me confidence that what I’ve learnt so far is being retained and I will be able to do this!&lt;br /&gt;
-• I’m looking forward to being a mentor next week! Happy to have someone who asks loads of questions etc.&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 19 Jun 2015 18:46:34 +0100</pubDate>
-        <link>http://natstar93.github.io//week2/2015/06/19/day-10.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week2/2015/06/19/day-10.html</guid>
-        
-        
-        <category>week2</category>
         
       </item>
     
