@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Day 23 | "
+title:  "Day 23 | AJAX.. but not then bathroom cleaner or the football team"
 date:   2015-07-08 21:03:39
 categories: week5
 image: 
 image-subtitle: 
 ---
 
-This week has involved a couple of famililar topics in the shape of HTML and CSS, so I've been able to give myself a bit of time off in the evenings! I've been showing a couple of people how to make pages more presentable and more interesting by using animated gifs and jquery animation. Whilst a thermostat with a background that goes up in flames might not be the best user experience, and I certainly wouldn't show it to any designers I know, it has been quite fun as a break from intense tutorials and logic challenges.
+This week has involved a couple of famililar topics in the shape of HTML and CSS, so I've been able to give myself a bit of time off in the evenings! I've been showing a couple of people how to make pages more presentable and more interesting by using animated gifs and jquery animation. Whilst a thermostat with a background that goes up in flames when the temperature gets too high might not be the best user experience, and I certainly wouldn't show it to any designers I know, it has been quite fun as a break from intense tutorials and logic challenges.
 
 We rewrote our front end JavaScript in jQuery today which didn't pose any problems, then moved on to working with AJAX calls to a weather API. The purpose of this was to display the weather in one or more locations. 
 

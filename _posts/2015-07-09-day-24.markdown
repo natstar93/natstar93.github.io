@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Day 24 | "
+title:  "Day 24 | Today I made my first API"
 date:   2015-07-09 21:40:17
 categories: week5
 image: 
@@ -25,6 +25,6 @@ Here's a nice jQuery example I stole from W3schools:
 
 Once the paragraph has finished hiding, an alert is executed.
 
-In addition to all this, I made my own API which records my thermometer's temperature (and the time) each time the temperature is changed. It might not be the most exciting API you've ever heard of but it allows my Thermometer to recall its last temperature even if the browser is reloaded or reopened. This means the temperature can persist between sessions. 
+In addition to all this, I made my own API which records my thermostat's temperature (and the time) each time the temperature is changed. It might not be the most exciting API you've ever heard of but it allows my Thermometer to recall its last temperature even if the browser is reloaded or reopened. This means the temperature can persist between sessions. 
 
 Nat x
