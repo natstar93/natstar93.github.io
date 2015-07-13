@@ -1,0 +1,35 @@
+---
+layout: post
+title:  "Day 23 | "
+date:   2015-07-08 21:03:39
+categories: week5
+image: 
+image-subtitle: 
+---
+
+This week has involved a couple of famililar topics in the shape of HTML and CSS, so I've been able to give myself a bit of time off in the evenings! I've been showing a couple of people how to make pages more presentable and more interesting by using animated gifs and jquery animation. Whilst a thermostat with a background that goes up in flames might not be the best user experience, and I certainly wouldn't show it to any designers I know, it has been quite fun as a break from intense tutorials and logic challenges.
+
+We rewrote our front end JavaScript in jQuery today which didn't pose any problems, then moved on to working with AJAX calls to a weather API. The purpose of this was to display the weather in one or more locations. 
+
+Here's the main call we used to get the JSON file and display the bits we needed
+
+	  $.ajax({url: "http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric", success: function(result){
+	    $("#currentTemp").html(result.main.temp + '°C');
+	    $("#city").html(result.name);
+	  }});
+
+And here is how it works...
+
+<ul>
+<li>The API URL for London weather is pulled in</li>
+<li>If the loading of that data is a success the result (a JSON file) is passed into a function</li>
+<li>The temperature is found by navigating through the file using `result.main.temp`</li>
+<li>This temperature information is displayed inside the element with an ID of 'currentTemp' (probably a div or paragraph)</li>
+<li>The name of the city is displayed in the same way</li>
+</ul>
+
+We managed to get it working for multiple cities using a method that was executed upon the change of a select box, and inserted the value of the select option into the API URL.
+
+The day ended a bit early due to the tube strike, but I'm pretty happy with what we did today!
+
+Nat x
