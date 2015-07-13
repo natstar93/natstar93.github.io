@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Day 24 | Today I made my first API"
+title:  "Day 24 | API days"
 date:   2015-07-09 21:40:17
 categories: week5
 image: 
