@@ -6,9 +6,234 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 06 Jul 2015 22:51:17 +0100</pubDate>
-    <lastBuildDate>Mon, 06 Jul 2015 22:51:17 +0100</lastBuildDate>
+    <pubDate>Thu, 16 Jul 2015 08:25:01 +0100</pubDate>
+    <lastBuildDate>Thu, 16 Jul 2015 08:25:01 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 28 | Makerthon part 1</title>
+        <description>&lt;p&gt;A makerthon is basically a mini hackathon, except there’s no prize at the end. The aim is to build a fully tested product in an agile way, using kanban and ensuring regular team stand ups are held. It’s better to create something that works and has just a couple of features than something that has a lot of half-built over-ambitious features.&lt;/p&gt;
+
+&lt;p&gt;Ideas were pitched and voted on, and I was pleased to end up in the Music Quiz team based on my votes. We chose to read up on kanban, gihub collaboration and the learning objectives before starting our meeting, which was a wise move I think. Our planning meeting was very successful and gave us a solid MVP plan to work on. Kate and I made up the back end team and the two Lucys started researching feature testing for JavaScript.&lt;/p&gt;
+
+&lt;p&gt;The backend for the MVP turned out to be fairly simple initially, with the Game function keeping track of score and telling the front end when the quiz had terminated. We started researching the Soundcloud API and tried to figure out whether we could get tracks to play without displaying their title and artist name. The front end team were having some difficulties with feature testing. It turns out there isn’t much in the way of feature testing for Javascript and we’re hoping we find out more about it in advanced JS week. Another problem was that the front end was not using the back end outputs in the way we had presumed. I’m starting to think maybe stand ups don’t cut it when it comes to collaborating on a project such as this. Going through the code base as a team might be a necessary complimentary activity.&lt;/p&gt;
+
+&lt;p&gt;I realised that the data for the quiz really should be coming through the back end. It sounds really obvious but I think somewhere along the way we confused ourselves by thinking about two things: that the front end displays the questions and options, and that the recent thermostat project worked by pulling API data into the front end to simply display it. Our program does more than that though, and needs the backend to know the answer to each question (a, b or c) in order to compare it to user input, so it makes more sense for it to accept the quiz data initially. I started looking at how the back end could organise the data into various arrays and supply the correct outputs to the front end for each round. By the end of the evening I had a little working ‘MMVP’ which I’m looking forward to sharing with the group.&lt;/p&gt;
+
+&lt;p&gt;After proceeding very cautiously with Github we managed to successfully collaborate on a repo and pull and push to and from development branch and feature branches. We ended the day with 0 merge conflicts to sort out and understanding way more about gihub than when we started! It’s important that the same file isn’t worked on by two people at the same time, so communication and knowledge of responsibilities is key. This seems to be a general theme for project work as a whole.&lt;/p&gt;
+
+&lt;p&gt;Here are my notes on how to merge a feature branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Commit changes whilst still on your feature branch
+Checkout to your local development branch
+Pull from Github development branch to get latest version of codebase
+Merge local feature branch into local development branch
+Push changes to Github 
+
+  561  git add .
+  562  git commit -m &#39;Added game termination logic&#39;
+  563  git checkout development
+  564  git pull origin development
+  565  git merge score-logic
+  566  git push origin development
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Wed, 15 Jul 2015 23:07:40 +0100</pubDate>
+        <link>http://natstar93.github.io//week6/2015/07/15/day-28.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week6/2015/07/15/day-28.html</guid>
+        
+        
+        <category>week6</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 27 | Spring cleaning a database and freezing time</title>
+        <description>&lt;p&gt;Today we resumed work on the extended Chitter challenge. We created a nice interface and sorted out some of the navigation issues, so the whole thing looks like more of a working product now. We definitely learnt a lot from the project, even if it was slow progress. One of the most difficult things is working out the correct datamapper commands for your normal SQL processes. Having barely touched upon joining SQL tables in this course didn’t help matters! As always, we’d been given just enough information to go away and find the solutions for ourselves.&lt;/p&gt;
+
+&lt;p&gt;This evening I made the finishing touches to my Chitter repo, correcting things like the below&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;validates_uniqueness_of :email, :username
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which became the last part of this line&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;property :email, String, unique: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Want to know why? Well, the first statement only validates the uniqueness of an email address on the application level, whereas the latter checks it at the database level. This means any data entered directly, or a duplicate entry happening at the very same moment would not be rejected and you may end up with two of the same email address in your database. Not ideal really.&lt;/p&gt;
+
+&lt;p&gt;Other fixes involved moving a couple of stray bits of logic away from the display files and into the backend where they belong, and making sure that a full time object is stored in the database for each peep instead of the ‘pretty time’ string I had created. As usual, the time is made pretty on the front end, where the display logic lives. This is the third time I’ve had cause to mention separation of display logic and backend logic in recent posts. It does seem to be a major theme these days now that we’ve moved into full stack development.&lt;/p&gt;
+
+&lt;p&gt;Another silly thing I’d done was duplicate the username in both my user and peeps tables (lets just call peeps messages from now on, since peeps is such a silly word). This is uneccessary information since the tables are associated by a key already. The correct way to pull the username for a particular message out is to 
+• look through the Message table to find that message’s associated user ID 
+• find that user ID in the Users table and pull out the associated username
+It sounds a bit longwinded but it’s really not, and it’s better than having a messy database.&lt;/p&gt;
+
+&lt;p&gt;I discovered a cool gem called Timecop which can actually freeze time! In a testing sense that is. One of its many functions is to stub the time with a value you give it, so that your tests can be accurate and don’t depend on the real time, which by its very nature changes a lot.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Timecop.freeze(Time.local(2015))
+post(peep)
+expect(page).to have_content(&quot;00:00 01/01/2015&quot;)
+Timecop.return
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After that I had a look through my bowling challenge again, and converted it to a bowling scorecard which relies on user input instead of random numbers. This was a fairly painless process and took about 5 minutes! It’s very satisfying seeing my 37 red tests go green in such a short space of time. The next tasks for my ever evolving bowling project are creating an interface and adding in something which outputs the score obtained by each round. At the moment strike bonuses are being simply added into the pot rather than attributed to the appropriate rounds. More on this another day though..&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Jul 2015 23:22:57 +0100</pubDate>
+        <link>http://natstar93.github.io//week6/2015/07/14/day-27.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week6/2015/07/14/day-27.html</guid>
+        
+        
+        <category>week6</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 26 | Error: Floor has already been spied upon</title>
+        <description>&lt;p&gt;I spent most of Sunday working on the Bowling Challenge, which was essentially a day long logic problem. So I had a very nice day :) The challenge is to model a bowling game which I took to mean a game with random inputs. The other interpretation is a bowling scorecard which tots up scores based on a user’s input. It turns out we have until next week to complete it so I’m going to branch my repo and do a scorecard version too, before implementing an animated jQuery interface. Modelling bowling scoring can be a little tricky, with spares and strikes causing scoring to be a lot less linear than one might hope. My code passed the Travis CI build test, but I’m still suspicious that a certain combination of strikes and spares in the end round might need a bit more testing.&lt;/p&gt;
+
+&lt;p&gt;Choosing the random scores approach meant I had to use spies in my Jasmine test, so I’m glad I chose that approach first. There’s not that much to say about them at this stage, other than that they work in a similar way to doubles and to Factory Girl. They also have the potential to throw up some interesting error messages, such as the title of this blog post.&lt;/p&gt;
+
+&lt;p&gt;This week is lab week, a week that traditionally enables you to revisit previous projects or research something new. However, very recently the concept was overhauled and we’ve been put into small groups to do a small task based on a previous project.&lt;/p&gt;
+
+&lt;p&gt;My group was given the task of extending the Chitter challenge, which is not what I would have picked considering we only did it a week ago and I spent more time on it that any previous challenge. The majority of the day was spent setting up a version of Chitter that allows user management and tagging, which wasn’t really anything new yet managed to throw up the occassional irritating config bug that stumped even the alumni helpers. All good practice I guess though. The post-yoga hours were spent implementing some nice CSS and a little bit more functionality. I think tomorrow will be more interesting and hopefully we’ll end the day having produced some cool new features!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Mon, 13 Jul 2015 23:18:54 +0100</pubDate>
+        <link>http://natstar93.github.io//week6/2015/07/13/day-26.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week6/2015/07/13/day-26.html</guid>
+        
+        
+        <category>week6</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 25 | Week 5 learning plan</title>
+        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Hoisting&lt;br /&gt;
+• API calls/JSON files&lt;br /&gt;
+• CSS transitions&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Google maps geolocation &lt;br /&gt;
+• Working with Ruby and JavaScript at the same time. Working out what will be passed from the Ruby controller to the JS, and how! (jQuery $.get call which passes the return value of the controller get ‘/’ method - for some reason it really confused me)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Try and think of a breakout idea that people would be interested in (perhaps something to do with animations e.g. CSS transitions and jQuery animate/hide&amp;amp;show etc)&lt;br /&gt;
+• Work at home in the evenings. For some reason I don’t seem to work that well after about 5:30 at Makers on non-yoga days but can be very productive after dinner at home.&lt;br /&gt;
+• More blog posts! It seems to have dropped off a bit this week :(&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Please add which project you’ll be working on for lab week and who you’ll be working with:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Apollo byte&lt;/p&gt;
+
+&lt;p&gt;Team 1 - Extend Chitter&lt;/p&gt;
+
+&lt;p&gt;Natalie A
+Nicola
+Kirsten
+Massi
+Alex&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• I much preferred the 1:30 stand up slot as I feel less time was wasted. Also it’s really hard to get fully into meditation sessions (2 - 2:20) when you can hear your byte starting their standup next door!&lt;br /&gt;
+• I enjoyed the seniors’ graduation presentations, but I am also a bit scared now. It’s made me realise that it’s probably a good idea to start thinking of project ideas from now on.. Also, striking a balance between features and simplicity is going to be important in order to make something which works robustly in a short space of time&lt;br /&gt;
+• I feel like we’re now at the stage where we can make something complete, from the inside out. Looking forward to the makerthon and lab week projects to see how we do this in a group situation (I imagine it’s pretty difficult!)&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Jul 2015 19:17:34 +0100</pubDate>
+        <link>http://natstar93.github.io//week5/2015/07/10/day-25.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week5/2015/07/10/day-25.html</guid>
+        
+        
+        <category>week5</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 24 | API days</title>
+        <description>&lt;p&gt;The tube strike threw a bit of a spanner in the works today by preventing a third of the class from getting in. A lot of the people who did make it in had to get up really early and leave early, but we managed to get what we needed to do done anyway! Pairs were reshuffled based on who was actually present, and other people were remotely watching the talks and attending google hangouts standups.&lt;/p&gt;
+
+&lt;p&gt;Mike and I started by refactoring the existing code. One of the consequences of switching pairs every day is that you often end up with a codebase that performs like the one you wrote, but isn’t the same. I had actually forgotten that my current codebase wasn’t the one I’d written myself so we had to go through and refactor some methods and tests to make sure they were as concise and logically sound as the ones I’d created previously. When working with a back end and front end JS file it’s important to keep the display logic out of the back end and ensure the front end makes those assigments/decisions based on calls to the logic that goes on ‘under the bonnet’.&lt;/p&gt;
+
+&lt;p&gt;I’d whipped up a stylesheet the night before so by 11:30am our little program was looking lovely both outside and in! I realised that I should really make the effort to check everything through every single time I inherit a new codebase. The logic for Thermometer was not that complex, but with more advanced programs it would be hard to build new features without going through the code with a fine toothed comb at the beginning of the day. For a simple codebase it’s still best to go through everything to ensure you don’t get stumped by something later.&lt;/p&gt;
+
+&lt;p&gt;We implemented automatic location finding using HTML5 Geolocation and a Google maps API. We then passed the coordinates we’d found into a call to the Open Weather API. These kinds of API calls illustrate the necessity for JS callbacks. Callbacks basically wait for one thing to happen before the next function is executed, so you can prevent your code from attempting to work on a JSON file until the file has been loaded properly.&lt;/p&gt;
+
+&lt;p&gt;Here’s a nice jQuery example I stole from W3schools:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&quot;button&quot;).click(function(){
+    $(&quot;p&quot;).hide(&quot;slow&quot;, function(){
+        alert(&quot;The paragraph is now hidden&quot;);
+    });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the paragraph has finished hiding, an alert is executed.&lt;/p&gt;
+
+&lt;p&gt;In addition to all this, I made my own API which records my thermostat’s temperature (and the time) each time the temperature is changed. It might not be the most exciting API you’ve ever heard of but it allows my Thermometer to recall its last temperature even if the browser is reloaded or reopened. This means the temperature can persist between sessions.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Thu, 09 Jul 2015 22:40:17 +0100</pubDate>
+        <link>http://natstar93.github.io//week5/2015/07/09/day-24.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week5/2015/07/09/day-24.html</guid>
+        
+        
+        <category>week5</category>
+        
+      </item>
+    
+      <item>
+        <title>Day 23 | AJAX.. but not then bathroom cleaner or the football team</title>
+        <description>&lt;p&gt;This week has involved a couple of famililar topics in the shape of HTML and CSS, so I’ve been able to give myself a bit of time off in the evenings! I’ve been showing a couple of people how to make pages more presentable and more interesting by using animated gifs and jquery animation. Whilst a thermostat with a background that goes up in flames when the temperature gets too high might not be the best user experience, and I certainly wouldn’t show it to any designers I know, it has been quite fun as a break from intense tutorials and logic challenges.&lt;/p&gt;
+
+&lt;p&gt;We rewrote our front end JavaScript in jQuery today which didn’t pose any problems, then moved on to working with AJAX calls to a weather API. The purpose of this was to display the weather in one or more locations.&lt;/p&gt;
+
+&lt;p&gt;Here’s the main call we used to get the JSON file and display the bits we needed&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  $.ajax({url: &quot;http://api.openweathermap.org/data/2.5/weather?q=London,uk&amp;amp;units=metric&quot;, success: function(result){
+    $(&quot;#currentTemp&quot;).html(result.main.temp + &#39;°C&#39;);
+    $(&quot;#city&quot;).html(result.name);
+  }});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And here is how it works…&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The API URL for London weather is pulled in&lt;/li&gt;
+&lt;li&gt;If the loading of that data is a success the result (a JSON file) is passed into a function&lt;/li&gt;
+&lt;li&gt;The temperature is found by navigating through the file using `result.main.temp`&lt;/li&gt;
+&lt;li&gt;This temperature information is displayed inside the element with an ID of &#39;currentTemp&#39; (probably a div or paragraph)&lt;/li&gt;
+&lt;li&gt;The name of the city is displayed in the same way&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We managed to get it working for multiple cities using a method that was executed upon the change of a select box, and inserted the value of the select option into the API URL.&lt;/p&gt;
+
+&lt;p&gt;The day ended a bit early due to the tube strike, but I’m pretty happy with what we did today!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Wed, 08 Jul 2015 22:03:39 +0100</pubDate>
+        <link>http://natstar93.github.io//week5/2015/07/08/day-23.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week5/2015/07/08/day-23.html</guid>
+        
+        
+        <category>week5</category>
+        
+      </item>
     
       <item>
         <title>Day 21 | Chitter chatter &amp; JavaScript</title>
@@ -109,210 +334,6 @@
         
         
         <category>week4</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 17 | Building a real thing</title>
-        <description>&lt;p&gt;This week I was excited to start learning about databases. The last two days have been spent getting to grips with the setup and using Heroku, a super awesome tool that takes about 2 minutes to set up and gets your app online just as quickly.&lt;/p&gt;
-
-&lt;p&gt;Having used a bit of SQL previously has helped a lot less than I thought it would so far. We’re more interested in the way DataMapper works with the regular Ruby files we build and the methods it provides to negate actually using SQL. Working through requiring files (simple translation: getting files to look at each other) and making sure settings are correct has been a bit of a minefield. An athletic restart (transalation: delete it and do it all again) was in order to make sure I could actually reproduce the setup.&lt;/p&gt;
-
-&lt;p&gt;The whole project is being built using the BDD method we know and love, and the tutorials actually lead us to make certain errors and then work out how to fix them. To say it’s quite challenging would be quite an accurate statement.&lt;/p&gt;
-
-&lt;p&gt;I’m pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what they meant exactly. Luckily Makers Academy have a ‘there are no stupid questions’ policy… Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you’re developing the product. So if you’re a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public.&lt;/p&gt;
-
-&lt;p&gt;Here are some cool things I’ve been using. Stop reading now if you’re not a fellow fan of code, you’ll just fall asleep otherwise.&lt;/p&gt;
-
-&lt;p&gt;This statement checks whether you’ve got an environmental variable called RACK_ENV (for testing), and if not concludes that env should be set to development. This happens because ENV[‘RACK_ENV’] returns nil, so the right hand side of the ‘or’ statement is returned.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;env = ENV[&#39;RACK_ENV&#39;] || &#39;development&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The ‘or’ operator used below then checks whether a prod database URL exists, and if not uses a local server (either test or dev, depending on the result of the above variable assignment) as an argument for the DataMapper setup method.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;DataMapper.setup(:default, ENV[&#39;DATABASE_URL&#39;] || &quot;postgres://localhost/bookmark_manager_#{env}&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Pretty clever, right?&lt;/p&gt;
-
-&lt;p&gt;I’ve also been using a lovely gem called database cleaner which uses the following code to clean up your database between tests so you can ensure the run of one test isn’t affecting that of another.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So we’re nearly able to build a really cool product! Looking forward to making some more progress on it tomorrow.&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Tue, 30 Jun 2015 22:34:23 +0100</pubDate>
-        <link>http://natstar93.github.io//week4/2015/06/30/day-17.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/06/30/day-17.html</guid>
-        
-        
-        <category>week4</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 16 | Bad idea bears like fun</title>
-        <description>&lt;p&gt;I spent the weekend having a lovely time in Copenhagen. The only non-lovely thing about it was that I spent several hours on a plane home that was going nowhere with no wifi or place to charge my laptop. Unable to look anything up, I fought my way through the first half of the challenge trying not to have a panic attack every time I noticed the status of my ever decreasing battery. Unsurprisingly, this greatly impacted my ability to do the weekend challenge. I’m not trying to make excuses, it’s totally my own fault for having time away, but I’ve realised over the last few weeks that social events really have to take a backseat if I’m going to do the best I can. The seniors who are 6 weeks ahead of us have started their final projects, a fact that has lead the June cohort to collectively and metaphorically soil itself.&lt;/p&gt;
-
-&lt;p&gt;I did the rest of the work when I got home, the next morning and this evening and now have a 1 player working rock, paper scissors web app (harder than it sounds). I’ve also completed part of the ‘extra work’ involving setting up a 2 player game using multiple sessions. So all in all it didn’t go too badly in the end.&lt;/p&gt;
-
-&lt;p&gt;Now to get my brain fully involved in the wonderful world of databases and make up for lost time!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Sat, 27 Jun 2015 00:47:13 +0100</pubDate>
-        <link>http://natstar93.github.io//week4/2015/06/27/day-16.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/06/27/day-16.html</guid>
-        
-        
-        <category>week4</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 15 | Friday learning plan</title>
-        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• How the internet works!&lt;br /&gt;
-• How to use BDD, controllers, views and sessions&lt;br /&gt;
-• Debugging is awesome. The alumni helpers helped me a lot with this and I’m now a lot more able to identify the cause of issues myself. I’m really happy about how this week went, I definitely found it easier than last week.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Being ok with moving through the first stages slowly, but I’m glad I did because it really helped me understand everything well and probably helped me progress through the later stuff a bit more rapidly&lt;br /&gt;
-• Listening to talks. I don’t know if there’s something wrong with me but after a certain amount of time I find it hard to listen if it’s not related to what I’m doing at that exact time&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Not really a change, but persevere as I did this week and keep making sure that both members of a pair are at the same level of understanding about a various topic before progressing onto the next bit of code&lt;br /&gt;
-• Make time for yoga!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• I quite liked being able to choose pair partners.. I’m not sure how other people feel about this but I enjoyed partnering with someone who was at the same stage of the program and going through all the issues together for the first time at the same pace. I feel like maybe I learnt more that way? Maybe it’s just that this week wasn’t as hard as week 2. You could argue that having random pairings allows more opportunity for people to explain things though. Hmm.&lt;br /&gt;
-• I LOVED the game we played in our standup (http://natstar93.github.io/week3/2015/06/23/day-12.html). I feel like I will now retain that info forever&lt;br /&gt;
-• Can we have more cereal, bread, milk and fruit on fridays? :)&lt;br /&gt;
-• I would prefer if the challenge came out earlier on a Friday. I occassionally have some unavoidable weekend plans (weddings etc) and it would be great to get a good start on it before Friday lunchtime and all the afternoon talks, sessions and er.. beers being handed round&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 26 Jun 2015 13:14:47 +0100</pubDate>
-        <link>http://natstar93.github.io//week3/2015/06/26/day-15.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/26/day-15.html</guid>
-        
-        
-        <category>week3</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 14 | Why is my test like an NHS ward? It&#39;s full of bugs</title>
-        <description>&lt;p&gt;Today was another great day. Kate and I were super excited to combine forces and create a game which allowed the placement &lt;em&gt;and&lt;/em&gt; striking of battleships. That probably doesn’t sound very exciting but every little win not only resulted in tests going green and passing, we could see our results visually on the local server too. Ok, it probably still doesn’t sound very exciting. I guess it just depends on what you’re into.&lt;/p&gt;
-
-&lt;p&gt;Some real progress was made today and we learnt a load of new stuff about cookies and error handling. Everything is really starting to come together. We managed to implement a multiplayer game and played it using two browsers that each took a cookie to keep track of which browser was being used by which player.&lt;/p&gt;
-
-&lt;p&gt;Our joy at the above successes was marred slightly by our test still not passing. I spent the evening trying to work out why and had a bit of remote help from Mihai, an member of the awesome Makers alumni.&lt;/p&gt;
-
-&lt;p&gt;I’ve learnt so much about debugging in the last few days I’m starting to embrace these problems. I wouldn’t say I exactly enjoy seeing error messages, but now I have more ideas on how to go about trying to identify issues and fix them, which is very satisfying. I don’t spend so much time feeling annoyed and scratching my head whilst looking at the error messages, hoping they’ll go away. Following BDD ensures that the problems are small and managable too. If you do it correctly and rigourously you can be quite confident your problem originates from the part you’ve just implemented, not something you should have tested earlier.&lt;/p&gt;
-
-&lt;p&gt;Mihai identified that the problem was definitely with the testing, not the code, and told me how to run just the failing test on its own. I did just that and it went green at last! This prompt lead me to realise that one or more other tests must be interfering, i.e. it/they had set something that needed to be reset before any other tests were initialised. This is a bit of a breakthrough. I haven’t fixed the issue yet (will save that for tomorrow when Kate is there), but the more important outcome is that I know WHY the problem is happening and what approach we need to take to rectify it.&lt;/p&gt;
-
-&lt;p&gt;Great week :) Makers &amp;lt;3&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Thu, 25 Jun 2015 23:50:44 +0100</pubDate>
-        <link>http://natstar93.github.io//week3/2015/06/25/day-14.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/25/day-14.html</guid>
-        
-        
-        <category>week3</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 13 | Looking up</title>
-        <description>&lt;p&gt;Today was a pretty good day. For the last week or so I’ve been a bit worried about whether I’ve been understanding enough and whether I’ve been implementing the concepts correctly but today I feel pretty good about everything! The three things that really pleased me today were my 1:1, making some real progress with this week’s work and some chats and tips from the awesome alumni helpers. So my blog post is basically about those things in turn.&lt;/p&gt;
-
-&lt;p&gt;I’ve been looking forward to my 1:1 since Monday. Each week we sign up for 1:1s with a coachineer to discuss how the weekend challenge was. I had so many questions and doubts after last weekend’s, so was happy for the opportunity to get some feedback. The main advice I gained was that the implementation doesn’t have to be perfect the first time you have a go at it. Junior (and even senior) devs don’t get it right first time but will then go back and try another approach based on their learnings. It’s better to have had a go than to have spent a long time planning things out and have tried nothing. It’s also better to do a hard reset after 3 commits than after a hundred, so questioning what you’re doing at all times is really important! The Single Responsibility Principle is the most important thing to bear in mind. As long as each method only does one thing and they’re all named correctly it will be easier to see how things fit into place.&lt;/p&gt;
-
-&lt;p&gt;Other points that came up were:&lt;/p&gt;
-
-&lt;p&gt;• &lt;strong&gt;Methods should have one word names.&lt;/strong&gt;
-This can flag if the method is definitely supposed to belong to that class or not&lt;br /&gt;
-e.g. my add_dishes class should just be add, which will help determine if add is the responsibility of that class&lt;/p&gt;
-
-&lt;p&gt;• &lt;strong&gt;Give classes and methods very specific names.&lt;/strong&gt;
-So that you don’t get confused about what their purpose is…&lt;/p&gt;
-
-&lt;p&gt;• &lt;strong&gt;No overly fancy code.&lt;/strong&gt; Keep it simple. Simple == readable. I was really proud of the following neat little line (Codewars people seem to love this kind of stuff), but when my coachineer asked me to explain it it took me a minute or two to remember! A simpler code snippet with explicit names for variables would have explained itself.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;@dishes.map{ |k,v| &quot;#{k} (£#{&#39;%.2f&#39; % v})&quot;}.join(&#39;, &#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;• &lt;strong&gt;Try not to output strings (apart from when raising errors).&lt;/strong&gt; Symbols are usually a good bet. Text is outputted to the interface when you start developing the fron end parts properly. Which leads nicely on to my next point…&lt;/p&gt;
-
-&lt;p&gt;• &lt;strong&gt;Ruby will make more and more sense as we progress through other topics.&lt;/strong&gt; I’m starting to get a better picture already through studying views, controllers, REST and all the http request stuff we’re doing at the moment.&lt;/p&gt;
-
-&lt;p&gt;The battleships front end implementation went very well today. The tests are lovely (and are all passing) and the game interface is shaping up nicely and doing what it’s supposed to do. (It doesn’t look beautiful, but I’m resisting the temptation to bash out a quick stylesheet as I know I’ll get in trouble for doing something that’s not an MVP!). Drawing diagrams of what messages you want to pass to the server and get back really helped with all this. I left feeling really pleased with what we’d produced and the BDD approach we followed. All the more so because of the blockers we ran into and overcame. Makers always say that trying, failing and overcoming is one of the best ways to learn.&lt;/p&gt;
-
-&lt;p&gt;We had a few visits to the alumni help desk today which were fantastic. Sarah in particular helped a lot by never providing the direct answer to a problem, but asking us questions and prompting us to use particular debugging methods in order to work the problems out ourselves. I understand so much more than I would have had I been told the answer. For example when an error of ‘object has nil class’ was being returned, we wrote code to output all of the objects used by that method and quickly identified the one which was behaving incorrectly. The detailed examination of error messages and ways to debug we practiced are really crucial and will transcend other languages and technologies.&lt;/p&gt;
-
-&lt;p&gt;Can’t wait for tomorrow!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 24 Jun 2015 20:44:37 +0100</pubDate>
-        <link>http://natstar93.github.io//week3/2015/06/24/day-13.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/24/day-13.html</guid>
-        
-        
-        <category>week3</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 12 | Jen, this box is the internet</title>
-        <description>&lt;p&gt;This week we’re learning about a newfangled invention called… the ‘internet’. We played a game in our stand up to help illustrate how http requests are sent out to servers, what controllers and views do to build pages and retrieve app logic, and how responses are sent back to the client. This involved Theo and Lucy (requests and reponses) running between the client and server and pretending to die, and other parties shouting messages. Probably the best way ever to learn the roles of all the constituent parts, and so much more memorable than a diagram full of boxes and arrows!&lt;/p&gt;
-
-&lt;p&gt;The most important points so far which relate to this week’s work (using Sinatra) are:&lt;/p&gt;
-
-&lt;p&gt;HTTP: Requests out, responses back&lt;/p&gt;
-
-&lt;p&gt;Controller uses the following methods:
-get: read data
-post: change state of system&lt;/p&gt;
-
-&lt;p&gt;Controller takes an incoming request and decides if it needs to consult app logic to illicit a response. It then uses views to build its pages. Views (in our case) contain erb (embedded ruby) which is evaluated and turned into html.&lt;/p&gt;
-
-&lt;p&gt;We are allowed to use a global variable for a new instance of our Game class this week but then never again after that or we’ll be shot. We’re going to find out better ways of allowing our data to persist (cue databases, presumably) next week.&lt;/p&gt;
-
-&lt;p&gt;Ooh and HTML and CSS are due to pop up at various points, yay let’s make everything pretty!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Tue, 23 Jun 2015 22:01:40 +0100</pubDate>
-        <link>http://natstar93.github.io//week3/2015/06/23/day-12.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week3/2015/06/23/day-12.html</guid>
-        
-        
-        <category>week3</category>
         
       </item>
     
