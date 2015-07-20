@@ -7,12 +7,13 @@ image: https://github.com/natstar93/bowling-challenge/raw/master/images/screensh
 image-subtitle: Now finally live on the interweb at https://serene-island-1376.herokuapp.com/
 ---
 
-Hello blog fans. I've spent the last couple of days working on the bowling challenge, and it now includes an interface (HTML, CSS & jQuery). It's pretty much done at last, so I decided to host it on Heroku <a href="https://serene-island-1376.herokuapp.com/" target="_blank">here</a>. Heroku is awesome for hosting applications that run on Ruby, Python and Node servers (amongst others) but what if you want to host a static site that doesn't need to run on a server? There doesn't seem to be an option for that...
+Hello blog fans. I've spent the last couple of days working on the bowling challenge again, and it now includes an interface (HTML, CSS & jQuery). It's pretty much done at last, so I decided to host it on Heroku <a href="https://serene-island-1376.herokuapp.com/" target="_blank">here</a>. Heroku is awesome for hosting applications that run on Ruby, Python and Node servers (amongst others) but what if you want to host a static site that doesn't need to run on a server? There doesn't seem to be an option for that...
 
 I discovered a workaround that lets you host your site using a tiny little bit of PHP:
 
 	* Rename your index.html file to home.html
-	* Create a file named index.php include the following code to reference your entry html file
+	* Create a file named index.php include the following code to reference
+	  your entry html file
 
 	  <?php include_once("home.html"); ?>
 
@@ -22,7 +23,7 @@ Sounds simple, but of course it didn't work first time. Stuff never works first 
 
 &bull; Make sure you are on branch 'master' and that the work you want to submit lives on branch 'master'. Heroku won't process anything pushed from any other branch.<br>
 &bull; Make sure your new little index file definitely ends in .php and not .html, or you will get an error along the lines of *Push rejected, no Cedar-supported app detected HINT: This occurs when Heroku cannot detect the buildpack to use for this application automatically*.<br>
-&bull; Make sure your PHP file (index.php) is at the root of your application folder or you'll get the same error as above<br>
+&bull; Make sure your PHP file (index.php) is at the root of your application folder or you'll get the same error as above.<br>
 &bull; It sounds obvious, but make sure everything is definitely committed.<br>
 &bull; Your stylesheets, javascripts and anything else referenced by your html file (e.g. a local copy of jQuery) will now need to be referenced from the location of the PHP file, which is now living at the root of the application. You might as well move your main HTML file 'home.html' up there to the app root too so that your site doesn't fall apart when you open home.html in your browser.
 
