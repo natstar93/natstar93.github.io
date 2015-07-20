@@ -1,0 +1,31 @@
+---
+layout: post
+title:  "Day 31 | How to: Host your static site on Heroku"
+date:   2015-07-20 22:19:22
+categories: week7
+image: https://github.com/natstar93/bowling-challenge/raw/master/images/screenshot.png
+image-subtitle: Now finally live on the interweb at https://serene-island-1376.herokuapp.com/
+---
+
+Hello blog fans. I've spent the last couple of days working on the bowling challenge, and it now includes an interface (HTML, CSS & jQuery). It's pretty much done at last, so I decided to host it on Heroku <a href="https://serene-island-1376.herokuapp.com/" target="_blank">here</a>. Heroku is awesome for hosting applications that run on Ruby, Python and Node servers (amongst others) but what if you want to host a static site that doesn't need to run on a server? There doesn't seem to be an option for that...
+
+I discovered a workaround that lets you host your site using a tiny little bit of PHP:
+
+	* Rename your index.html file to home.html
+	* Create a file named index.php include the following code to reference your entry html file
+
+	  <?php include_once("home.html"); ?>
+
+	* Git commit and push to Heroku
+
+Sounds simple, but of course it didn't work first time. Stuff never works first time. It always takes an extra hour and requires reading about 5 stack overflow posts. Here is an idiot's guide based on a few issues I encountered.
+
+&bull; Make sure you are on branch 'master' and that the work you want to submit lives on branch 'master'. Heroku won't process anything pushed from any other branch.<br>
+&bull; Make sure your new little index file definitely ends in .php and not .html, or you will get an error along the lines of *Push rejected, no Cedar-supported app detected HINT: This occurs when Heroku cannot detect the buildpack to use for this application automatically*.<br>
+&bull; Make sure your PHP file (index.php) is at the root of your application folder or you'll get the same error as above<br>
+&bull; It sounds obvious, but make sure everything is definitely committed.<br>
+&bull; Your stylesheets, javascripts and anything else referenced by your html file (e.g. a local copy of jQuery) will now need to be referenced from the location of the PHP file, which is now living at the root of the application. You might as well move your main HTML file 'home.html' up there to the app root too so that your site doesn't fall apart when you open home.html in your browser.
+
+And that's about it, for now. Let me know if you encounter any other errors doing this and I will add them to the post!
+
+Nat x
