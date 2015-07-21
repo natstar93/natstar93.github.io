@@ -6,18 +6,36 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Jul 2015 23:04:27 +0100</pubDate>
-    <lastBuildDate>Mon, 20 Jul 2015 23:04:27 +0100</lastBuildDate>
+    <pubDate>Tue, 21 Jul 2015 19:59:08 +0100</pubDate>
+    <lastBuildDate>Tue, 21 Jul 2015 19:59:08 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Day 32 | Off the Rails</title>
+        <description>&lt;p&gt;This week is Rails week. Everyone has an opinion on Rails, ranging from ‘Easier and better than Sinatra’ to ‘I don’t understand how it’s doing stuff for me’ to ‘I don’t like this Rails Voodoo magic, make it stop!’. There are some very nice features such as the fact that it creates all your routes for you when you generate a model, and this means you can get something up and running very quickly. A lot seems to be a lot going on automatically, which is a bit strange at first. When I installed a gem called Devise, it automatically updated my routes config file without me asking it to.&lt;/p&gt;
+
+&lt;p&gt;The user management functionality is super easy to set up, but we came unstuck when trying to implement Facebook login. It was one of those parts of the tutorial where you just have to take a leap of faith and add a lot of config stuff in without fully understanding what’s going on. That’s the part I don’t like. I’m not sure how I’m meant to fix problems with the login if I don’t fully understand what each bit of code is doing. I think I’m going to have a very exciting evening finding out about the wonderful world of Omniauth!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 Jul 2015 20:38:22 +0100</pubDate>
+        <link>http://natstar93.github.io//week7/2015/07/21/day-32.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week7/2015/07/21/day-32.html</guid>
+        
+        
+        <category>week7</category>
+        
+      </item>
+    
+      <item>
         <title>Day 31 | How to: Host your static site on Heroku</title>
-        <description>&lt;p&gt;Hello blog fans. I’ve spent the last couple of days working on the bowling challenge, and it now includes an interface (HTML, CSS &amp;amp; jQuery). It’s pretty much done at last, so I decided to host it on Heroku &lt;a href=&quot;https://serene-island-1376.herokuapp.com/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. Heroku is awesome for hosting applications that run on Ruby, Python and Node servers (amongst others) but what if you want to host a static site that doesn’t need to run on a server? There doesn’t seem to be an option for that…&lt;/p&gt;
+        <description>&lt;p&gt;Hello blog fans. I’ve spent the last couple of days working on the bowling challenge again, and it now includes an interface (HTML, CSS &amp;amp; jQuery). It’s pretty much done at last, so I decided to host it on Heroku &lt;a href=&quot;https://serene-island-1376.herokuapp.com/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;. Heroku is awesome for hosting applications that run on Ruby, Python and Node servers (amongst others) but what if you want to host a static site that doesn’t need to run on a server? There doesn’t seem to be an option for that…&lt;/p&gt;
 
 &lt;p&gt;I discovered a workaround that lets you host your site using a tiny little bit of PHP:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;* Rename your index.html file to home.html
-* Create a file named index.php include the following code to reference your entry html file
+* Create a file named index.php include the following code to reference
+  your entry html file
 
   &amp;lt;?php include_once(&quot;home.html&quot;); ?&amp;gt;
 
@@ -28,7 +46,7 @@
 
 &lt;p&gt;• Make sure you are on branch ‘master’ and that the work you want to submit lives on branch ‘master’. Heroku won’t process anything pushed from any other branch.&lt;br /&gt;
 • Make sure your new little index file definitely ends in .php and not .html, or you will get an error along the lines of &lt;em&gt;Push rejected, no Cedar-supported app detected HINT: This occurs when Heroku cannot detect the buildpack to use for this application automatically&lt;/em&gt;.&lt;br /&gt;
-• Make sure your PHP file (index.php) is at the root of your application folder or you’ll get the same error as above&lt;br /&gt;
+• Make sure your PHP file (index.php) is at the root of your application folder or you’ll get the same error as above.&lt;br /&gt;
 • It sounds obvious, but make sure everything is definitely committed.&lt;br /&gt;
 • Your stylesheets, javascripts and anything else referenced by your html file (e.g. a local copy of jQuery) will now need to be referenced from the location of the PHP file, which is now living at the root of the application. You might as well move your main HTML file ‘home.html’ up there to the app root too so that your site doesn’t fall apart when you open home.html in your browser.&lt;/p&gt;
 
@@ -323,43 +341,6 @@ Alex&lt;/p&gt;
         
         
         <category>week5</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 20 | Week 4 learning plan</title>
-        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Lots of datamapper configuration details!&lt;br /&gt;
-• Testing with databases using factory girl and database cleaner&lt;br /&gt;
-• How passwords work&lt;br /&gt;
-• How controllers should be organised (e.g. users/new structure as a convention for creating something, delete methods being called using hidden fields)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• I was worried I didn’t fully understand the setup properly. Hopefully having done an athletic restart and the weekend challenge will give me more confidence with this&lt;br /&gt;
-• DataMapper methods&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Go to bed earlier&lt;br /&gt;
-• Complete weekend challenge earlier&lt;br /&gt;
-• Spend evenings going over what I’ve learnt in the day instead of trying to do all of the extra bits of the last weekend challenge - I will save these for lab week&lt;br /&gt;
-• Post on slack overflow more&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Really enjoying it! Confused about a few things as usual but I’m happy with the progress I made this week. I really can see the value in pairing with lots of different people now. Having a mix of people who like to get through things rapidly and people who like to talk through things and examine them in detail is a really great way to push yourself and learn loads.&lt;br /&gt;
-• More fruit and breakfast please!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 03 Jul 2015 13:27:13 +0100</pubDate>
-        <link>http://natstar93.github.io//week4/2015/07/03/day-20.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week4/2015/07/03/day-20.html</guid>
-        
-        
-        <category>week4</category>
         
       </item>
     

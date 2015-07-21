@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "Day 32 | Off the Rails"
+date:   2015-07-21 19:38:22
+categories: week7
+image:
+image-subtitle: 
+---
+
+This week is Rails week. Everyone has an opinion on Rails, ranging from 'Easier and better than Sinatra' to 'I don't understand how it's doing stuff for me' to 'I don't like this Rails Voodoo magic, make it stop!'. There are some very nice features such as the fact that it creates all your routes for you when you generate a model, and this means you can get something up and running very quickly. A lot seems to be a lot going on automatically, which is a bit strange at first. When I installed a gem called Devise, it automatically updated my routes config file without me asking it to.
+
+The user management functionality is super easy to set up, but we came unstuck when trying to implement Facebook login. It was one of those parts of the tutorial where you just have to take a leap of faith and add a lot of config stuff in without fully understanding what's going on. That's the part I don't like. I'm not sure how I'm meant to fix problems with the login if I don't fully understand what each bit of code is doing. I think I'm going to have a very exciting evening finding out about the wonderful world of Omniauth!
+
+Nat x
