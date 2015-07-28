@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Day 36 | Welcome to Natstagram! (1 like)"
+date:   2015-07-27 20:55:14
+categories: week8
+image:
+image-subtitle: 
+---
+
+I think these weekend challenges are getting longer y'know... They're also getting more and more interesting, and more satisfying to complete. Our weekend challenge this week was to recreate Instagram, an immensely popular but strangely simple site. I use 'simple' in a rather loose sense. *It's simple to make if you have more than 5 days' experience with Rails and have any experience at all with image uploads and stubbing the damned things.*
+
+I spent almost all of Saturday eating takeaway pizza and completing the Yelp clone from last week, working through extra features and using some shiny new gems. Then I moved onto the Insta-challenge which involved a lot of the same features, but I was able to make them bigger, better and smarter for having rehearsed them with Yelp. The biggest challenges were migrating database changes properly without ending up in a huge mess, and stubbing image uploads.
+
+My app has the following super awesome functionality and is soon to have some nicely bootstrapped CSS too.
+<ul>
+<li>Anyone can view photos</li>
+<li> Anyone can sign up with an email address or through Facebook</li>
+<li> Logged in users can comment on photos</li>
+<li> Logged in users can delete their own photos and comments</li>
+<li> Logged in users can 'like' each photo a maximum of 1 time *- this bit looks so simple but is actually the hardest feature of all!*</li>
+</ul>
+
+Phew. What a weekend! We're now in advanced Javascript week so it's time to swap those gems for curly brackets, APIs and callbacks again. Monday mainly consisted of installing and playing with strangely named things like Bower, Grunt and Node.
+
+I've also started peer reviewing juniors' weekend challenges. It was great to be able to pass on some of my knowledge and experience to help people. People who are just starting out but at the same time just 6 weeks behind me. How far we've come in that short time...
+
+Nat x

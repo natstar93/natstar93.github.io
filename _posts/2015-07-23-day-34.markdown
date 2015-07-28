@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "Day 34 | Off the Rails II (the sql)"
+date:   2015-07-23 21:21:05
+categories: week7
+image:
+image-subtitle: 
+---
+
+The entire cohort have been totally confused by database associations for the last two days. The principle of what we're trying to do makes sense, but accurately setting up relationships and expressing them or their related methods in Ruby - in the correct model or controller as appropriate -is driving us up the wall. We're learnt that you can create relationships through tables, and you express them in way like this:
+
+    Class User  < ActiveRecord::Base
+    has_many :reviewed_restaurants, through: :reviews, source: :restaurant
+
+This sets up a relationship using 'reviewed_restaurants' which doesn't actually exist as a model or database table. But that's ok, because you've expressed what it is and can therefore use it in a method! Crazy stuff! And that's not the end of it. You have to make sure you write tests for all of this first of course, to make sure the code you're about to write builds things in the database correctly. You also have to check that the thing you created is the right kind of thing using weird sounding tests such as:
+
+    it 'builds a like' do
+      expect(like).to be_a Like
+    end
+
+Is this a unit test or an existential question?
+
+Now for your next trick, how about taking that method you created earlier based on a made-up non-existent table and improving it by moving the logic into a module so it's nice and encapsulated and never gets as far as your contoller? 
+
+It seems like this part of the exercise is a combination of half of the stuff we've learnt so far. Confusing as hell, but once you've cracked it you reap the rewards. Which sort of sums up the course in general!
+
+Nat x
