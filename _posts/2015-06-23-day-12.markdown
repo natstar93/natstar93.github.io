@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Day 12 | Jen, this box is the internet"
+title:  "Day 12 | What is the internet?"
 date:   2015-06-23 21:01:40
 categories: week3
 image: http://www.natalie-akam.com/Blog/images/internet.jpg
