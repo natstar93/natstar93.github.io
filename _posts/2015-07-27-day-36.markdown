@@ -3,8 +3,8 @@ layout: post
 title:  "Day 36 | Welcome to Natstagram! (1 like)"
 date:   2015-07-27 20:55:14
 categories: week8
-image:
-image-subtitle: 
+image: http://www.natalie-akam.com/Blog/images/natstagram.png
+image-subtitle: Work in progress
 ---
 
 I think these weekend challenges are getting longer y'know... They're also getting more and more interesting, and more satisfying to complete. Our weekend challenge this week was to recreate Instagram, an immensely popular but strangely simple site. I use 'simple' in a rather loose sense. *It's simple to make if you have more than 5 days' experience with Rails and have any experience at all with image uploads and stubbing the damned things.*
