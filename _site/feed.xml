@@ -6,9 +6,58 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Jul 2015 18:18:12 +0100</pubDate>
-    <lastBuildDate>Wed, 29 Jul 2015 18:18:12 +0100</lastBuildDate>
+    <pubDate>Thu, 30 Jul 2015 23:26:53 +0100</pubDate>
+    <lastBuildDate>Thu, 30 Jul 2015 23:26:53 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 39 | Testing times</title>
+        <description>&lt;p&gt;My brain is hurting again. I’ve spent a lot of today debugging server setup issues and getting in the middle of a debate about Rack vs Sinatra as a method of serving up Single Page Applications. In the middle of all this my server file went missing and made me look like an idiot, and I had to follow a trail of breadcrumbs in the shape of error messages which told me I hadn’t done a load of obvious things. Not bundling my Gemfile before pushing to Heroku, and trying to use a server without a config file spring to mind as moments I’d rather forget (but have immortalised in this blog for some reason anyway).&lt;/p&gt;
+
+&lt;p&gt;I’ve been using protractor for testing, and getting totally confused about what I’m meant to be stubbing and what I actually need to test. One of those days when you suddenly realise you’re trying to test that something is itself, and that maybe you’re overdoing it on the testing efforts.&lt;/p&gt;
+
+&lt;p&gt;In short, anything that could go wrong went wrong today.&lt;/p&gt;
+
+&lt;p&gt;Despite a multitude of setbacks, my little app is now finally on Heroku. It’s really not much to look at so far, but if you fancy dynamically searching Github using a funny little app I made, &lt;a href=&quot;https://nat-gihub-profiles.herokuapp.com/&quot; target=&quot;_blank&quot;&gt;do feel free&lt;/a&gt;. Tomorrow will hopefully result in some more interesting data being presented and maybe some CSS so it looks like a real thing.&lt;/p&gt;
+
+&lt;p&gt;Here are some pointers for anyone deploying a simple Rack app:&lt;/p&gt;
+
+&lt;p&gt;• Make sure you’ve created a Gemfile including your source, Ruby version and the ‘rack’ gem&lt;br /&gt;
+• Bundle it, otherwise you won’t have a Gemfile.lock&lt;br /&gt;
+• Shove your index, js folder, css folder and anything else your app needs in a ‘public’ folder&lt;br /&gt;
+• Make sure your node_components are .gitignored&lt;br /&gt;
+• Make sure your config file looks something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;use Rack::Static,
+  :urls =&amp;gt; [&quot;/images&quot;, &quot;/js&quot;, &quot;/css&quot;, &#39;/bower_components&#39;],
+  :root =&amp;gt; &quot;public&quot;
+
+run lambda { |env|
+  [
+    200,
+    {
+      &#39;Content-Type&#39;  =&amp;gt; &#39;text/html&#39;,
+      &#39;Cache-Control&#39; =&amp;gt; &#39;public, max-age=86400&#39;
+    },
+    File.open(&#39;public/index.html&#39;, File::RDONLY)
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;• Note that you may need to amend the urls values array&lt;br /&gt;
+• Your server will be looking at the root (public, in the example above) for additional files. Therefore you need to make sure the references at the top of your html file include a forward slash at the front &lt;code&gt;&amp;lt;script src=&quot;/js/app.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br /&gt;
+• Junebugs, for our github-profiles challenge, if you’re using an API access token you’ll need to remove it from the .gitignore list. This doesn’t seem like a very satisfactory solution, but we were unable to find a good way of supplying a secret token to the front end. The best we could do was branch the repo for the heroku push and push to heroku using &lt;code&gt;git push heroku yourbranch:master&lt;/code&gt;. Do be aware that when switching between branches your .gitignored access token may disappear.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Jul 2015 23:11:10 +0100</pubDate>
+        <link>http://natstar93.github.io//week8/2015/07/30/day-39.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week8/2015/07/30/day-39.html</guid>
+        
+        
+        <category>week8</category>
+        
+      </item>
     
       <item>
         <title>Day 37 | Are you .gitignoring me?</title>
@@ -303,27 +352,6 @@ Timecop.return
         <pubDate>Tue, 14 Jul 2015 23:22:57 +0100</pubDate>
         <link>http://natstar93.github.io//week6/2015/07/14/day-27.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week6/2015/07/14/day-27.html</guid>
-        
-        
-        <category>week6</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 26 | Error: Floor has already been spied upon</title>
-        <description>&lt;p&gt;I spent most of Sunday working on the Bowling Challenge, which was essentially a day long logic problem. So I had a very nice day :) The challenge is to model a bowling game which I took to mean a game with random inputs. The other interpretation is a bowling scorecard which tots up scores based on a user’s input. It turns out we have until next week to complete it so I’m going to branch my repo and do a scorecard version too, before implementing an animated jQuery interface. Modelling bowling scoring can be a little tricky, with spares and strikes causing scoring to be a lot less linear than one might hope. My code passed the Travis CI build test, but I’m still suspicious that a certain combination of strikes and spares in the end round might need a bit more testing.&lt;/p&gt;
-
-&lt;p&gt;Choosing the random scores approach meant I had to use spies in my Jasmine test, so I’m glad I chose that approach first. There’s not that much to say about them at this stage, other than that they work in a similar way to doubles and to Factory Girl. They also have the potential to throw up some interesting error messages, such as the title of this blog post.&lt;/p&gt;
-
-&lt;p&gt;This week is lab week, a week that traditionally enables you to revisit previous projects or research something new. However, very recently the concept was overhauled and we’ve been put into small groups to do a small task based on a previous project.&lt;/p&gt;
-
-&lt;p&gt;My group was given the task of extending the Chitter challenge, which is not what I would have picked considering we only did it a week ago and I spent more time on it that any previous challenge. The majority of the day was spent setting up a version of Chitter that allows user management and tagging, which wasn’t really anything new yet managed to throw up the occassional irritating config bug that stumped even the alumni helpers. All good practice I guess though. The post-yoga hours were spent implementing some nice CSS and a little bit more functionality. I think tomorrow will be more interesting and hopefully we’ll end the day having produced some cool new features!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Mon, 13 Jul 2015 23:18:54 +0100</pubDate>
-        <link>http://natstar93.github.io//week6/2015/07/13/day-26.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week6/2015/07/13/day-26.html</guid>
         
         
         <category>week6</category>
