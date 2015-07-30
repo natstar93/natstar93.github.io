@@ -3,8 +3,8 @@ layout: post
 title:  "Day 32 | Off the Rails"
 date:   2015-07-21 19:38:22
 categories: week7
-image:
-image-subtitle: 
+image: http://www.natalie-akam.com/Blog/images/god.png
+image-subtitle: We finally found out who created Rails! https://github.com/god
 ---
 
 This week is Rails week. Everyone has an opinion on Rails, ranging from 'Easier and better than Sinatra' to 'I don't understand how it's doing stuff for me' to 'I don't like this Rails Voodoo magic, make it stop!'. There are some very nice features such as the fact that it creates all your routes for you when you generate a model, and this means you can get something up and running very quickly. A lot seems to be a lot going on automatically, which is a bit strange at first. When I installed a gem called Devise, it automatically updated my routes config file without me asking it to.

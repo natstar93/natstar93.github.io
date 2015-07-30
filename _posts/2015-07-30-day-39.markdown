@@ -3,8 +3,8 @@ layout: post
 title:  "Day 39 | Testing times"
 date:   2015-07-30 22:11:29
 categories: week8
-image: http://www.natalie-akam.com/Blog/images/god.png
-image-subtitle: Just brilliant... https://github.com/god
+image: 
+image-subtitle: 
 ---
 
 My brain is hurting again. I've spent a lot of today debugging server setup issues and getting in the middle of a debate about Rack vs Sinatra as a method of serving up Single Page Applications. In the middle of all this my server file went missing and made me look like an idiot, and I had to follow a trail of breadcrumbs in the shape of error messages which told me I hadn't done a load of obvious things. Not bundling my Gemfile before pushing to Heroku, and trying to use a server without a config file spring to mind as moments I'd rather forget (but have immortalised in this blog for some reason anyway).
