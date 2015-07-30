@@ -7,7 +7,7 @@ image:
 image-subtitle: 
 ---
 
-The entire cohort have been totally confused by database associations for the last two days. The principle of what we're trying to do makes sense, but accurately setting up relationships and expressing them or their related methods in Ruby - in the correct model or controller as appropriate -is driving us up the wall. We're learnt that you can create relationships through tables, and you express them in way like this:
+The entire cohort have been totally confused by database associations for the last two days. The principle of what we're trying to do makes sense, but accurately setting up relationships and expressing them or their related methods in Ruby - in the correct model or controller as appropriate -is driving us up the wall. We're learnt that you can create relationships through tables, and you express them in ways like this:
 
     Class User  < ActiveRecord::Base
     has_many :reviewed_restaurants, through: :reviews, source: :restaurant
@@ -18,10 +18,10 @@ This sets up a relationship using 'reviewed_restaurants' which doesn't actually 
       expect(like).to be_a Like
     end
 
-Is this a unit test or an existential question?
+Is this a unit test or a strange riddle?
 
 Now for your next trick, how about taking that method you created earlier based on a made-up non-existent table and improving it by moving the logic into a module so it's nice and encapsulated and never gets as far as your contoller? 
 
-It seems like this part of the exercise is a combination of half of the stuff we've learnt so far. Confusing as hell, but once you've cracked it you reap the rewards. Which sort of sums up the course in general!
+It seems like this part of the exercise is a combination of half of the stuff we've learnt so far. Confusing as hell, but once you've cracked it you reap the rewards. And that, my friends, sort of sums up the course in general!
 
 Nat x
