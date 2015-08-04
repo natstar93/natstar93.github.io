@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Day 40 | Week 8 learning plan"
+date:   2015-07-31 16:38:29
+categories: week8
+image: 
+image-subtitle: 
+---
+
+**Most Important Things I Learned:**
+
+&bull; Protractor and karma testing<br>
+&bull; Angular setup
+
+**Things I Struggled With The Most:**
+
+&bull; Server setup issues<br>
+&bull; Making a second API call to Github to retrieve number of repos for each user displayed in search results. I really don't get how to do this and will have to spend some time looking at Stefan's solution. Would have much preferred to be able to work it out on my own but ran out of time<br>
+&bull; Communicating Github access token to Heroku-hosted app securely<br>
+&bull; Working out what tests to write..
+
+**Changes I Plan to Make Next Week:**
+
+&bull; Try and get in a makerthon group who are using Express<br>
+&bull; Read JS books to get to grips with some of the conecpts we looked at this week
+
+**Other Experiences or General Feedback This Week:**
+
+&bull; A confusing but good week! I am happy we've studied concepts such as factories/services, promises and more on dependency injection, but I don't feel 100% comfortable with them yet, hence wanting to read more JavaScript books<br>
+&bull; ng-hide and ng-show didn't come up. Presumably this is because we were meant to find them out on our own but I think they're useful for the weekend homework<br>
+&bull; Sad that the hardcore learning part of the course is pretty much over now, but looking forward to projects and hopefully creating some really awesome things!
+
+Nat x

@@ -6,9 +6,45 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2015 23:26:53 +0100</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2015 23:26:53 +0100</lastBuildDate>
+    <pubDate>Tue, 04 Aug 2015 20:42:43 +0100</pubDate>
+    <lastBuildDate>Tue, 04 Aug 2015 20:42:43 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Day 40 | Week 8 learning plan</title>
+        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Protractor and karma testing&lt;br /&gt;
+• Angular setup&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Server setup issues&lt;br /&gt;
+• Making a second API call to Github to retrieve number of repos for each user displayed in search results. I really don’t get how to do this and will have to spend some time looking at Stefan’s solution. Would have much preferred to be able to work it out on my own but ran out of time&lt;br /&gt;
+• Communicating Github access token to Heroku-hosted app securely&lt;br /&gt;
+• Working out what tests to write..&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• Try and get in a makerthon group who are using Express&lt;br /&gt;
+• Read JS books to get to grips with some of the conecpts we looked at this week&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;• A confusing but good week! I am happy we’ve studied concepts such as factories/services, promises and more on dependency injection, but I don’t feel 100% comfortable with them yet, hence wanting to read more JavaScript books&lt;br /&gt;
+• ng-hide and ng-show didn’t come up. Presumably this is because we were meant to find them out on our own but I think they’re useful for the weekend homework&lt;br /&gt;
+• Sad that the hardcore learning part of the course is pretty much over now, but looking forward to projects and hopefully creating some really awesome things!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 31 Jul 2015 17:38:29 +0100</pubDate>
+        <link>http://natstar93.github.io//week8/2015/07/31/day-40.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//week8/2015/07/31/day-40.html</guid>
+        
+        
+        <category>week8</category>
+        
+      </item>
     
       <item>
         <title>Day 39 | Testing times</title>
@@ -25,6 +61,9 @@
 &lt;p&gt;• Make sure you’ve created a Gemfile including your source, Ruby version and the ‘rack’ gem&lt;br /&gt;
 • Bundle it, otherwise you won’t have a Gemfile.lock&lt;br /&gt;
 • Shove your index, js folder, css folder and anything else your app needs in a ‘public’ folder&lt;br /&gt;
+• Move your bower_components directory to public/bower_components&lt;br /&gt;
+• Create a .bowerrc file in the top level of your application, and add the following text to it:  { “directory”: “public/bower_components” }&lt;br /&gt;
+• Add a buildpack to your Heroku env variables like so: heroku config:add BUILDPACK_URL=git://github.com/qnyp/heroku-buildpack-ruby-bower.git#run-bower&lt;br /&gt;
 • Make sure your node_components are .gitignored&lt;br /&gt;
 • Make sure your config file looks something like this:&lt;/p&gt;
 
@@ -44,13 +83,15 @@ run lambda { |env|
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;• Note that you may need to amend the urls values array&lt;br /&gt;
+&lt;p&gt;• Note that you may need to amend the urls values array to include any other folders you need&lt;br /&gt;
 • Your server will be looking at the root (public, in the example above) for additional files. Therefore you need to make sure the references at the top of your html file include a forward slash at the front &lt;code&gt;&amp;lt;script src=&quot;/js/app.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br /&gt;
+• Type &lt;code&gt;heroku create nats-awesome-app&lt;/code&gt;&lt;br /&gt;
+• &lt;code&gt;heroku push origin master&lt;/code&gt;&lt;br /&gt;
 • Junebugs, for our github-profiles challenge, if you’re using an API access token you’ll need to remove it from the .gitignore list. This doesn’t seem like a very satisfactory solution, but we were unable to find a good way of supplying a secret token to the front end. The best we could do was branch the repo for the heroku push and push to heroku using &lt;code&gt;git push heroku yourbranch:master&lt;/code&gt;. Do be aware that when switching between branches your .gitignored access token may disappear.&lt;/p&gt;
 
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
-        <pubDate>Thu, 30 Jul 2015 23:11:10 +0100</pubDate>
+        <pubDate>Thu, 30 Jul 2015 23:11:29 +0100</pubDate>
         <link>http://natstar93.github.io//week8/2015/07/30/day-39.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week8/2015/07/30/day-39.html</guid>
         
@@ -157,7 +198,7 @@ run lambda { |env|
     
       <item>
         <title>Day 34 | Off the Rails II (the sql)</title>
-        <description>&lt;p&gt;The entire cohort have been totally confused by database associations for the last two days. The principle of what we’re trying to do makes sense, but accurately setting up relationships and expressing them or their related methods in Ruby - in the correct model or controller as appropriate -is driving us up the wall. We’re learnt that you can create relationships through tables, and you express them in way like this:&lt;/p&gt;
+        <description>&lt;p&gt;The entire cohort have been totally confused by database associations for the last two days. The principle of what we’re trying to do makes sense, but accurately setting up relationships and expressing them or their related methods in Ruby - in the correct model or controller as appropriate -is driving us up the wall. We’re learnt that you can create relationships through tables, and you express them in ways like this:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;Class User  &amp;lt; ActiveRecord::Base
 has_many :reviewed_restaurants, through: :reviews, source: :restaurant
@@ -170,11 +211,11 @@ has_many :reviewed_restaurants, through: :reviews, source: :restaurant
 end
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Is this a unit test or an existential question?&lt;/p&gt;
+&lt;p&gt;Is this a unit test or a strange riddle?&lt;/p&gt;
 
 &lt;p&gt;Now for your next trick, how about taking that method you created earlier based on a made-up non-existent table and improving it by moving the logic into a module so it’s nice and encapsulated and never gets as far as your contoller?&lt;/p&gt;
 
-&lt;p&gt;It seems like this part of the exercise is a combination of half of the stuff we’ve learnt so far. Confusing as hell, but once you’ve cracked it you reap the rewards. Which sort of sums up the course in general!&lt;/p&gt;
+&lt;p&gt;It seems like this part of the exercise is a combination of half of the stuff we’ve learnt so far. Confusing as hell, but once you’ve cracked it you reap the rewards. And that, my friends, sort of sums up the course in general!&lt;/p&gt;
 
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
@@ -308,50 +349,6 @@ Push changes to Github
         <pubDate>Wed, 15 Jul 2015 23:07:40 +0100</pubDate>
         <link>http://natstar93.github.io//week6/2015/07/15/day-28.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week6/2015/07/15/day-28.html</guid>
-        
-        
-        <category>week6</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 27 | Spring cleaning a database and freezing time</title>
-        <description>&lt;p&gt;Today we resumed work on the extended Chitter challenge. We created a nice interface and sorted out some of the navigation issues, so the whole thing looks like more of a working product now. We definitely learnt a lot from the project, even if it was slow progress. One of the most difficult things is working out the correct datamapper commands for your normal SQL processes. Having barely touched upon joining SQL tables in this course didn’t help matters! As always, we’d been given just enough information to go away and find the solutions for ourselves.&lt;/p&gt;
-
-&lt;p&gt;This evening I made the finishing touches to my Chitter repo, correcting things like the below&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;validates_uniqueness_of :email, :username
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;which became the last part of this line&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;property :email, String, unique: true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Want to know why? Well, the first statement only validates the uniqueness of an email address on the application level, whereas the latter checks it at the database level. This means any data entered directly, or a duplicate entry happening at the very same moment would not be rejected and you may end up with two of the same email address in your database. Not ideal really.&lt;/p&gt;
-
-&lt;p&gt;Other fixes involved moving a couple of stray bits of logic away from the display files and into the backend where they belong, and making sure that a full time object is stored in the database for each peep instead of the ‘pretty time’ string I had created. As usual, the time is made pretty on the front end, where the display logic lives. This is the third time I’ve had cause to mention separation of display logic and backend logic in recent posts. It does seem to be a major theme these days now that we’ve moved into full stack development.&lt;/p&gt;
-
-&lt;p&gt;Another silly thing I’d done was duplicate the username in both my user and peeps tables (lets just call peeps messages from now on, since peeps is such a silly word). This is uneccessary information since the tables are associated by a key already. The correct way to pull the username for a particular message out is to 
-• look through the Message table to find that message’s associated user ID 
-• find that user ID in the Users table and pull out the associated username
-It sounds a bit longwinded but it’s really not, and it’s better than having a messy database.&lt;/p&gt;
-
-&lt;p&gt;I discovered a cool gem called Timecop which can actually freeze time! In a testing sense that is. One of its many functions is to stub the time with a value you give it, so that your tests can be accurate and don’t depend on the real time, which by its very nature changes a lot.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Timecop.freeze(Time.local(2015))
-post(peep)
-expect(page).to have_content(&quot;00:00 01/01/2015&quot;)
-Timecop.return
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After that I had a look through my bowling challenge again, and converted it to a bowling scorecard which relies on user input instead of random numbers. This was a fairly painless process and took about 5 minutes! It’s very satisfying seeing my 37 red tests go green in such a short space of time. The next tasks for my ever evolving bowling project are creating an interface and adding in something which outputs the score obtained by each round. At the moment strike bonuses are being simply added into the pot rather than attributed to the appropriate rounds. More on this another day though..&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Tue, 14 Jul 2015 23:22:57 +0100</pubDate>
-        <link>http://natstar93.github.io//week6/2015/07/14/day-27.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week6/2015/07/14/day-27.html</guid>
         
         
         <category>week6</category>
