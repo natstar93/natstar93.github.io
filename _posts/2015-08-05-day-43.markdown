@@ -12,8 +12,8 @@ So.. this week we've been working in groups on a 'Pairing matrix website' projec
 I've got a pretty sweet group who haven't fallen out yet, so that's one win. I've now paired with everyone in the group somehow, and worked on database models and associations, pairing algorithms and styling. I think I just need to contribute to the controllers now and that's all bases covered! We spent a lot of day two fretting over how to populate the database without pretty much doubling the entries we needed to do before coach Sam (aka English Jack Black) scaffolded our stand up. He told us we should go with a non-optimum solution that works and let it lead us to to a better way of doing it. So one of our database tables now looks like this:
 
     pairing_matrix_development=# SELECT * FROM pairs;
-     id |         created_at         |         updated_at         | student_id | partner_id 
-    ----+----------------------------+----------------------------+------------+------------
+     id |      created_at     |      updated_at     | student_id | partner_id 
+    ----+---------------------+---------------------+------------+------------
      23 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         35 |         34
      24 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         34 |         35
      25 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         37 |         36
