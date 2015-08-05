@@ -12,12 +12,12 @@ So.. this week we've been working in groups on a 'Pairing matrix website' projec
 I've got a pretty sweet group who haven't fallen out yet, so that's one win. I've now paired with everyone in the group somehow, and worked on database models and associations, pairing algorithms and styling. I think I just need to contribute to the controllers now and that's all bases covered! We spent a lot of day two fretting over how to populate the database without pretty much doubling the entries we needed to do before coach Sam (aka English Jack Black) scaffolded our stand up. He told us we should go with a non-optimum solution that works and let it lead us to to a better way of doing it. So one of our database tables now looks like this:
 
     pairing_matrix_development=# SELECT * FROM pairs;
-      id  |         created_at         |         updated_at         | student_id | partner_id 
-    ------+----------------------------+----------------------------+------------+------------
-       23 | 2015-08-05 14:18:32.122094 | 2015-08-05 14:18:32.122094 |         35 |         34
-       24 | 2015-08-05 14:18:32.143091 | 2015-08-05 14:18:32.143091 |         34 |         35
-       25 | 2015-08-05 14:18:32.146807 | 2015-08-05 14:18:32.146807 |         37 |         36
-       26 | 2015-08-05 14:18:32.149875 | 2015-08-05 14:18:32.149875 |         36 |         37
+     id |         created_at         |         updated_at         | student_id | partner_id 
+    ----+----------------------------+----------------------------+------------+------------
+     23 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         35 |         34
+     24 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         34 |         35
+     25 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         37 |         36
+     26 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         36 |         37
 
     (Note that partners are students and use the same model)
 
@@ -27,7 +27,7 @@ I've just pushed something to Github that's causing all sorts of problems so fur
 
 Another blimmin tube strike is raining on our parade, so our pretty-good-so-far communication is going to be tested tomorrow. But hey, working remotely is a great learning experience. Throw in some Git issues and debates about how features should function and we've got a recipe for a lot of fun...
 
-I really think the most important learning from this is communication. It's great to rehearse what we now know and learn some new bits and bobs on the way, but none of that matters if your team are working in silos or misunderstanding what they need to deliver. Pairing is also very important. You really get a lot more done if someone is there to validate what you're doing or picking up on silly little errors. We've also picked up new tools such as Waffle, a kanban which integrates your github issues and pull requests and automatically moves cards around to the delighted claps of a team who've clearly spent too much of their summer locked away in a building on Commercial Street...
+I really think the most important learning from this is communication. It's great to rehearse what we now know and learn some new bits and bobs on the way, but none of that matters if your team are working in silos or misunderstanding what they need to deliver. Pairing is also very important. You really get a lot more done if someone is there to validate what you're doing or picking up on silly little errors. We've also picked up new tools such as Waffle, a kanban which integrates all your Github issues and pull requests. Then it automatically moves cards around, to the delighted claps of a team who've clearly spent too much of their summer locked away in a building on Commercial Street...
 
 Final projects start on Monday. How scary!
 
