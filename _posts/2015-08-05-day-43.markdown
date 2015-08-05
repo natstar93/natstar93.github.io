@@ -3,8 +3,8 @@ layout: post
 title:  "Day 43 | Penultimate Projects"
 date:   2015-08-05 22:05:39
 categories: week9
-image: 
-image-subtitle:
+image: http://www.natalie-akam.com/Blog/images/pairing-matrix.png
+image-subtitle: Spoiler alert
 ---
 
 So.. this week we've been working in groups on a 'Pairing matrix website' project. I think one of the reasons for this is so that the coaches can point and go 'See, it's actually bloody hard to organise you guys into pairs every day!'. The main point though, is to get everyone working in teams to create something big and complicated, and get us used to merge conflicts and general project organisation. 
