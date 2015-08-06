@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "Day 44 | I actually need to write a todo list..."
+date:   2015-08-06 22:51:39
+categories: week9
+image: 
+image-subtitle: 
+---
+
+Today we've been working on the Pairing Matrix project again, with all teams operating with skeleton staff. In a way it's easier with less people to cause merge conflicts, but it meant we couldn't move ahead with any extra features. We implemented a blacklist, and started implementing login since it became very necessary to the Blacklisting feature we were creating.
+
+I've been researching final projects and am about to vote for three options I would like to work on, which will allow the coaches to organise us into groups. I also seem to have a backlog of little things I want to do, and am hoping to make a start this weekend since we have no homework for the first time in 12 weeks! I've also declared myself homework-free to family and friends though, so we'll see how much time I actually have..
+
+Here's the list as it currently stands:
+
+&bull; Do a MongoDB tutorial<br>
+&bull; Create a full MEAN stack app (MongoDB, Express, Angular & Node)<br>
+&bull; Create or improve READMEs for a few recent projects<br>
+&bull; Get Amazon web services image uploading working<br>
+&bull; Push projects incorporating the above to Heroku<br>
+&bull; Pretty up some previous projects with CSS. Go easy on the Bootstrap and all out on the design and UX<br>
+&bull; Read Ruby & JS books<br>
+&bull; Read OOP books<br>
+&bull; Revisit and improve earlier weeks' projects
+
+Well.. that's enough to keep me going for quite a while I think!
+
+Nat x
