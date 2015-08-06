@@ -21,9 +21,9 @@ Want to know why? Well, the first statement only validates the uniqueness of an 
 
 Other fixes involved moving a couple of stray bits of logic away from the display files and into the backend where they belong, and making sure that a full time object is stored in the database for each peep instead of the 'pretty time' string I had created. As usual, the time is made pretty on the front end, where the display logic lives. This is the third time I've had cause to mention separation of display logic and backend logic in recent posts. It does seem to be a major theme these days now that we've moved into full stack development. 
 
-Another silly thing I'd done was duplicate the username in both my user and peeps tables (lets just call peeps messages from now on, since peeps is such a silly word). This is uneccessary information since the tables are associated by a key already. The correct way to pull the username for a particular message out is to 
-&bull; look through the Message table to find that message's associated user ID 
-&bull; find that user ID in the Users table and pull out the associated username
+Another silly thing I'd done was duplicate the username in both my user and peeps tables (lets just call peeps messages from now on, since peeps is such a silly word). This is uneccessary information since the tables are associated by a key already. The correct way to pull the username for a particular message out is to<br>
+&bull; look through the Message table to find that message's associated user ID<br>
+&bull; find that user ID in the Users table and pull out the associated username<br>
 It sounds a bit longwinded but it's really not, and it's better than having a messy database. 
 
 I discovered a cool gem called Timecop which can actually freeze time! In a testing sense that is. One of its many functions is to stub the time with a value you give it, so that your tests can be accurate and don't depend on the real time, which by its very nature changes a lot. 
