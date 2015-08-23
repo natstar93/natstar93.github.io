@@ -3,7 +3,7 @@ layout: post
 title:  "Day 55 | Thanks for the memories"
 date:   2015-08-21 19:18:45
 categories: week11
-image: http://www.natalie-akam.com/Blog/images/group_pic.jpg
+image:
 image-subtitle:
 ---
 
