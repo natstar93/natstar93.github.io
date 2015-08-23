@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Day 41 | Many things todo</title>
-  <meta name="description" content="This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. ...">
+  <title>Day 43 | Penultimate Projects</title>
+  <meta name="description" content="So.. this week we’ve been working in groups on a ‘Pairing matrix website’ project. I think one of the reasons for this is so that the coaches can point and g...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//week9/2015/08/03/day-41.html">
+  <link rel="canonical" href="http://natstar93.github.io//week9/2015/08/05/day-43.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,56 +72,42 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Day 41 | Many things todo</h1>
-    <p class="post-meta">Aug 3, 2015</p>
+    <h1 class="post-title">Day 43 | Penultimate Projects</h1>
+    <p class="post-meta">Aug 5, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. It’s stuffed full of angular directives and looks like Bootstrap has thrown up on it. I think my Makers training has taught alarm bells to ring in my head when something starts to look busy and complex, so I’m not sure if what I’ve done is correct. Technically the logic in the HTML page is all display logic, but I’m looking forward to having a coach review it so they can tell me if I need to move certain things into the controller.</p>
+      <p>So.. this week we’ve been working in groups on a ‘Pairing matrix website’ project. I think one of the reasons for this is so that the coaches can point and go ‘See, it’s actually bloody hard to organise you guys into pairs every day!’. The main point though, is to get everyone working in teams to create something big and complicated, and get us used to merge conflicts and general project organisation.</p>
 
-<p>Having said all that, it’s got a few nifty features such as inline editing and buttons that become disabled when they’re not needed. Plus angular form validation is pretty neat too, even it introduces more mess into the HTML page.</p>
+<p>I’ve got a pretty sweet group who haven’t fallen out yet, so that’s one win. I’ve now paired with everyone in the group somehow, and worked on database models and associations, pairing algorithms and styling. I think I just need to contribute to the controllers now and that’s all bases covered! We spent a lot of day two fretting over how to populate the database without pretty much doubling the entries we needed to do before coach Sam (aka English Jack Black) scaffolded our stand up. He told us we should go with a non-optimum solution that works and let it lead us to to a better way of doing it. So one of our database tables now looks like this:</p>
 
-<p>Here’s how the inline editing works:</p>
+<pre><code>pairing_matrix_development=# SELECT * FROM pairs;
+ id |      created_at     |      updated_at     | student_id | partner_id 
+----+---------------------+---------------------+------------+------------
+ 23 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         35 |         34
+ 24 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         34 |         35
+ 25 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         37 |         36
+ 26 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         36 |         37
 
-<pre><code>&lt;td class="col-md-7"&gt;
-  &lt;span class="col-md-12" ng-hide="editorEnabled"&gt;&lt;/span&gt;
-  &lt;input class="col-md-12 edit-box" ng-show="editorEnabled" 
-  ng-model="task.description"&gt;
-&lt;/td&gt;
+(Note that partners are students and use the same model)
 </code></pre>
 
-<p>A button toggles editorEnabled’s boolean value, which controls whether the task description is shown, or an input field that allows the task description to be updated using ng-model. In case you’re wondering how the buttons work…</p>
+<p>There must be a better way of doing this, but for now it will do. What we really want is two entries rather than four, and we want to make a single query to the database to get a pair out.</p>
 
-<pre><code>&lt;td class="col-md-4"&gt;
-  &lt;button type="button" id="editing" ng-disabled="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-primary edit-task-btn"&gt;
-    &lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt; Edit
-  &lt;/button&gt;
-  &lt;button type="button" id="editing" ng-show="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-success done-editing-btn"&gt;Done&lt;/button&gt;
-&lt;/td&gt;
-</code></pre>
+<p>I’ve just pushed something to Github that’s causing all sorts of problems so further work will have to wait til tomorrow now. I’m a bit scared the development branch is not correct, so that will be the first priority tomorrow. It’s a bit scary having 3 pairs working off the same repository, since any issues or conflicts will be picked up by anyone pulling down from it. Ahhh.</p>
 
-<p>The edit button sets the value of editorEnabled, and becomes disabled if editorEnabled is true. The ‘Done’ button only appears when editorEnabled is true.</p>
+<p>Another blimmin tube strike is raining on our parade, so our pretty-good-so-far communication is going to be tested tomorrow. But hey, working remotely is a great learning experience. Throw in some Git issues and debates about how features should function and we’ve got a recipe for a lot of fun…</p>
 
-<p>I tried to put a setPristine method in the task adding method in my controller, but all attempts to do this failed. This meant when a task was added and the field reset to blank, since the form was still ‘dirty’my error handling allowed a ‘Description is required’ message to show. So into the HTML it went, and now everything is working fine.</p>
+<p>I really think the most important learning from this is communication. It’s great to rehearse what we now know and learn some new bits and bobs on the way, but none of that matters if your team are working in silos or misunderstanding what they need to deliver. Pairing is also very important. You really get a lot more done if someone is there to validate what you’re doing or picking up on silly little errors. We’ve also picked up new tools such as Waffle, a kanban which integrates all your Github issues and pull requests. Then it automatically moves cards around, to the delighted claps of a team who’ve clearly spent too much of their summer locked away in a building on Commercial Street…</p>
 
-<p>Here’s what I did to fix the bug:</p>
-
-<pre><code>&lt;button class="btn btn-success add-task-btn" 
-ng-click="addForm.taskDescription.$setPristine()"&gt;Add task&lt;/button&gt;
-</code></pre>
-
-<p>Bring on the code review…</p>
+<p>Final projects start on Monday. How scary!</p>
 
 <p>Nat x</p>
 
 
-      <img src="http://www.natalie-akam.com/Blog/images/todo.png">
-    <p>Ok, improving the design is on my todo list too...</p>
+      <img src="http://www.natalie-akam.com/Blog/images/pairing-matrix.png">
+    <p>Spoiler alert</p>
   </article>
 
 </div>

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Day 41 | Many things todo</title>
-  <meta name="description" content="This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. ...">
+  <title>Day 55 | Over so soon</title>
+  <meta name="description" content="I am feeling a mixture of emotions today. June 2015 have now officially graduated and I’m so immensely proud of what all the groups produced for their final ...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//week9/2015/08/03/day-41.html">
+  <link rel="canonical" href="http://natstar93.github.io//week11/2015/08/21/day-55.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,56 +72,29 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Day 41 | Many things todo</h1>
-    <p class="post-meta">Aug 3, 2015</p>
+    <h1 class="post-title">Day 55 | Over so soon</h1>
+    <p class="post-meta">Aug 21, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. It’s stuffed full of angular directives and looks like Bootstrap has thrown up on it. I think my Makers training has taught alarm bells to ring in my head when something starts to look busy and complex, so I’m not sure if what I’ve done is correct. Technically the logic in the HTML page is all display logic, but I’m looking forward to having a coach review it so they can tell me if I need to move certain things into the controller.</p>
+      <p>I am feeling a mixture of emotions today. June 2015 have now officially graduated and I’m so immensely proud of what all the groups produced for their final projects and of the journey we had together. All six groups’ presentations went without a hitch and we proved that together we can create some amazing things and overcome all sorts of barriers to get there. Graduation night was a huge celebration of our achievements and of the fun we’ve had in the last 11 weeks with our cohort and the fantastic staff we’ve been working with.</p>
 
-<p>Having said all that, it’s got a few nifty features such as inline editing and buttons that become disabled when they’re not needed. Plus angular form validation is pretty neat too, even it introduces more mess into the HTML page.</p>
+<p>I haven’t blogged this week due to obvious time constraints, but our project really started to come together from Sunday onwards and in the end we somehow created with something bigger and better than we expected, and it looked beautiful too. At times I was so exhausted but it was all worth it in the end. After two frankly horrendous practice presentations on Friday, each team member put their all into making their part the best they could, and when we came off stage we were all riding a wave of elation. Seeing each member of your beloved cohort absolutely rock it too just puts the icing on the cake!</p>
 
-<p>Here’s how the inline editing works:</p>
+<p>These times are tinged with immense sadness too though. We had to say goodbye to Jack (aka Captain America) at the end of the night as he left for his flight home (accompanied by new best friends Christian and Simon, and Nikesh who is responsible for accepting him onto the course in the first place, so it felt very fitting that he was there to see him on his way too!). There will no doubt be a couple more tearful goodbyes in coming weeks too, which I’m not looking forward to. Jack’s departure signals the start of the disbandment of a very special group who were complete strangers 11 weeks ago but have now experienced so many laughs, lows and so much love for each other. I’ve had such an amazing summer and it’s so sad to know that this part of the journey has come to an ended so quickly. Some great friendships have been formed and I’m sure we’ll all keep in contact even when we’re all out in the world doing various awesome things.</p>
 
-<pre><code>&lt;td class="col-md-7"&gt;
-  &lt;span class="col-md-12" ng-hide="editorEnabled"&gt;&lt;/span&gt;
-  &lt;input class="col-md-12 edit-box" ng-show="editorEnabled" 
-  ng-model="task.description"&gt;
-&lt;/td&gt;
-</code></pre>
+<p>Due to the strength of the ever expanding Makers alumni network it seems a lot of alumni end up working together, collaborating on things and even forming startups, so in a way this is not the end. Most of us will be back in for hiring week next week too, which we’ve been warned is very hard work (just carrying on as normal then, really!). A record number of hiring companies are coming in to present to us with the aim of plucking us from the Makers Academy nest to become the awesome developers we now know we can be.</p>
 
-<p>A button toggles editorEnabled’s boolean value, which controls whether the task description is shown, or an input field that allows the task description to be updated using ng-model. In case you’re wondering how the buttons work…</p>
+<p>If anyone reading this is weighing up whether to apply or not, I would say a massive, massive 100% YES! Quit your boring job, throw yourself into it and never look back. I would live it all again in a heartbeat.</p>
 
-<pre><code>&lt;td class="col-md-4"&gt;
-  &lt;button type="button" id="editing" ng-disabled="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-primary edit-task-btn"&gt;
-    &lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt; Edit
-  &lt;/button&gt;
-  &lt;button type="button" id="editing" ng-show="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-success done-editing-btn"&gt;Done&lt;/button&gt;
-&lt;/td&gt;
-</code></pre>
-
-<p>The edit button sets the value of editorEnabled, and becomes disabled if editorEnabled is true. The ‘Done’ button only appears when editorEnabled is true.</p>
-
-<p>I tried to put a setPristine method in the task adding method in my controller, but all attempts to do this failed. This meant when a task was added and the field reset to blank, since the form was still ‘dirty’my error handling allowed a ‘Description is required’ message to show. So into the HTML it went, and now everything is working fine.</p>
-
-<p>Here’s what I did to fix the bug:</p>
-
-<pre><code>&lt;button class="btn btn-success add-task-btn" 
-ng-click="addForm.taskDescription.$setPristine()"&gt;Add task&lt;/button&gt;
-</code></pre>
-
-<p>Bring on the code review…</p>
+<p>And so ends… the best summer of my life.</p>
 
 <p>Nat x</p>
 
 
-      <img src="http://www.natalie-akam.com/Blog/images/todo.png">
-    <p>Ok, improving the design is on my todo list too...</p>
+      <img src="http://www.natalie-akam.com/Blog/images/group_pic.jpg">
+    <p>16 of the 24 amazing people I spent my summer with. June 2015 <3</p>
   </article>
 
 </div>

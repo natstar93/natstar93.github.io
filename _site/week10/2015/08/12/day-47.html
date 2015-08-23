@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Day 41 | Many things todo</title>
-  <meta name="description" content="This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. ...">
+  <title>Day 47 | Issue central</title>
+  <meta name="description" content="All hell has broken loose. We’ve now started our final projects, in seemingly random groups of four (and one five) with widely varying competencies and level...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//week9/2015/08/03/day-41.html">
+  <link rel="canonical" href="http://natstar93.github.io//week10/2015/08/12/day-47.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,56 +72,25 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Day 41 | Many things todo</h1>
-    <p class="post-meta">Aug 3, 2015</p>
+    <h1 class="post-title">Day 47 | Issue central</h1>
+    <p class="post-meta">Aug 12, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. It’s stuffed full of angular directives and looks like Bootstrap has thrown up on it. I think my Makers training has taught alarm bells to ring in my head when something starts to look busy and complex, so I’m not sure if what I’ve done is correct. Technically the logic in the HTML page is all display logic, but I’m looking forward to having a coach review it so they can tell me if I need to move certain things into the controller.</p>
+      <p>All hell has broken loose. We’ve now started our final projects, in seemingly random groups of four (and one five) with widely varying competencies and levels of dedication.</p>
 
-<p>Having said all that, it’s got a few nifty features such as inline editing and buttons that become disabled when they’re not needed. Plus angular form validation is pretty neat too, even it introduces more mess into the HTML page.</p>
+<p>Day 1 was pretty much a disaster. Based on our initial discussions and research, the partial absence of one team member and a general lack of excitement about the project theme we decided to completely change our project idea. It was good that these misgivings were out in the open early, and the win for the day was that when the three of us left for the day we had an idea we were excited about working on. There was a lot of uncertainty about how many team members we would have and therefore how much be could plan to achieve. Plus if we were to be a four, would the fourth member be happy to work on the new idea? Not a good start.</p>
 
-<p>Here’s how the inline editing works:</p>
+<p>We decided to create a smartphone app for children that’s based around the idea of an <a href="https://en.wikipedia.org/wiki/I-Spy_(Michelin)">iSpy book</a> for the digital youth of today. It’s aimed at tourists or daytrippers who have children with them and want to give them a fun, educational, game-based activity to do to prevent them getting cranky and ruining the whole outing. I think the idea has a lot of potential and it’s interesting to be creating something for a different target market and on a mobile platform too.</p>
 
-<pre><code>&lt;td class="col-md-7"&gt;
-  &lt;span class="col-md-12" ng-hide="editorEnabled"&gt;&lt;/span&gt;
-  &lt;input class="col-md-12 edit-box" ng-show="editorEnabled" 
-  ng-model="task.description"&gt;
-&lt;/td&gt;
-</code></pre>
-
-<p>A button toggles editorEnabled’s boolean value, which controls whether the task description is shown, or an input field that allows the task description to be updated using ng-model. In case you’re wondering how the buttons work…</p>
-
-<pre><code>&lt;td class="col-md-4"&gt;
-  &lt;button type="button" id="editing" ng-disabled="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-primary edit-task-btn"&gt;
-    &lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt; Edit
-  &lt;/button&gt;
-  &lt;button type="button" id="editing" ng-show="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-success done-editing-btn"&gt;Done&lt;/button&gt;
-&lt;/td&gt;
-</code></pre>
-
-<p>The edit button sets the value of editorEnabled, and becomes disabled if editorEnabled is true. The ‘Done’ button only appears when editorEnabled is true.</p>
-
-<p>I tried to put a setPristine method in the task adding method in my controller, but all attempts to do this failed. This meant when a task was added and the field reset to blank, since the form was still ‘dirty’my error handling allowed a ‘Description is required’ message to show. So into the HTML it went, and now everything is working fine.</p>
-
-<p>Here’s what I did to fix the bug:</p>
-
-<pre><code>&lt;button class="btn btn-success add-task-btn" 
-ng-click="addForm.taskDescription.$setPristine()"&gt;Add task&lt;/button&gt;
-</code></pre>
-
-<p>Bring on the code review…</p>
+<p>Days 1-3 are research, prototyping and design days. We’re looking at Ionic and Cordova as our potential tools and I’ve been experimenting with a plugin that accesses the iPhone/Android camera. It’s quite satisfying when it works, but terrible to debug since you actually have to upload the app to your phone to test the camera function, so there goes the option of using your usual debugging tools e.g. the blimmin console. David and I have been debugging by outputting objects and values all over the shop, to try and keep a track of what’s doing what without a console. Natalia has used her Photoshop skills to create a design for the main view. We’re back to a four now but we’re a bit all over the place in terms of who’s doing what and crucially whether everyone is on the same page after our lengthy discussions. Some things we disuss in detail seem to emerge completely different than agreed. I’m nervous about whether we can pull this project off, but if we do it will be a very satisfying achievement.</p>
 
 <p>Nat x</p>
 
 
-      <img src="http://www.natalie-akam.com/Blog/images/todo.png">
-    <p>Ok, improving the design is on my todo list too...</p>
+      <img src="">
+    <p></p>
   </article>
 
 </div>

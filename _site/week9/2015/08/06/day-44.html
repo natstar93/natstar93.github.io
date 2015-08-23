@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Day 41 | Many things todo</title>
-  <meta name="description" content="This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. ...">
+  <title>Day 44 | I actually need to write a todo list...</title>
+  <meta name="description" content="Today we’ve been working on the Pairing Matrix project again, with all teams operating with skeleton staff. In a way it’s easier with less people to cause me...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//week9/2015/08/03/day-41.html">
+  <link rel="canonical" href="http://natstar93.github.io//week9/2015/08/06/day-44.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,56 +72,35 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Day 41 | Many things todo</h1>
-    <p class="post-meta">Aug 3, 2015</p>
+    <h1 class="post-title">Day 44 | I actually need to write a todo list...</h1>
+    <p class="post-meta">Aug 6, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. It’s stuffed full of angular directives and looks like Bootstrap has thrown up on it. I think my Makers training has taught alarm bells to ring in my head when something starts to look busy and complex, so I’m not sure if what I’ve done is correct. Technically the logic in the HTML page is all display logic, but I’m looking forward to having a coach review it so they can tell me if I need to move certain things into the controller.</p>
+      <p>Today we’ve been working on the Pairing Matrix project again, with all teams operating with skeleton staff. In a way it’s easier with less people to cause merge conflicts, but it meant we couldn’t move ahead with any extra features. We implemented a blacklist, and started implementing login since it became very necessary to the Blacklisting feature we were creating.</p>
 
-<p>Having said all that, it’s got a few nifty features such as inline editing and buttons that become disabled when they’re not needed. Plus angular form validation is pretty neat too, even it introduces more mess into the HTML page.</p>
+<p>I’ve been researching final projects and am about to vote for three options I would like to work on, which will allow the coaches to organise us into groups. I also seem to have a backlog of little things I want to do, and am hoping to make a start this weekend since we have no homework for the first time in 12 weeks! I’ve also declared myself homework-free to family and friends though, so we’ll see how much time I actually have..</p>
 
-<p>Here’s how the inline editing works:</p>
+<p>Here’s the list as it currently stands:</p>
 
-<pre><code>&lt;td class="col-md-7"&gt;
-  &lt;span class="col-md-12" ng-hide="editorEnabled"&gt;&lt;/span&gt;
-  &lt;input class="col-md-12 edit-box" ng-show="editorEnabled" 
-  ng-model="task.description"&gt;
-&lt;/td&gt;
-</code></pre>
+<p>• Do a MongoDB tutorial<br />
+• Create a full MEAN stack app (MongoDB, Express, Angular &amp; Node)<br />
+• Create or improve READMEs for a few recent projects<br />
+• Get Amazon web services image uploading working<br />
+• Push projects incorporating the above to Heroku<br />
+• Pretty up some previous projects with CSS. Go easy on the Bootstrap and all out on the design and UX<br />
+• Read Ruby &amp; JS books<br />
+• Read OOP books<br />
+• Revisit and improve earlier weeks’ projects</p>
 
-<p>A button toggles editorEnabled’s boolean value, which controls whether the task description is shown, or an input field that allows the task description to be updated using ng-model. In case you’re wondering how the buttons work…</p>
-
-<pre><code>&lt;td class="col-md-4"&gt;
-  &lt;button type="button" id="editing" ng-disabled="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-primary edit-task-btn"&gt;
-    &lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt; Edit
-  &lt;/button&gt;
-  &lt;button type="button" id="editing" ng-show="editorEnabled" 
-  ng-click="editorEnabled=!editorEnabled" 
-  class="btn btn-success done-editing-btn"&gt;Done&lt;/button&gt;
-&lt;/td&gt;
-</code></pre>
-
-<p>The edit button sets the value of editorEnabled, and becomes disabled if editorEnabled is true. The ‘Done’ button only appears when editorEnabled is true.</p>
-
-<p>I tried to put a setPristine method in the task adding method in my controller, but all attempts to do this failed. This meant when a task was added and the field reset to blank, since the form was still ‘dirty’my error handling allowed a ‘Description is required’ message to show. So into the HTML it went, and now everything is working fine.</p>
-
-<p>Here’s what I did to fix the bug:</p>
-
-<pre><code>&lt;button class="btn btn-success add-task-btn" 
-ng-click="addForm.taskDescription.$setPristine()"&gt;Add task&lt;/button&gt;
-</code></pre>
-
-<p>Bring on the code review…</p>
+<p>Well.. that’s enough to keep me going for quite a while I think!</p>
 
 <p>Nat x</p>
 
 
-      <img src="http://www.natalie-akam.com/Blog/images/todo.png">
-    <p>Ok, improving the design is on my todo list too...</p>
+      <img src="">
+    <p></p>
   </article>
 
 </div>
