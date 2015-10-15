@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Oct 2015 15:49:52 +0100</pubDate>
-    <lastBuildDate>Thu, 15 Oct 2015 15:49:52 +0100</lastBuildDate>
+    <pubDate>Thu, 15 Oct 2015 18:24:01 +0100</pubDate>
+    <lastBuildDate>Thu, 15 Oct 2015 18:24:01 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -92,6 +92,8 @@ eventEmitter.emit(&#39;firstEvent&#39;);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The event emitter is returned, so this can be used for chaining calls together.&lt;/p&gt;
+
+&lt;p&gt;Event listeners can be added and removed from the array of event listeners using methods such as &lt;code&gt;eventEmitter.addListener(event, listener)&lt;/code&gt;. For a full list please see the &lt;a href=&quot;https://nodejs.org/api/events.html&quot;&gt;docs&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
