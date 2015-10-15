@@ -112,7 +112,7 @@ console.log('Something else');
 <pre><code>var fs = require('fs');
 
 var data = fs.readFileSync('nat.txt', function (error, data) {
-  if (err) return console.log('error');
+  if (error) return console.log('error');
   console.log(data.toString());
 });
 

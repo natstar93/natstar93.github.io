@@ -39,7 +39,7 @@ In this example the data file will be read and the result outputted, then after 
     var fs = require('fs');
 
     var data = fs.readFileSync('nat.txt', function (error, data) {
-      if (err) return console.log('error');
+      if (error) return console.log('error');
       console.log(data.toString());
     });
 

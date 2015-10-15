@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Oct 2015 02:23:15 +0100</pubDate>
-    <lastBuildDate>Thu, 15 Oct 2015 02:23:15 +0100</lastBuildDate>
+    <pubDate>Thu, 15 Oct 2015 15:49:52 +0100</pubDate>
+    <lastBuildDate>Thu, 15 Oct 2015 15:49:52 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -46,7 +46,7 @@ console.log(&#39;Something else&#39;);
 &lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
 
 var data = fs.readFileSync(&#39;nat.txt&#39;, function (error, data) {
-  if (err) return console.log(&#39;error&#39;);
+  if (error) return console.log(&#39;error&#39;);
   console.log(data.toString());
 });
 
