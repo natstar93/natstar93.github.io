@@ -6,9 +6,103 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Aug 2015 19:25:45 +0100</pubDate>
-    <lastBuildDate>Sun, 23 Aug 2015 19:25:45 +0100</lastBuildDate>
+    <pubDate>Thu, 15 Oct 2015 02:23:15 +0100</pubDate>
+    <lastBuildDate>Thu, 15 Oct 2015 02:23:15 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>The wonderful world of Node</title>
+        <description>&lt;p&gt;I’ve been learning about Node.js this week. Previously this extended about as far as using node package manager to declare dependencies on node modules I needed and playing with things in the Terminal using the REPL environment. Oh, and debugging a lot of Makers students’ Node installations, which threw up a few interesting errors. Mainly that led to uninstalling the damned thing including a load of files which tended to be scattered around everywhere, then reinstalling with Homebrew. Lovely, lovely Homebrew.&lt;/p&gt;
+
+&lt;h2 id=&quot;so-what-is-nodejs&quot;&gt;So, what is Node.js?&lt;/h2&gt;
+
+&lt;p&gt;It’s a cross-platform runtime environment for developing &lt;strong&gt;server-side web applications&lt;/strong&gt;, and interestingly the whole thing is open-source. According to the Node.js website, ‘Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient’. This kind of means that it achieves concurrency through events and callbacks, even though it’s a single threaded application.&lt;/p&gt;
+
+&lt;p&gt;I’m excited to be finally working with JavaScript on the server side, after doing quite a lot of &lt;a href=&quot;https://github.com/natstar93/clothing_shop&quot; target=&quot;blank&quot;&gt;JavaScript things on the front end recently&lt;/a&gt;. (Blog post on React.js coming soon too).&lt;/p&gt;
+
+&lt;h3 id=&quot;callbacks&quot;&gt;Callbacks&lt;/h3&gt;
+
+&lt;p&gt;It’s probably worth mentioning callbacks here since I don’t think I’ve written about them previously. Callback functions are executed at the end of a given task. They’re useful as they mean that the program can go off and do something else in the meantime, and when the first task has been completed the program receives a signal that task 1 has delivered the required output and is ready to execute the next part using that output. This kind of setup is known as non-blocking.&lt;/p&gt;
+
+&lt;h4 id=&quot;example-of-blocking&quot;&gt;Example of Blocking&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
+var data = fs.readFileSync(&#39;nat.txt&#39;)
+
+console.log(data.toString());
+console.log(&#39;Something else&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; Whatever stupid data is in my file
+&amp;gt; Something else
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example the data file will be read and the result outputted, then after all that’s done the program will move on to the second console.log and output the string ‘Something else’.&lt;/p&gt;
+
+&lt;h4 id=&quot;example-of-non-blocking&quot;&gt;Example of Non-Blocking&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
+
+var data = fs.readFileSync(&#39;nat.txt&#39;, function (error, data) {
+  if (err) return console.log(&#39;error&#39;);
+  console.log(data.toString());
+});
+
+console.log(&#39;Something else&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Output&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; Something else
+&amp;gt; Whatever stupid data is in my file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example the string ‘Something else’ will actually be outputted first, while the program is processing the data read in from the nat.txt file. Once the data has been read it will be logged. If the data file cannot be read, an error message will be logged instead.&lt;/p&gt;
+
+&lt;h3 id=&quot;events&quot;&gt;Events&lt;/h3&gt;
+&lt;p&gt;Callbacks are great, but when there are more than two events and/or they need to be called multiple times, events are used. They’re more flexible and more powerful…&lt;/p&gt;
+
+&lt;p&gt;Instead of using asynchronous functions which execute upon the return of a result, a number of event listeners are set up to watch for certain signals or state changes. These listeners are also known as Observers. Node.js has a module called ‘events’ which needs to be required in order for this all to work.&lt;/p&gt;
+
+&lt;p&gt;Here’s an example of event handlers and emitters:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var events = require(&#39;events&#39;);
+var eventEmitter = new events.EventEmitter();
+
+var myFirstEventHandler = function first() {
+  console.log(&#39;First event handler fired&#39;);
+}
+
+eventEmitter.on(&#39;firstEvent&#39;, myFirstEventHandler);
+
+eventEmitter.emit(&#39;firstEvent&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Run that with node and see what happens…&lt;/p&gt;
+
+&lt;p&gt;Also, check out what gets returned here if you type each line into a REPL environment:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; eventEmitter.on(&#39;firstEvent&#39;, myFirstEventHandler);
+
+{ domain: null,
+  _events: { firstEvent: [Function: first] },
+  _maxListeners: 10 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The event emitter is returned, so this can be used for chaining calls together.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Thu, 15 Oct 2015 01:31:45 +0100</pubDate>
+        <link>http://natstar93.github.io//node/2015/10/15/NodeJS.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//node/2015/10/15/NodeJS.html</guid>
+        
+        
+        <category>node</category>
+        
+      </item>
     
       <item>
         <title>Day 55 | Thanks for the memories</title>
@@ -311,60 +405,6 @@ ng-click=&quot;addForm.taskDescription.$setPristine()&quot;&amp;gt;Add task&amp;
         <pubDate>Fri, 31 Jul 2015 17:38:29 +0100</pubDate>
         <link>http://natstar93.github.io//week8/2015/07/31/day-40.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week8/2015/07/31/day-40.html</guid>
-        
-        
-        <category>week8</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 39 | Testing times</title>
-        <description>&lt;p&gt;My brain is hurting again. I’ve spent a lot of today debugging server setup issues and getting in the middle of a debate about Rack vs Sinatra as a method of serving up Single Page Applications. In the middle of all this my server file went missing and made me look like an idiot, and I had to follow a trail of breadcrumbs in the shape of error messages which told me I hadn’t done a load of obvious things. Not bundling my Gemfile before pushing to Heroku, and trying to use a server without a config file spring to mind as moments I’d rather forget (but have immortalised in this blog for some reason anyway).&lt;/p&gt;
-
-&lt;p&gt;I’ve been using protractor for testing, and getting totally confused about what I’m meant to be stubbing and what I actually need to test. One of those days when you suddenly realise you’re trying to test that something is itself, and that maybe you’re overdoing it on the testing efforts.&lt;/p&gt;
-
-&lt;p&gt;In short, anything that could go wrong went wrong today.&lt;/p&gt;
-
-&lt;p&gt;Despite a multitude of setbacks, my little app is now finally on Heroku. It’s really not much to look at so far, but if you fancy dynamically searching Github using a funny little app I made, &lt;a href=&quot;https://nat-gihub-profiles.herokuapp.com/&quot; target=&quot;_blank&quot;&gt;do feel free&lt;/a&gt;. Tomorrow will hopefully result in some more interesting data being presented and maybe some CSS so it looks like a real thing.&lt;/p&gt;
-
-&lt;p&gt;Here are some pointers for anyone deploying a simple Rack app:&lt;/p&gt;
-
-&lt;p&gt;• Make sure you’ve created a Gemfile including your source, Ruby version and the ‘rack’ gem&lt;br /&gt;
-• Bundle it, otherwise you won’t have a Gemfile.lock&lt;br /&gt;
-• Shove your index, js folder, css folder and anything else your app needs in a ‘public’ folder&lt;br /&gt;
-• Move your bower_components directory to public/bower_components&lt;br /&gt;
-• Create a .bowerrc file in the top level of your application, and add the following text to it:  { “directory”: “public/bower_components” }&lt;br /&gt;
-• Add a buildpack to your Heroku env variables like so: heroku config:add BUILDPACK_URL=git://github.com/qnyp/heroku-buildpack-ruby-bower.git#run-bower&lt;br /&gt;
-• Make sure your node_components are .gitignored&lt;br /&gt;
-• Make sure your config file looks something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;use Rack::Static,
-  :urls =&amp;gt; [&quot;/images&quot;, &quot;/js&quot;, &quot;/css&quot;, &#39;/bower_components&#39;],
-  :root =&amp;gt; &quot;public&quot;
-
-run lambda { |env|
-  [
-    200,
-    {
-      &#39;Content-Type&#39;  =&amp;gt; &#39;text/html&#39;,
-      &#39;Cache-Control&#39; =&amp;gt; &#39;public, max-age=86400&#39;
-    },
-    File.open(&#39;public/index.html&#39;, File::RDONLY)
-  ]
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;• Note that you may need to amend the urls values array to include any other folders you need&lt;br /&gt;
-• Your server will be looking at the root (public, in the example above) for additional files. Therefore you need to make sure the references at the top of your html file include a forward slash at the front &lt;code&gt;&amp;lt;script src=&quot;/js/app.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;br /&gt;
-• Type &lt;code&gt;heroku create nats-awesome-app&lt;/code&gt;&lt;br /&gt;
-• &lt;code&gt;heroku push origin master&lt;/code&gt;&lt;br /&gt;
-• Junebugs, for our github-profiles challenge, if you’re using an API access token you’ll need to remove it from the .gitignore list. This doesn’t seem like a very satisfactory solution, but we were unable to find a good way of supplying a secret token to the front end. The best we could do was branch the repo for the heroku push and push to heroku using &lt;code&gt;git push heroku yourbranch:master&lt;/code&gt;. Do be aware that when switching between branches your .gitignored access token may disappear.&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Thu, 30 Jul 2015 23:11:29 +0100</pubDate>
-        <link>http://natstar93.github.io//week8/2015/07/30/day-39.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week8/2015/07/30/day-39.html</guid>
         
         
         <category>week8</category>

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Day 55 | Thanks for the memories</title>
-  <meta name="description" content="16 of the 24 amazing people I spent my summer with">
+  <title>The wonderful world of Node</title>
+  <meta name="description" content="I’ve been learning about Node.js this week. Previously this extended about as far as using node package manager to declare dependencies on node modules I nee...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//week11/2015/08/21/day-55.html">
+  <link rel="canonical" href="http://natstar93.github.io//node/2015/10/15/NodeJS.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,26 +72,92 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Day 55 | Thanks for the memories</h1>
-    <p class="post-meta">Aug 21, 2015</p>
+    <h1 class="post-title">The wonderful world of Node</h1>
+    <p class="post-meta">Oct 15, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p><img src="http://www.natalie-akam.com/Blog/images/group_pic.jpg" />
-<strong>16 of the 24 amazing people I spent my summer with</strong></p>
+      <p>I’ve been learning about Node.js this week. Previously this extended about as far as using node package manager to declare dependencies on node modules I needed and playing with things in the Terminal using the REPL environment. Oh, and debugging a lot of Makers students’ Node installations, which threw up a few interesting errors. Mainly that led to uninstalling the damned thing including a load of files which tended to be scattered around everywhere, then reinstalling with Homebrew. Lovely, lovely Homebrew.</p>
 
-<p>I am feeling a mixture of emotions today. June 2015 have now officially graduated and I’m so immensely proud of what all the groups produced for their final projects and of the journey we had together. All six groups’ presentations went without a hitch and we proved that together we can create some amazing things and overcome all sorts of barriers to get there. Graduation night was a huge celebration of our achievements and of the fun we’ve had in the last 11 weeks with our cohort and the fantastic staff.</p>
+<h2 id="so-what-is-nodejs">So, what is Node.js?</h2>
 
-<p>I haven’t blogged this week due to obvious time constraints, but our project really started to come together from Sunday onwards and in the end we somehow created with something bigger and better than we expected, and it looked beautiful too. At times I was so exhausted but it was all worth it in the end. After two frankly horrendous practice presentations on Friday, each team member put their all into making their part the best they could, and when we came off stage we were all riding a wave of elation. Seeing each member of your beloved cohort absolutely rock it too just puts the icing on the cake!</p>
+<p>It’s a cross-platform runtime environment for developing <strong>server-side web applications</strong>, and interestingly the whole thing is open-source. According to the Node.js website, ‘Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient’. This kind of means that it achieves concurrency through events and callbacks, even though it’s a single threaded application.</p>
 
-<p>These times are tinged with immense sadness too though. We had to say goodbye to Jack (aka Captain America, aka the guy who brought the party to Makers Academy) at the end of the night as he left for his flight home. There will no doubt be a couple more tearful goodbyes in coming weeks too, which I’m not looking forward to. Jack’s departure signals the start of the disbandment of a very special group who were complete strangers 11 weeks ago but have now experienced so many laughs, lows and so much love for each other. I’ve had such an amazing summer and it’s so sad to know that this part of the journey has come to an end so quickly. Some great friendships have been formed and I’m sure we’ll all keep in contact even when we’re all out in the world doing various awesome things.</p>
+<p>I’m excited to be finally working with JavaScript on the server side, after doing quite a lot of <a href="https://github.com/natstar93/clothing_shop" target="blank">JavaScript things on the front end recently</a>. (Blog post on React.js coming soon too).</p>
 
-<p>Due to the strength of the ever expanding Makers alumni network it seems a lot of alumni end up working together, collaborating on things and even forming startups, so in a way this is not the end. Most of us will be back in for hiring week next week too, which we’ve been warned is very hard work (just carrying on as normal then, really!). A record number of hiring companies are coming in to present to us with the aim of plucking us from the Makers Academy nest to become the awesome developers we now know we can be.</p>
+<h3 id="callbacks">Callbacks</h3>
 
-<p>If anyone reading this is weighing up whether to apply or not, I would say a massive, massive 100% YES! Quit your boring job, throw yourself into it and never look back. I would live it all again in a heartbeat.</p>
+<p>It’s probably worth mentioning callbacks here since I don’t think I’ve written about them previously. Callback functions are executed at the end of a given task. They’re useful as they mean that the program can go off and do something else in the meantime, and when the first task has been completed the program receives a signal that task 1 has delivered the required output and is ready to execute the next part using that output. This kind of setup is known as non-blocking.</p>
 
-<p>And so ends… the best summer of my life.</p>
+<h4 id="example-of-blocking">Example of Blocking</h4>
+
+<pre><code>var fs = require('fs');
+var data = fs.readFileSync('nat.txt')
+
+console.log(data.toString());
+console.log('Something else');
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>&gt; Whatever stupid data is in my file
+&gt; Something else
+</code></pre>
+
+<p>In this example the data file will be read and the result outputted, then after all that’s done the program will move on to the second console.log and output the string ‘Something else’.</p>
+
+<h4 id="example-of-non-blocking">Example of Non-Blocking</h4>
+
+<pre><code>var fs = require('fs');
+
+var data = fs.readFileSync('nat.txt', function (error, data) {
+  if (err) return console.log('error');
+  console.log(data.toString());
+});
+
+console.log('Something else');
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>&gt; Something else
+&gt; Whatever stupid data is in my file
+</code></pre>
+
+<p>In this example the string ‘Something else’ will actually be outputted first, while the program is processing the data read in from the nat.txt file. Once the data has been read it will be logged. If the data file cannot be read, an error message will be logged instead.</p>
+
+<h3 id="events">Events</h3>
+<p>Callbacks are great, but when there are more than two events and/or they need to be called multiple times, events are used. They’re more flexible and more powerful…</p>
+
+<p>Instead of using asynchronous functions which execute upon the return of a result, a number of event listeners are set up to watch for certain signals or state changes. These listeners are also known as Observers. Node.js has a module called ‘events’ which needs to be required in order for this all to work.</p>
+
+<p>Here’s an example of event handlers and emitters:</p>
+
+<pre><code>var events = require('events');
+var eventEmitter = new events.EventEmitter();
+
+var myFirstEventHandler = function first() {
+  console.log('First event handler fired');
+}
+
+eventEmitter.on('firstEvent', myFirstEventHandler);
+
+eventEmitter.emit('firstEvent');
+</code></pre>
+
+<p>Run that with node and see what happens…</p>
+
+<p>Also, check out what gets returned here if you type each line into a REPL environment:</p>
+
+<pre><code>&gt; eventEmitter.on('firstEvent', myFirstEventHandler);
+
+{ domain: null,
+  _events: { firstEvent: [Function: first] },
+  _maxListeners: 10 }
+</code></pre>
+
+<p>The event emitter is returned, so this can be used for chaining calls together.</p>
 
 <p>Nat x</p>
 
