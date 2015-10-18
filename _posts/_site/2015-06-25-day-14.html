@@ -1,0 +1,13 @@
+<p>Today was another great day. Kate and I were super excited to combine forces and create a game which allowed the placement <em>and</em> striking of battleships. That probably doesn’t sound very exciting but every little win not only resulted in tests going green and passing, we could see our results visually on the local server too. Ok, it probably still doesn’t sound very exciting. I guess it just depends on what you’re into.</p>
+
+<p>Some real progress was made today and we learnt a load of new stuff about cookies and error handling. Everything is really starting to come together. We managed to implement a multiplayer game and played it using two browsers that each took a cookie to keep track of which browser was being used by which player.</p>
+
+<p>Our joy at the above successes was marred slightly by our test still not passing. I spent the evening trying to work out why and had a bit of remote help from Mihai, an member of the awesome Makers alumni.</p>
+
+<p>I’ve learnt so much about debugging in the last few days I’m starting to embrace these problems. I wouldn’t say I exactly enjoy seeing error messages, but now I have more ideas on how to go about trying to identify issues and fix them, which is very satisfying. I don’t spend so much time feeling annoyed and scratching my head whilst looking at the error messages, hoping they’ll go away. Following BDD ensures that the problems are small and managable too. If you do it correctly and rigourously you can be quite confident your problem originates from the part you’ve just implemented, not something you should have tested earlier.</p>
+
+<p>Mihai identified that the problem was definitely with the testing, not the code, and told me how to run just the failing test on its own. I did just that and it went green at last! This prompt lead me to realise that one or more other tests must be interfering, i.e. it/they had set something that needed to be reset before any other tests were initialised. This is a bit of a breakthrough. I haven’t fixed the issue yet (will save that for tomorrow when Kate is there), but the more important outcome is that I know WHY the problem is happening and what approach we need to take to rectify it.</p>
+
+<p>Great week :) Makers &lt;3</p>
+
+<p>Nat x</p>

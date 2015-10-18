@@ -1,0 +1,26 @@
+<p>So.. this week we’ve been working in groups on a ‘Pairing matrix website’ project. I think one of the reasons for this is so that the coaches can point and go ‘See, it’s actually bloody hard to organise you guys into pairs every day!’. The main point though, is to get everyone working in teams to create something big and complicated, and get us used to merge conflicts and general project organisation.</p>
+
+<p>I’ve got a pretty sweet group who haven’t fallen out yet, so that’s one win. I’ve now paired with everyone in the group somehow, and worked on database models and associations, pairing algorithms and styling. I think I just need to contribute to the controllers now and that’s all bases covered! We spent a lot of day two fretting over how to populate the database without pretty much doubling the entries we needed to do before coach Sam (aka English Jack Black) scaffolded our stand up. He told us we should go with a non-optimum solution that works and let it lead us to to a better way of doing it. So one of our database tables now looks like this:</p>
+
+<pre><code>pairing_matrix_development=# SELECT * FROM pairs;
+ id |      created_at     |      updated_at     | student_id | partner_id 
+----+---------------------+---------------------+------------+------------
+ 23 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         35 |         34
+ 24 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         34 |         35
+ 25 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         37 |         36
+ 26 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         36 |         37
+
+(Note that partners are students and use the same model)
+</code></pre>
+
+<p>There must be a better way of doing this, but for now it will do. What we really want is two entries rather than four, and we want to make a single query to the database to get a pair out.</p>
+
+<p>I’ve just pushed something to Github that’s causing all sorts of problems so further work will have to wait til tomorrow now. I’m a bit scared the development branch is not correct, so that will be the first priority tomorrow. It’s a bit scary having 3 pairs working off the same repository, since any issues or conflicts will be picked up by anyone pulling down from it. Ahhh.</p>
+
+<p>Another blimmin tube strike is raining on our parade, so our pretty-good-so-far communication is going to be tested tomorrow. But hey, working remotely is a great learning experience. Throw in some Git issues and debates about how features should function and we’ve got a recipe for a lot of fun…</p>
+
+<p>I really think the most important learning from this is communication. It’s great to rehearse what we now know and learn some new bits and bobs on the way, but none of that matters if your team are working in silos or misunderstanding what they need to deliver. Pairing is also very important. You really get a lot more done if someone is there to validate what you’re doing or picking up on silly little errors. We’ve also picked up new tools such as Waffle, a kanban which integrates all your Github issues and pull requests. Then it automatically moves cards around, to the delighted claps of a team who’ve clearly spent too much of their summer locked away in a building on Commercial Street…</p>
+
+<p>Final projects start on Monday. How scary!</p>
+
+<p>Nat x</p>

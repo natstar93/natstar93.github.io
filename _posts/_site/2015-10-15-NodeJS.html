@@ -1,0 +1,62 @@
+<p>I’ve been having a lot of fun learning about Node.js this week. I’m excited to be finally working with JavaScript on the server side, after doing quite a lot of <a href="https://github.com/natstar93/clothing_shop" target="blank">JavaScript things on the front end recently</a>. (Blog post on React.js coming soon too).</p>
+
+<h2 id="so-what-is-nodejs">So, what is Node.js?</h2>
+
+<p>It’s a cross-platform runtime environment for developing server-side web applications.</p>
+
+<p><strong>What the hell does that mean?</strong></p>
+
+<p>Every language has a runtime environment that runs the language and processes it. You might have had to download or update your Java environment in the past, for example, in order to run a certain program. That would have been because something you were running was written in Java. Your computer needed to update your out-of-date/non-existent Java runtime environment in order to interpret and process the Java code in that program.</p>
+
+<p>JavaScript was originally developed for use in the browser, rather than for the server side, so its runtime environment came a bit late to the party. A few options were developed but Node.js proved to be the most popular because it was the fastest and processed things in the most efficient way.</p>
+
+<p><strong>Why is Node.js faster and more efficient?</strong></p>
+
+<p>Node.js is a single threaded application which means it processes one command at a time. It uses events and callbacks in a ‘non-blocking’ way to achieve concurrency of processes. This will all be explained below… but basically it means it can do a lot of things at once despite being quite lightweight.</p>
+
+<h3 id="callbacks">Callbacks</h3>
+
+<p>It’s worth mentioning callbacks here since I don’t think I’ve written about them previously. Callback functions are executed at the end of a given task. They’re useful as they mean that the program can go off and do something else in the meantime, and when the first task has been completed the program receives a signal that task 1 has delivered the required output and is ready to execute the next part using that output. This kind of setup is known as a non-blocking model.</p>
+
+<h4 id="example-of-blocking">Example of Blocking</h4>
+
+<pre><code>var fs = require('fs');
+var data = fs.readFileSync('nat.txt')
+
+console.log(data.toString());
+console.log('Something else');
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>&gt; Whatever stupid data is in my file
+&gt; Something else
+</code></pre>
+
+<p>In this example the data file will be read and the result outputted, then after all that’s done the program will move on to the second console.log and output the string ‘Something else’. So the program has to wait for the first command to be completely executed before it handles something else, even if that first command is waiting for something external. Hmm, doesn’t sound too efficient.</p>
+
+<h4 id="example-of-non-blocking-using-callbacks">Example of Non-Blocking, using callbacks</h4>
+
+<pre><code>var fs = require('fs');
+
+var data = fs.readFileSync('nat.txt', function (error, data) {
+  if (error) return console.log('error');
+  console.log(data.toString());
+});
+
+console.log('Something else');
+</code></pre>
+
+<p>Output</p>
+
+<pre><code>&gt; Something else
+&gt; Whatever stupid data is in my file
+</code></pre>
+
+<p>In this example the string ‘Something else’ will actually be outputted first, while the program is waiting for the data to all be read in from the nat.txt file. Once the data has been read it will be logged. If the data file cannot be read, an error object is passed back so you can log an error message instead.</p>
+
+<p>So, yaaay for callbacks. Lets move onto Events next…</p>
+
+<p><a href="./2015-10-15-NodeJS">blah</a></p>
+
+<p>Nat x</p>

@@ -1,0 +1,21 @@
+<p>Today I worked on a mix of AngularJS and some previous challenges. I’ve done a little bit of Angular before, at a time that now seems like forever ago. I like to call that period the ‘<strong>pre-Rubyist era</strong>’. It was in March 2015, or thereabouts. The explanations and walkthroughs make a lot more sense now that I actually know how the back end and that big thing called the internet work.</p>
+
+<p>My pair partner and I dedicated a fair bit of time to making sure our all of our challenge builds to date were passing. My week 3 challenge was looking for Cucumber (the testing suite, not the refreshing salad item) which meant that the Travis CI build had thrown up an error. This was easily resolved by amending my Gemfile then creating a new Gemfile.lock by bundling from another location. I had an issue with this weekend’s build too. My bugfixing led to me correctly stubbing an image upload thanks to some huge help from Ptolemy, but it turned out the Travis error was due to me having specified the link to my image folder in the .gitignore file. This meant that when my ‘like’ feature tests were run in any copy of the repo other than my local directory they were unable to use images and would therefore FAIL MASSIVELY.</p>
+
+<p>This is what I had to do to get images in 3 of my image folders to be recognised by git:</p>
+
+<pre><code>/public/system/photos/images/*
+!public/system/photos/images/000/
+/public/system/photos/images/000/*
+!public/system/photos/images/000/000/
+/public/system/photos/images/000/000/*
+!public/system/photos/images/000/000/001/
+!public/system/photos/images/000/000/003/
+!public/system/photos/images/000/000/006/
+</code></pre>
+
+<p>Kind of a pain, right?</p>
+
+<p>I’m really happy that my build passes now :) Once I’ve CSS’d it up and worked out how to use Amazon Web Services’ image uploader it will be on Heroku for all to enjoy!</p>
+
+<p>Nat x</p>

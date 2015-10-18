@@ -1,0 +1,22 @@
+<p>The tube strike threw a bit of a spanner in the works today by preventing a third of the class from getting in. A lot of the people who did make it in had to get up really early and leave early, but we managed to get what we needed to do done anyway! Pairs were reshuffled based on who was actually present, and other people were remotely watching the talks and attending google hangouts standups.</p>
+
+<p>Mike and I started by refactoring the existing code. One of the consequences of switching pairs every day is that you often end up with a codebase that performs like the one you wrote, but isn’t the same. I had actually forgotten that my current codebase wasn’t the one I’d written myself so we had to go through and refactor some methods and tests to make sure they were as concise and logically sound as the ones I’d created previously. When working with a back end and front end JS file it’s important to keep the display logic out of the back end and ensure the front end makes those assigments/decisions based on calls to the logic that goes on ‘under the bonnet’.</p>
+
+<p>I’d whipped up a stylesheet the night before so by 11:30am our little program was looking lovely both outside and in! I realised that I should really make the effort to check everything through every single time I inherit a new codebase. The logic for Thermometer was not that complex, but with more advanced programs it would be hard to build new features without going through the code with a fine toothed comb at the beginning of the day. For a simple codebase it’s still best to go through everything to ensure you don’t get stumped by something later.</p>
+
+<p>We implemented automatic location finding using HTML5 Geolocation and a Google maps API. We then passed the coordinates we’d found into a call to the Open Weather API. These kinds of API calls illustrate the necessity for JS callbacks. Callbacks basically wait for one thing to happen before the next function is executed, so you can prevent your code from attempting to work on a JSON file until the file has been loaded properly.</p>
+
+<p>Here’s a nice jQuery example I stole from W3schools:</p>
+
+<pre><code>$("button").click(function(){
+    $("p").hide("slow", function(){
+        alert("The paragraph is now hidden");
+    });
+});
+</code></pre>
+
+<p>Once the paragraph has finished hiding, an alert is executed.</p>
+
+<p>In addition to all this, I made my own API which records my thermostat’s temperature (and the time) each time the temperature is changed. It might not be the most exciting API you’ve ever heard of but it allows my Thermometer to recall its last temperature even if the browser is reloaded or reopened. This means the temperature can persist between sessions.</p>
+
+<p>Nat x</p>

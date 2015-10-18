@@ -1,0 +1,42 @@
+<p>My brain is hurting again. I’ve spent a lot of today debugging server setup issues and getting in the middle of a debate about Rack vs Sinatra as a method of serving up Single Page Applications. In the middle of all this my server file went missing and made me look like an idiot, and I had to follow a trail of breadcrumbs in the shape of error messages which told me I hadn’t done a load of obvious things. Not bundling my Gemfile before pushing to Heroku, and trying to use a server without a config file spring to mind as moments I’d rather forget (but have immortalised in this blog for some reason anyway).</p>
+
+<p>I’ve been using protractor for testing, and getting totally confused about what I’m meant to be stubbing and what I actually need to test. One of those days when you suddenly realise you’re trying to test that something is itself, and that maybe you’re overdoing it on the testing efforts.</p>
+
+<p>In short, anything that could go wrong went wrong today.</p>
+
+<p>Despite a multitude of setbacks, my little app is now finally on Heroku. It’s really not much to look at so far, but if you fancy dynamically searching Github using a funny little app I made, <a href="https://nat-gihub-profiles.herokuapp.com/" target="_blank">do feel free</a>. Tomorrow will hopefully result in some more interesting data being presented and maybe some CSS so it looks like a real thing.</p>
+
+<p>Here are some pointers for anyone deploying a simple Rack app:</p>
+
+<p>• Make sure you’ve created a Gemfile including your source, Ruby version and the ‘rack’ gem<br />
+• Bundle it, otherwise you won’t have a Gemfile.lock<br />
+• Shove your index, js folder, css folder and anything else your app needs in a ‘public’ folder<br />
+• Move your bower_components directory to public/bower_components<br />
+• Create a .bowerrc file in the top level of your application, and add the following text to it:  { “directory”: “public/bower_components” }<br />
+• Add a buildpack to your Heroku env variables like so: heroku config:add BUILDPACK_URL=git://github.com/qnyp/heroku-buildpack-ruby-bower.git#run-bower<br />
+• Make sure your node_components are .gitignored<br />
+• Make sure your config file looks something like this:</p>
+
+<pre><code>use Rack::Static,
+  :urls =&gt; ["/images", "/js", "/css", '/bower_components'],
+  :root =&gt; "public"
+
+run lambda { |env|
+  [
+    200,
+    {
+      'Content-Type'  =&gt; 'text/html',
+      'Cache-Control' =&gt; 'public, max-age=86400'
+    },
+    File.open('public/index.html', File::RDONLY)
+  ]
+}
+</code></pre>
+
+<p>• Note that you may need to amend the urls values array to include any other folders you need<br />
+• Your server will be looking at the root (public, in the example above) for additional files. Therefore you need to make sure the references at the top of your html file include a forward slash at the front <code>&lt;script src="/js/app.js"&gt;&lt;/script&gt;</code><br />
+• Type <code>heroku create nats-awesome-app</code><br />
+• <code>heroku push origin master</code><br />
+• Junebugs, for our github-profiles challenge, if you’re using an API access token you’ll need to remove it from the .gitignore list. This doesn’t seem like a very satisfactory solution, but we were unable to find a good way of supplying a secret token to the front end. The best we could do was branch the repo for the heroku push and push to heroku using <code>git push heroku yourbranch:master</code>. Do be aware that when switching between branches your .gitignored access token may disappear.</p>
+
+<p>Nat x</p>

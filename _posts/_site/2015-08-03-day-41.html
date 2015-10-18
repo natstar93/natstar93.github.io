@@ -1,0 +1,40 @@
+<p>This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. It’s stuffed full of angular directives and looks like Bootstrap has thrown up on it. I think my Makers training has taught alarm bells to ring in my head when something starts to look busy and complex, so I’m not sure if what I’ve done is correct. Technically the logic in the HTML page is all display logic, but I’m looking forward to having a coach review it so they can tell me if I need to move certain things into the controller.</p>
+
+<p>Having said all that, it’s got a few nifty features such as inline editing and buttons that become disabled when they’re not needed. Plus angular form validation is pretty neat too, even it introduces more mess into the HTML page.</p>
+
+<p>Here’s how the inline editing works:</p>
+
+<pre><code>&lt;td class="col-md-7"&gt;
+  &lt;span class="col-md-12" ng-hide="editorEnabled"&gt;&lt;/span&gt;
+  &lt;input class="col-md-12 edit-box" ng-show="editorEnabled" 
+  ng-model="task.description"&gt;
+&lt;/td&gt;
+</code></pre>
+
+<p>A button toggles editorEnabled’s boolean value, which controls whether the task description is shown, or an input field that allows the task description to be updated using ng-model. In case you’re wondering how the buttons work…</p>
+
+<pre><code>&lt;td class="col-md-4"&gt;
+  &lt;button type="button" id="editing" ng-disabled="editorEnabled" 
+  ng-click="editorEnabled=!editorEnabled" 
+  class="btn btn-primary edit-task-btn"&gt;
+    &lt;span class="glyphicon glyphicon-pencil"&gt;&lt;/span&gt; Edit
+  &lt;/button&gt;
+  &lt;button type="button" id="editing" ng-show="editorEnabled" 
+  ng-click="editorEnabled=!editorEnabled" 
+  class="btn btn-success done-editing-btn"&gt;Done&lt;/button&gt;
+&lt;/td&gt;
+</code></pre>
+
+<p>The edit button sets the value of editorEnabled, and becomes disabled if editorEnabled is true. The ‘Done’ button only appears when editorEnabled is true.</p>
+
+<p>I tried to put a setPristine method in the task adding method in my controller, but all attempts to do this failed. This meant when a task was added and the field reset to blank, since the form was still ‘dirty’my error handling allowed a ‘Description is required’ message to show. So into the HTML it went, and now everything is working fine.</p>
+
+<p>Here’s what I did to fix the bug:</p>
+
+<pre><code>&lt;button class="btn btn-success add-task-btn" 
+ng-click="addForm.taskDescription.$setPristine()"&gt;Add task&lt;/button&gt;
+</code></pre>
+
+<p>Bring on the code review…</p>
+
+<p>Nat x</p>

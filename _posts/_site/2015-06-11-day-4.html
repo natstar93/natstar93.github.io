@@ -1,0 +1,32 @@
+<p>Today was a day of ups and downs. I’ve discovered that it’s incredibly difficult to switch pairing partners part way through a project. It’s all good experience and practice of course, as there will be plenty of times in our future jobs when we have to jump in, understand someone else’s repo and just get on with it. It really pushes you to make sure you understand the code, especially when you’re presented with a solution (or part solution) to the same problem that someone’s approached from a really different angle.</p>
+
+<p>My partner and I have pretty different styles of working, so it was great experience in adapting to someone else’s way of doing things. At times I didn’t feel like I was being that good a partner as I sometimes find it difficult to explain concepts or ideas that make sense to me in my head. I’ll bring this up in my 1:1 next week as I’d like to improve on this.</p>
+
+<p>Today we covered off a lot of the material I was doing yesterday, and started to work on the problem of broken bikes mid-afternoon. Mid-afternoon is that strange time when sometimes information overload hits you and complicated concepts start to not make sense anymore. We made some progress but on the whole I wasn;t that happy with the amount I achieved today. I went home a bit unhappy, and decided to get stuck into it again as soon as I got back.</p>
+
+<p>This evening went amazingly well. In my quiet and peaceful lounge I managed to work things out in clear, logical steps and build the functionality I needed in what I think is the best way I could have. I’m really happy it went so well and that I ended the day on a high!</p>
+
+<p>Here’s my new favourite little array method (using a ‘destructive selector’.. ooh sounds exciting)</p>
+
+<p><code>arr.delete_at(index { block })</code></p>
+
+<p>Used to detect the first working bike of an array, remove it from the array and return it to the method call:</p>
+
+<p><code>@bikes.delete_at(@bikes.index { |bike| bike.working? })</code></p>
+
+<p>And another line I really liked is this super easy to read ‘if’ statement</p>
+
+<p><code>fail 'No bikes available' if no_working_bikes?</code></p>
+
+<p>and here’s that working? method, if you’re interested. It’s packaged away in a private method. It’s good practice to not make a single method do more than one thing, and by paying attention to this and naming things well you really do start writing very ‘plain english’ code that’s easy for others to understand.</p>
+
+<pre><code>def no_working_bikes?
+  bikes.none? { |bike| bike.working? }
+end
+</code></pre>
+
+<p>Simples, right?</p>
+
+<p>Anyway, I’ll sign off now. Looking forward to whatever challenges Friday brings!</p>
+
+<p>Nat x</p>

@@ -1,0 +1,27 @@
+<p>A makerthon is basically a mini hackathon, except there’s no prize at the end. The aim is to build a fully tested product in an agile way, using kanban and ensuring regular team stand ups are held. It’s better to create something that works and has just a couple of features than something that has a lot of half-built over-ambitious features.</p>
+
+<p>Ideas were pitched and voted on, and I was pleased to end up in the Music Quiz team based on my votes. We chose to read up on kanban, gihub collaboration and the learning objectives before starting our meeting, which was a wise move I think. Our planning meeting was very successful and gave us a solid MVP plan to work on. Kate and I made up the back end team and the two Lucys started researching feature testing for JavaScript.</p>
+
+<p>The backend for the MVP turned out to be fairly simple initially, with the Game function keeping track of score and telling the front end when the quiz had terminated. We started researching the Soundcloud API and tried to figure out whether we could get tracks to play without displaying their title and artist name. The front end team were having some difficulties with feature testing. It turns out there isn’t much in the way of feature testing for Javascript and we’re hoping we find out more about it in advanced JS week. Another problem was that the front end was not using the back end outputs in the way we had presumed. I’m starting to think maybe stand ups don’t cut it when it comes to collaborating on a project such as this. Going through the code base as a team might be a necessary complimentary activity.</p>
+
+<p>I realised that the data for the quiz really should be coming through the back end. It sounds really obvious but I think somewhere along the way we confused ourselves by thinking about two things: that the front end displays the questions and options, and that the recent thermostat project worked by pulling API data into the front end to simply display it. Our program does more than that though, and needs the backend to know the answer to each question (a, b or c) in order to compare it to user input, so it makes more sense for it to accept the quiz data initially. I started looking at how the back end could organise the data into various arrays and supply the correct outputs to the front end for each round. By the end of the evening I had a little working ‘MMVP’ which I’m looking forward to sharing with the group.</p>
+
+<p>After proceeding very cautiously with Github we managed to successfully collaborate on a repo and pull and push to and from development branch and feature branches. We ended the day with 0 merge conflicts to sort out and understanding way more about gihub than when we started! It’s important that the same file isn’t worked on by two people at the same time, so communication and knowledge of responsibilities is key. This seems to be a general theme for project work as a whole.</p>
+
+<p>Here are my notes on how to merge a feature branch:</p>
+
+<pre><code>Commit changes whilst still on your feature branch
+Checkout to your local development branch
+Pull from Github development branch to get latest version of codebase
+Merge local feature branch into local development branch
+Push changes to Github 
+
+  561  git add .
+  562  git commit -m 'Added game termination logic'
+  563  git checkout development
+  564  git pull origin development
+  565  git merge score-logic
+  566  git push origin development
+</code></pre>
+
+<p>Nat x</p>

@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>The wonderful world of Node</title>
-  <meta name="description" content="I’ve been having a lot of fun learning about Node.js this week. I’m excited to be finally working with JavaScript on the server side, after doing quite a lot...">
+  <title>Node Events</title>
+  <meta name="description" content="Callbacks are great, but when there are more than two events and/or they need to be called multiple times, events are used. They’re more flexible and more po...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//node/2015/10/15/NodeJS.html">
+  <link rel="canonical" href="http://natstar93.github.io//node/2015/10/16/Node_Events.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,70 +72,44 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">The wonderful world of Node</h1>
-    <p class="post-meta">Oct 15, 2015</p>
+    <h1 class="post-title">Node Events</h1>
+    <p class="post-meta">Oct 16, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>I’ve been having a lot of fun learning about Node.js this week. I’m excited to be finally working with JavaScript on the server side, after doing quite a lot of <a href="https://github.com/natstar93/clothing_shop" target="blank">JavaScript things on the front end recently</a>. (Blog post on React.js coming soon too).</p>
+      <p>Callbacks are great, but when there are more than two events and/or they need to be called multiple times, events are used. They’re more flexible and more powerful… Plus you can kind of switch them on and off as you please.</p>
 
-<h2 id="so-what-is-nodejs">So, what is Node.js?</h2>
+<p>Instead of using asynchronous functions which execute upon the return of a result, a number of event listeners are set up to watch for certain signals or state changes. These listeners are also known as Observers. Node.js has a module called ‘events’ which needs to be required in order for this all to work.</p>
 
-<p>It’s a cross-platform runtime environment for developing server-side web applications.</p>
+<p>Here’s an example of event handlers and emitters:</p>
 
-<p><strong>What the hell does that mean?</strong></p>
+<pre><code>var events = require('events');
+var eventEmitter = new events.EventEmitter();
 
-<p>Every language has a runtime environment that runs the language and processes it. You might have had to download or update your Java environment in the past, for example, in order to run a certain program. That would have been because something you were running was written in Java. Your computer needed to update your out-of-date/non-existent Java runtime environment in order to interpret and process the Java code in that program.</p>
+var myFirstEventHandler = function first() {
+  console.log('First event handler fired');
+}
 
-<p>JavaScript was originally developed for use in the browser, rather than for the server side, so its runtime environment came a bit late to the party. A few options were developed but Node.js proved to be the most popular because it was the fastest and processed things in the most efficient way.</p>
+eventEmitter.on('firstEvent', myFirstEventHandler);
 
-<p><strong>Why is Node.js faster and more efficient?</strong></p>
-
-<p>Node.js is a single threaded application which means it processes one command at a time. It uses events and callbacks in a ‘non-blocking’ way to achieve concurrency of processes. This will all be explained below… but basically it means it can do a lot of things at once despite being quite lightweight.</p>
-
-<h3 id="callbacks">Callbacks</h3>
-
-<p>It’s worth mentioning callbacks here since I don’t think I’ve written about them previously. Callback functions are executed at the end of a given task. They’re useful as they mean that the program can go off and do something else in the meantime, and when the first task has been completed the program receives a signal that task 1 has delivered the required output and is ready to execute the next part using that output. This kind of setup is known as a non-blocking model.</p>
-
-<h4 id="example-of-blocking">Example of Blocking</h4>
-
-<pre><code>var fs = require('fs');
-var data = fs.readFileSync('nat.txt')
-
-console.log(data.toString());
-console.log('Something else');
+eventEmitter.emit('firstEvent');
 </code></pre>
 
-<p>Output</p>
+<p>Run that with node and see what happens…</p>
 
-<pre><code>&gt; Whatever stupid data is in my file
-&gt; Something else
+<p>Also, check out what gets returned here if you type each line into a REPL environment:</p>
+
+<pre><code>&gt; eventEmitter.on('firstEvent', myFirstEventHandler);
+
+{ domain: null,
+  _events: { firstEvent: [Function: first] },
+  _maxListeners: 10 }
 </code></pre>
 
-<p>In this example the data file will be read and the result outputted, then after all that’s done the program will move on to the second console.log and output the string ‘Something else’. So the program has to wait for the first command to be completely executed before it handles something else, even if that first command is waiting for something external. Hmm, doesn’t sound too efficient.</p>
+<p>The event emitter is returned, so this can be used for chaining calls together.</p>
 
-<h4 id="example-of-non-blocking-using-callbacks">Example of Non-Blocking, using callbacks</h4>
-
-<pre><code>var fs = require('fs');
-
-var data = fs.readFileSync('nat.txt', function (error, data) {
-  if (error) return console.log('error');
-  console.log(data.toString());
-});
-
-console.log('Something else');
-</code></pre>
-
-<p>Output</p>
-
-<pre><code>&gt; Something else
-&gt; Whatever stupid data is in my file
-</code></pre>
-
-<p>In this example the string ‘Something else’ will actually be outputted first, while the program is waiting for the data to all be read in from the nat.txt file. Once the data has been read it will be logged. If the data file cannot be read, an error object is passed back so you can log an error message instead.</p>
-
-<p>So, yaaay for callbacks. Lets move onto <a href="../16/Node_Events.html">Events</a> next…</p>
+<p>Event listeners can be added and removed from the array of event listeners using methods such as <code>eventEmitter.addListener(event, listener)</code>. For a full list please see the <a href="https://nodejs.org/api/events.html">docs</a>.</p>
 
 <p>Nat x</p>
 

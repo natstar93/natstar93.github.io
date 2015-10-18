@@ -1,0 +1,41 @@
+<p>This week I was excited to start learning about databases. The last two days have been spent getting to grips with the setup and using Heroku, a super awesome tool that takes about 2 minutes to set up and gets your app online just as quickly.</p>
+
+<p>Having used a bit of SQL previously has helped a lot less than I thought it would so far. We’re more interested in the way DataMapper works with the regular Ruby files we build and the methods it provides to negate actually using SQL. Working through requiring files (simple translation: getting files to look at each other) and making sure settings are correct has been a bit of a minefield. An athletic restart (transalation: delete it and do it all again) was in order to make sure I could actually reproduce the setup.</p>
+
+<p>The whole project is being built using the BDD method we know and love, and the tutorials actually lead us to make certain errors and then work out how to fix them. To say it’s quite challenging would be quite an accurate statement.</p>
+
+<p>I’m pleased I know the roles of test, dev and prod databases and how to implement them into the various bits of my project. Those words were bandied about a lot in my old office but I never really knew what they meant exactly. Luckily Makers Academy have a ‘there are no stupid questions’ policy… Prod databases are the real life working databases. Test databases are usually a copy of the prod database and can be used when running rpsec tests on code. Dev databases are what you use when you’re developing the product. So if you’re a bank you can continue using your prod database, try out your new code on the dev database and then check it works on test before unleashing your changes on the public.</p>
+
+<p>Here are some cool things I’ve been using. Stop reading now if you’re not a fellow fan of code, you’ll just fall asleep otherwise.</p>
+
+<p>This statement checks whether you’ve got an environmental variable called RACK_ENV (for testing), and if not concludes that env should be set to development. This happens because ENV[‘RACK_ENV’] returns nil, so the right hand side of the ‘or’ statement is returned.</p>
+
+<pre><code>env = ENV['RACK_ENV'] || 'development'
+</code></pre>
+
+<p>The ‘or’ operator used below then checks whether a prod database URL exists, and if not uses a local server (either test or dev, depending on the result of the above variable assignment) as an argument for the DataMapper setup method.</p>
+
+<pre><code>DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/bookmark_manager_#{env}")
+</code></pre>
+
+<p>Pretty clever, right?</p>
+
+<p>I’ve also been using a lovely gem called database cleaner which uses the following code to clean up your database between tests so you can ensure the run of one test isn’t affecting that of another.</p>
+
+<pre><code> config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+</code></pre>
+
+<p>So we’re nearly able to build a really cool product! Looking forward to making some more progress on it tomorrow.</p>
+
+<p>Nat x</p>
