@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Node fs module"
+title:  "Node fs Module"
 date:   2015-10-17 12:31:45
 categories: Node
 image:
@@ -37,6 +37,6 @@ Here's an example of a synchronous way of doing the same thing
     var myWrite = fs.writeFileSync('text2.txt', 'text here', 'utf8');
     console.log(myWrite);
 
-Well, that wasn't too hard. I think we're ready for streams now.
+Well, that wasn't too hard. I think we're ready for <a href='../18/Node_streams.html'>streams</a> now.
 
 Nat x

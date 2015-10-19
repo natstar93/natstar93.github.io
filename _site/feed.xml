@@ -6,12 +6,61 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Oct 2015 12:53:38 +0100</pubDate>
-    <lastBuildDate>Mon, 19 Oct 2015 12:53:38 +0100</lastBuildDate>
+    <pubDate>Mon, 19 Oct 2015 14:15:06 +0100</pubDate>
+    <lastBuildDate>Mon, 19 Oct 2015 14:15:06 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Node fs module</title>
+        <title>Node Streams</title>
+        <description>&lt;p&gt;Streams are a way of inputting and outputting data. They can be readable or writable (or both) and can be paused and resumed.&lt;/p&gt;
+
+&lt;p&gt;Using the filesystem module we just saw, we can create a stream to read data as below. The data is read in in chunks, so the readStream on data event event is fired multiple times. A counter has been implemented which increments each time another chunk of data is received.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
+
+var readStream = fs.createReadStream(&#39;lorem.txt&#39;);
+readStream.setEncoding(&#39;utf8&#39;);
+
+var counter = 0;
+
+readStream.on(&#39;data&#39;, function(myData) {
+  counter ++;
+});
+
+readStream.on(&#39;end&#39;, function() {
+  console.log(counter);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Another event listener is listening for a signal that the data has finished being read, and at this point it outputs the value of the counter variable to the console. You can therefore see how many chunks the data was streamed in.&lt;/p&gt;
+
+&lt;p&gt;Write streams can be created as below&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var writeStream = fs.createWriteStream(&#39;copylorem.txt&#39;);
+
+writeStream.write(&#39;Hello world&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some other useful commands you might like to use with streaming are&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;readStream.pipe(writeStream); // to pipe the data read in straight into the write stream
+
+readStream.pause(); // pauses the reading of the stream
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Oct 2015 20:14:52 +0100</pubDate>
+        <link>http://natstar93.github.io//node/2015/10/18/Node_streams.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//node/2015/10/18/Node_streams.html</guid>
+        
+        
+        <category>node</category>
+        
+      </item>
+    
+      <item>
+        <title>Node fs Module</title>
         <description>&lt;p&gt;File System (fs) is a very useful module that comes with the node installation by default. It can be used to read and write data from the file system on your computer.&lt;/p&gt;
 
 &lt;p&gt;Below is an example of how it can be used in an asynchronous way. Note the use of ‘utf8’ as a parameter. Node uses a datatype called buffer which represents data in binary. We need the data converted to utf-8 encoding for it to be interpreted properly, so that’s why ‘utf8’ need to be passed in as the encoding parameter. Try running the below without the encoding parameter and your text file will be represented as something like &amp;lt;Buffer 34 92 57 6c 6f 62&amp;gt; instead of nice normal text.&lt;/p&gt;
@@ -44,7 +93,7 @@ var myWrite = fs.writeFileSync(&#39;text2.txt&#39;, &#39;text here&#39;, &#39;ut
 console.log(myWrite);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Well, that wasn’t too hard. I think we’re ready for streams now.&lt;/p&gt;
+&lt;p&gt;Well, that wasn’t too hard. I think we’re ready for &lt;a href=&quot;../18/Node_streams.html&quot;&gt;streams&lt;/a&gt; now.&lt;/p&gt;
 
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
@@ -353,58 +402,6 @@ console.log(&#39;Something else&#39;);
         <pubDate>Wed, 05 Aug 2015 23:05:39 +0100</pubDate>
         <link>http://natstar93.github.io//week9/2015/08/05/day-43.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week9/2015/08/05/day-43.html</guid>
-        
-        
-        <category>week9</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 41 | Many things todo</title>
-        <description>&lt;p&gt;This weekend I made a super cool todo list app. It does everything it’s supposed to do and more, but I’m slightly worried about how big my HTML page is now. It’s stuffed full of angular directives and looks like Bootstrap has thrown up on it. I think my Makers training has taught alarm bells to ring in my head when something starts to look busy and complex, so I’m not sure if what I’ve done is correct. Technically the logic in the HTML page is all display logic, but I’m looking forward to having a coach review it so they can tell me if I need to move certain things into the controller.&lt;/p&gt;
-
-&lt;p&gt;Having said all that, it’s got a few nifty features such as inline editing and buttons that become disabled when they’re not needed. Plus angular form validation is pretty neat too, even it introduces more mess into the HTML page.&lt;/p&gt;
-
-&lt;p&gt;Here’s how the inline editing works:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;td class=&quot;col-md-7&quot;&amp;gt;
-  &amp;lt;span class=&quot;col-md-12&quot; ng-hide=&quot;editorEnabled&quot;&amp;gt;&amp;lt;/span&amp;gt;
-  &amp;lt;input class=&quot;col-md-12 edit-box&quot; ng-show=&quot;editorEnabled&quot; 
-  ng-model=&quot;task.description&quot;&amp;gt;
-&amp;lt;/td&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A button toggles editorEnabled’s boolean value, which controls whether the task description is shown, or an input field that allows the task description to be updated using ng-model. In case you’re wondering how the buttons work…&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;td class=&quot;col-md-4&quot;&amp;gt;
-  &amp;lt;button type=&quot;button&quot; id=&quot;editing&quot; ng-disabled=&quot;editorEnabled&quot; 
-  ng-click=&quot;editorEnabled=!editorEnabled&quot; 
-  class=&quot;btn btn-primary edit-task-btn&quot;&amp;gt;
-    &amp;lt;span class=&quot;glyphicon glyphicon-pencil&quot;&amp;gt;&amp;lt;/span&amp;gt; Edit
-  &amp;lt;/button&amp;gt;
-  &amp;lt;button type=&quot;button&quot; id=&quot;editing&quot; ng-show=&quot;editorEnabled&quot; 
-  ng-click=&quot;editorEnabled=!editorEnabled&quot; 
-  class=&quot;btn btn-success done-editing-btn&quot;&amp;gt;Done&amp;lt;/button&amp;gt;
-&amp;lt;/td&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The edit button sets the value of editorEnabled, and becomes disabled if editorEnabled is true. The ‘Done’ button only appears when editorEnabled is true.&lt;/p&gt;
-
-&lt;p&gt;I tried to put a setPristine method in the task adding method in my controller, but all attempts to do this failed. This meant when a task was added and the field reset to blank, since the form was still ‘dirty’my error handling allowed a ‘Description is required’ message to show. So into the HTML it went, and now everything is working fine.&lt;/p&gt;
-
-&lt;p&gt;Here’s what I did to fix the bug:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;button class=&quot;btn btn-success add-task-btn&quot; 
-ng-click=&quot;addForm.taskDescription.$setPristine()&quot;&amp;gt;Add task&amp;lt;/button&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Bring on the code review…&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 Aug 2015 21:44:44 +0100</pubDate>
-        <link>http://natstar93.github.io//week9/2015/08/03/day-41.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week9/2015/08/03/day-41.html</guid>
         
         
         <category>week9</category>

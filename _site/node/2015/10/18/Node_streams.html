@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Node fs Module</title>
-  <meta name="description" content="File System (fs) is a very useful module that comes with the node installation by default. It can be used to read and write data from the file system on your...">
+  <title>Node Streams</title>
+  <meta name="description" content="Streams are a way of inputting and outputting data. They can be readable or writable (or both) and can be paused and resumed.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//node/2015/10/17/Node_fs.html">
+  <link rel="canonical" href="http://natstar93.github.io//node/2015/10/18/Node_streams.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,45 +72,47 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Node fs Module</h1>
-    <p class="post-meta">Oct 17, 2015</p>
+    <h1 class="post-title">Node Streams</h1>
+    <p class="post-meta">Oct 18, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>File System (fs) is a very useful module that comes with the node installation by default. It can be used to read and write data from the file system on your computer.</p>
+      <p>Streams are a way of inputting and outputting data. They can be readable or writable (or both) and can be paused and resumed.</p>
 
-<p>Below is an example of how it can be used in an asynchronous way. Note the use of ‘utf8’ as a parameter. Node uses a datatype called buffer which represents data in binary. We need the data converted to utf-8 encoding for it to be interpreted properly, so that’s why ‘utf8’ need to be passed in as the encoding parameter. Try running the below without the encoding parameter and your text file will be represented as something like &lt;Buffer 34 92 57 6c 6f 62&gt; instead of nice normal text.</p>
-
-<pre><code>var fs = require('fs');
-
-fs.readFile('text.txt', 'utf8', function(err, data) {
-  if(err) {
-    console.log(err.code);
-  }
-  console.log(data);
-});
-
-fs.writeFile('text2.txt', 'some text', 'utf8', function(err, data) {
-  if(err) {console.log(err)}
-  console.log(data);
-});
-</code></pre>
-
-<p>I think the above is quite self explanatory as far as explaining how the fs methods readFile and writeFile work, now that we know all about callbacks and asynchronous stuff.</p>
-
-<p>Here’s an example of a synchronous way of doing the same thing</p>
+<p>Using the filesystem module we just saw, we can create a stream to read data as below. The data is read in in chunks, so the readStream on data event event is fired multiple times. A counter has been implemented which increments each time another chunk of data is received.</p>
 
 <pre><code>var fs = require('fs');
 
-var myRead = fs.readFileSync('text.txt', 'utf8');
-console.log(myRead);
+var readStream = fs.createReadStream('lorem.txt');
+readStream.setEncoding('utf8');
 
-var myWrite = fs.writeFileSync('text2.txt', 'text here', 'utf8');
-console.log(myWrite);
+var counter = 0;
+
+readStream.on('data', function(myData) {
+  counter ++;
+});
+
+readStream.on('end', function() {
+  console.log(counter);
+});
 </code></pre>
 
-<p>Well, that wasn’t too hard. I think we’re ready for <a href="../18/Node_streams.html">streams</a> now.</p>
+<p>Another event listener is listening for a signal that the data has finished being read, and at this point it outputs the value of the counter variable to the console. You can therefore see how many chunks the data was streamed in.</p>
+
+<p>Write streams can be created as below</p>
+
+<pre><code>var writeStream = fs.createWriteStream('copylorem.txt');
+
+writeStream.write('Hello world');
+</code></pre>
+
+<p>Some other useful commands you might like to use with streaming are</p>
+
+<pre><code>readStream.pipe(writeStream); // to pipe the data read in straight into the write stream
+
+readStream.pause(); // pauses the reading of the stream
+</code></pre>
 
 <p>Nat x</p>
 
