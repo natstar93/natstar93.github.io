@@ -36,6 +36,16 @@ Also, check out what gets returned here if you type each line into a REPL enviro
 
 The event emitter is returned, so this can be used for chaining calls together.
 
-Event listeners can be added and removed from the array of event listeners using methods such as ``eventEmitter.addListener(event, listener)``. For a full list please see the <a href="https://nodejs.org/api/events.html">docs</a>.
+Event listeners can be added and removed from the array of event listeners using methods such as ``eventEmitter.addListener(event, listener)``.
+
+Here's an example of removeAllListeners in use.
+
+    if(counter === 15) {
+      readStream.removeAllListeners('data');
+    }
+
+For a full list please see the <a href="https://nodejs.org/api/events.html">docs</a>.
+
+Next up, streams!
 
 Nat x
