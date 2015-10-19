@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Node Events</title>
-  <meta name="description" content="Callbacks are great, but when there are more than two events and/or they need to be called multiple times, events are used. They’re more flexible and more po...">
+  <title>Node fs module</title>
+  <meta name="description" content="File System (fs) is a very useful module that comes with the node installation by default. It can be used to read and write data from the file system on your...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://natstar93.github.io//node/2015/10/16/Node_Events.html">
+  <link rel="canonical" href="http://natstar93.github.io//node/2015/10/17/Node_fs.html">
   <link rel="alternate" type="application/rss+xml" title="Diary of a Developer" href="http://natstar93.github.io//feed.xml" />
   <style>
     .logo {
@@ -72,55 +72,45 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Node Events</h1>
-    <p class="post-meta">Oct 16, 2015</p>
+    <h1 class="post-title">Node fs module</h1>
+    <p class="post-meta">Oct 17, 2015</p>
   </header>
 
   <article class="post-content">
    
-      <p>Callbacks are great, but when there are more than two events and/or they need to be called multiple times, events are used. They’re more flexible and more powerful… Plus you can kind of switch them on and off as you please.</p>
+      <p>File System (fs) is a very useful module that comes with the node installation by default. It can be used to read and write data from the file system on your computer.</p>
 
-<p>Instead of using asynchronous functions which execute upon the return of a result, a number of event listeners are set up to watch for certain signals or state changes. These listeners are also known as Observers. Node.js has a module called ‘events’ which needs to be required in order for this all to work.</p>
+<p>Below is an example of how it can be used in an asynchronous way. Note the use of ‘utf8’ as a parameter. Node uses a datatype called buffer which represents data in binary. We need the data converted to utf-8 encoding for it to be interpreted properly, so that’s why ‘utf8’ need to be passed in as the encoding parameter. Try running the below without the encoding parameter and your text file will be represented as something like &lt;Buffer 34 92 57 6c 6f 62&gt; instead of nice normal text.</p>
 
-<p>Here’s an example of event handlers and emitters:</p>
+<pre><code>var fs = require('fs');
 
-<pre><code>var events = require('events');
-var eventEmitter = new events.EventEmitter();
+fs.readFile('text.txt', 'utf8', function(err, data) {
+  if(err) {
+    console.log(err.code);
+  }
+  console.log(data);
+});
 
-var myFirstEventHandler = function first() {
-  console.log('First event handler fired');
-}
-
-eventEmitter.on('firstEvent', myFirstEventHandler);
-
-eventEmitter.emit('firstEvent');
+fs.writeFile('text2.txt', 'some text', 'utf8', function(err, data) {
+  if(err) {console.log(err)}
+  console.log(data);
+});
 </code></pre>
 
-<p>Run that with node and see what happens…</p>
+<p>I think the above is quite self explanatory as far as explaining how the fs methods readFile and writeFile work, now that we know all about callbacks and asynchronous stuff.</p>
 
-<p>Also, check out what gets returned here if you type each line into a REPL environment:</p>
+<p>Here’s an example of a synchronous way of doing the same thing</p>
 
-<pre><code>&gt; eventEmitter.on('firstEvent', myFirstEventHandler);
+<pre><code>var fs = require('fs');
 
-{ domain: null,
-  _events: { firstEvent: [Function: first] },
-  _maxListeners: 10 }
+var myRead = fs.readFileSync('text.txt', 'utf8');
+console.log(myRead);
+
+var myWrite = fs.writeFileSync('text2.txt', 'text here', 'utf8');
+console.log(myWrite);
 </code></pre>
 
-<p>The event emitter is returned, so this can be used for chaining calls together.</p>
-
-<p>Event listeners can be added and removed from the array of event listeners using methods such as <code>eventEmitter.addListener(event, listener)</code>.</p>
-
-<p>Here’s an example of removeAllListeners in use.</p>
-
-<pre><code>if(counter === 15) {
-  readStream.removeAllListeners('data');
-}
-</code></pre>
-
-<p>For a full list please see the <a href="https://nodejs.org/api/events.html">docs</a>.</p>
-
-<p>Next up, the <a href="../17/Node_fs.html">file system module</a>!</p>
+<p>Well, that wasn’t too hard. I think we’re ready for streams now.</p>
 
 <p>Nat x</p>
 

@@ -46,6 +46,6 @@ Here's an example of removeAllListeners in use.
 
 For a full list please see the <a href="https://nodejs.org/api/events.html">docs</a>.
 
-Next up, streams!
+Next up, the <a href='../17/Node_fs.html'>file system module</a>!
 
 Nat x

@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Node fs module"
+date:   2015-10-17 12:31:45
+categories: Node
+image:
+image-subtitle:
+---
+
+File System (fs) is a very useful module that comes with the node installation by default. It can be used to read and write data from the file system on your computer.
+
+Below is an example of how it can be used in an asynchronous way. Note the use of 'utf8' as a parameter. Node uses a datatype called buffer which represents data in binary. We need the data converted to utf-8 encoding for it to be interpreted properly, so that's why 'utf8' need to be passed in as the encoding parameter. Try running the below without the encoding parameter and your text file will be represented as something like <Buffer 34 92 57 6c 6f 62> instead of nice normal text.
+
+    var fs = require('fs');
+
+    fs.readFile('text.txt', 'utf8', function(err, data) {
+      if(err) {
+        console.log(err.code);
+      }
+      console.log(data);
+    });
+
+    fs.writeFile('text2.txt', 'some text', 'utf8', function(err, data) {
+      if(err) {console.log(err)}
+      console.log(data);
+    });
+
+I think the above is quite self explanatory as far as explaining how the fs methods readFile and writeFile work, now that we know all about callbacks and asynchronous stuff.  
+
+Here's an example of a synchronous way of doing the same thing
+
+    var fs = require('fs');
+
+    var myRead = fs.readFileSync('text.txt', 'utf8');
+    console.log(myRead);
+
+    var myWrite = fs.writeFileSync('text2.txt', 'text here', 'utf8');
+    console.log(myWrite);
+
+Well, that wasn't too hard. I think we're ready for streams now.
+
+Nat x
