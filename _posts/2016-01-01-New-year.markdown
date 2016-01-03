@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "New years resolutions"
+date:   2016-01-01 21:38:28
+categories:
+image:
+image-subtitle:
+---
+
+- Blog more
+- Mentor at Codebar
+- Attend meetups that provide pizza, beer and JavaScript
+
+Nat x

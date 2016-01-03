@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "I love it when a plan goes completely wrong!"
+date:   2016-01-03 21:38:28
+categories: Node
+image:
+image-subtitle:
+---
+
+I've spent the last few days working through a MEAN tutorial I started months ago but never made that much progress on. I remember my poor pair partner David's face when I exclaimed 'oh, looks like I don't have Node or Java installed on this laptop' and the resulting 2 hours of installations and issues hampering our efforts to get to the <a href='https://thinkster.io/mean-stack-tutorial#beginning-node'>interesting bit</a>. It never really got off the ground. Having to redo the angular bits of the tutorial and ugh... the basic styling section, was a bit soul-destroying but at least it was over quickly. Like a bad nightmare. Happily, I've now moved on to the part where you get to play around with databases (fun) and the node/express/routing/debugging part (vaguely relevant to my job AND fun).
+
+I had forgotten databases could be a lot of fun. I even laughed once when Zeina was reminiscing about a particular week at Makers and merrily concluded 'and that was when I realised I loved databases'. Mongo is a pretty simple non-relational database and I'm pretty sure its simplicity will lead me to use it in projects in the future. I nearly wrote 'hackatons in the future' there but then remembered that hackathons usually involve pretending you have a database and not just a crappy JSON file you've faked and that the judges will **never ever see**. Anyway... I've now got the models, a little database that stores Posts and their related Comments and uses a couple of little database methods to increment upvotes on each when told to do so. I'm using Node and Express for the routing and associated error handling and have been finding about some new javascript methods and parameters... (see last section)
+
+The best thing about this tutorial has been the debugging side of things. It's easy to zone out and become demotivated when typing out the lines of code the tutorial tells you to type. But then.. occasionally you make a mistake or misinterpret something. You dive into the database and realise that it doesn't look like it should, or you run npm start and the app crashes. Bring on stack traces, stack overflows, console.log() here there and everywhere and setting up some extra routes in order to work out what's going on. Suddenly you're actually thinking and manipulating stuff to do what you need it to do, and celebrating when you work each little problem out with increasing ease. Happily, I now get to do this kind of stuff EVERY DAY at work, just with a little more pressure to make sure I a) get things done fairly quickly and b) don't commit something stupid to the master branch of a real site.
+
+I restarted this tutorial with the aim of redoing the front end in React, which I'll be using more and more in my job this year. Once I've cracked that, I'm hoping to think up a new React+Node+Mongo project to completely test drive. Happy days.
+
+**Stuff I have learnt by doing this tutorial** (Enough waffle, get to the technical bit)
+
+* next *- (parameter)*<br>
+Explained <a href='http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714'>here</a> but it is an extra parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it's sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you're looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.
+
+    router.get('/posts/:post/comments', (req, res, next) => {
+      Comment.find((err, comments) => {
+        if(err) { return next(err); }
+        res.json(comments);
+      });
+    });
+
+* exec() method<br>
+The exec() method tests for a match in a string. It returns the matched text if it finds a match, otherwise it returns null. Shove this into your console:
+
+    var str = 'Hi Nat';
+    patt = /Hi/g;
+    patt.exec(str);
+
+You should get back an array containing the matched text as a string. If you change the regex to something that's not in the string you should get back null. Cool huh?
+
+Nat x

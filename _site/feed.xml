@@ -6,9 +6,73 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Oct 2015 14:15:06 +0100</pubDate>
-    <lastBuildDate>Mon, 19 Oct 2015 14:15:06 +0100</lastBuildDate>
+    <pubDate>Sun, 03 Jan 2016 23:33:13 +0000</pubDate>
+    <lastBuildDate>Sun, 03 Jan 2016 23:33:13 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>I love it when a plan goes completely wrong!</title>
+        <description>&lt;p&gt;I’ve spent the last few days working through a MEAN tutorial I started months ago but never made that much progress on. I remember my poor pair partner David’s face when I exclaimed ‘oh, looks like I don’t have Node or Java installed on this laptop’ and the resulting 2 hours of installations and issues hampering our efforts to get to the &lt;a href=&quot;https://thinkster.io/mean-stack-tutorial#beginning-node&quot;&gt;interesting bit&lt;/a&gt;. It never really got off the ground. Having to redo the angular bits of the tutorial and ugh… the basic styling section, was a bit soul-destroying but at least it was over quickly. Like a bad nightmare. Happily, I’ve now moved on to the part where you get to play around with databases (fun) and the node/express/routing/debugging part (vaguely relevant to my job AND fun).&lt;/p&gt;
+
+&lt;p&gt;I had forgotten databases could be a lot of fun. I even laughed once when Zeina was reminiscing about a particular week at Makers and merrily concluded ‘and that was when I realised I loved databases’. Mongo is a pretty simple non-relational database and I’m pretty sure its simplicity will lead me to use it in projects in the future. I nearly wrote ‘hackatons in the future’ there but then remembered that hackathons usually involve pretending you have a database and not just a crappy JSON file you’ve faked and that the judges will &lt;strong&gt;never ever see&lt;/strong&gt;. Anyway… I’ve now got the models, a little database that stores Posts and their related Comments and uses a couple of little database methods to increment upvotes on each when told to do so. I’m using Node and Express for the routing and associated error handling and have been finding about some new javascript methods and parameters… (see last section)&lt;/p&gt;
+
+&lt;p&gt;The best thing about this tutorial has been the debugging side of things. It’s easy to zone out and become demotivated when typing out the lines of code the tutorial tells you to type. But then.. occasionally you make a mistake or misinterpret something. You dive into the database and realise that it doesn’t look like it should, or you run npm start and the app crashes. Bring on stack traces, stack overflows, console.log() here there and everywhere and setting up some extra routes in order to work out what’s going on. Suddenly you’re actually thinking and manipulating stuff to do what you need it to do, and celebrating when you work each little problem out with increasing ease. Happily, I now get to do this kind of stuff EVERY DAY at work, just with a little more pressure to make sure I a) get things done fairly quickly and b) don’t commit something stupid to the master branch of a real site.&lt;/p&gt;
+
+&lt;p&gt;I restarted this tutorial with the aim of redoing the front end in React, which I’ll be using more and more in my job this year. Once I’ve cracked that, I’m hoping to think up a new React+Node+Mongo project to completely test drive. Happy days.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Stuff I have learnt by doing this tutorial&lt;/strong&gt; (Enough waffle, get to the technical bit)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;next &lt;em&gt;- (parameter)&lt;/em&gt;&lt;br /&gt;
+Explained &lt;a href=&quot;http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714&quot;&gt;here&lt;/a&gt; but it is an extra parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it’s sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you’re looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.&lt;/p&gt;
+
+    &lt;p&gt;router.get(‘/posts/:post/comments’, (req, res, next) =&amp;gt; {
+    Comment.find((err, comments) =&amp;gt; {
+      if(err) { return next(err); }
+      res.json(comments);
+    });
+  });&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;exec() method&lt;br /&gt;
+The exec() method tests for a match in a string. It returns the matched text if it finds a match, otherwise it returns null. Shove this into your console:&lt;/p&gt;
+
+    &lt;p&gt;var str = ‘Hi Nat’;
+  patt = /Hi/g;
+  patt.exec(str);&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You should get back an array containing the matched text as a string. If you change the regex to something that’s not in the string you should get back null. Cool huh?&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Sun, 03 Jan 2016 21:38:28 +0000</pubDate>
+        <link>http://natstar93.github.io//node/2016/01/03/MEAN.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//node/2016/01/03/MEAN.html</guid>
+        
+        
+        <category>node</category>
+        
+      </item>
+    
+      <item>
+        <title>New years resolutions</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;Blog more&lt;/li&gt;
+  &lt;li&gt;Mentor at Codebar&lt;/li&gt;
+  &lt;li&gt;Attend meetups that provide pizza, beer and JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 Jan 2016 21:38:28 +0000</pubDate>
+        <link>http://natstar93.github.io//2016/01/01/New-year.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//2016/01/01/New-year.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Node Streams</title>
@@ -333,75 +397,6 @@ console.log(&#39;Something else&#39;);
         <pubDate>Fri, 07 Aug 2015 12:21:23 +0100</pubDate>
         <link>http://natstar93.github.io//week9/2015/08/07/day-45.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week9/2015/08/07/day-45.html</guid>
-        
-        
-        <category>week9</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 44 | I actually need to write a todo list...</title>
-        <description>&lt;p&gt;Today we’ve been working on the Pairing Matrix project again, with all teams operating with skeleton staff. In a way it’s easier with less people to cause merge conflicts, but it meant we couldn’t move ahead with any extra features. We implemented a blacklist, and started implementing login since it became very necessary to the Blacklisting feature we were creating.&lt;/p&gt;
-
-&lt;p&gt;I’ve been researching final projects and am about to vote for three options I would like to work on, which will allow the coaches to organise us into groups. I also seem to have a backlog of little things I want to do, and am hoping to make a start this weekend since we have no homework for the first time in 12 weeks! I’ve also declared myself homework-free to family and friends though, so we’ll see how much time I actually have..&lt;/p&gt;
-
-&lt;p&gt;Here’s the list as it currently stands:&lt;/p&gt;
-
-&lt;p&gt;• Do a MongoDB tutorial&lt;br /&gt;
-• Create a full MEAN stack app (MongoDB, Express, Angular &amp;amp; Node)&lt;br /&gt;
-• Create or improve READMEs for a few recent projects&lt;br /&gt;
-• Get Amazon web services image uploading working&lt;br /&gt;
-• Push projects incorporating the above to Heroku&lt;br /&gt;
-• Pretty up some previous projects with CSS. Go easy on the Bootstrap and all out on the design and UX&lt;br /&gt;
-• Read Ruby &amp;amp; JS books&lt;br /&gt;
-• Read OOP books&lt;br /&gt;
-• Revisit and improve earlier weeks’ projects&lt;/p&gt;
-
-&lt;p&gt;Well.. that’s enough to keep me going for quite a while I think!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Thu, 06 Aug 2015 23:51:39 +0100</pubDate>
-        <link>http://natstar93.github.io//week9/2015/08/06/day-44.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week9/2015/08/06/day-44.html</guid>
-        
-        
-        <category>week9</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 43 | Penultimate Projects</title>
-        <description>&lt;p&gt;So.. this week we’ve been working in groups on a ‘Pairing matrix website’ project. I think one of the reasons for this is so that the coaches can point and go ‘See, it’s actually bloody hard to organise you guys into pairs every day!’. The main point though, is to get everyone working in teams to create something big and complicated, and get us used to merge conflicts and general project organisation.&lt;/p&gt;
-
-&lt;p&gt;I’ve got a pretty sweet group who haven’t fallen out yet, so that’s one win. I’ve now paired with everyone in the group somehow, and worked on database models and associations, pairing algorithms and styling. I think I just need to contribute to the controllers now and that’s all bases covered! We spent a lot of day two fretting over how to populate the database without pretty much doubling the entries we needed to do before coach Sam (aka English Jack Black) scaffolded our stand up. He told us we should go with a non-optimum solution that works and let it lead us to to a better way of doing it. So one of our database tables now looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pairing_matrix_development=# SELECT * FROM pairs;
- id |      created_at     |      updated_at     | student_id | partner_id 
-----+---------------------+---------------------+------------+------------
- 23 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         35 |         34
- 24 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         34 |         35
- 25 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         37 |         36
- 26 | 2015-08-05 14:18:32 | 2015-08-05 14:18:32 |         36 |         37
-
-(Note that partners are students and use the same model)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There must be a better way of doing this, but for now it will do. What we really want is two entries rather than four, and we want to make a single query to the database to get a pair out.&lt;/p&gt;
-
-&lt;p&gt;I’ve just pushed something to Github that’s causing all sorts of problems so further work will have to wait til tomorrow now. I’m a bit scared the development branch is not correct, so that will be the first priority tomorrow. It’s a bit scary having 3 pairs working off the same repository, since any issues or conflicts will be picked up by anyone pulling down from it. Ahhh.&lt;/p&gt;
-
-&lt;p&gt;Another blimmin tube strike is raining on our parade, so our pretty-good-so-far communication is going to be tested tomorrow. But hey, working remotely is a great learning experience. Throw in some Git issues and debates about how features should function and we’ve got a recipe for a lot of fun…&lt;/p&gt;
-
-&lt;p&gt;I really think the most important learning from this is communication. It’s great to rehearse what we now know and learn some new bits and bobs on the way, but none of that matters if your team are working in silos or misunderstanding what they need to deliver. Pairing is also very important. You really get a lot more done if someone is there to validate what you’re doing or picking up on silly little errors. We’ve also picked up new tools such as Waffle, a kanban which integrates all your Github issues and pull requests. Then it automatically moves cards around, to the delighted claps of a team who’ve clearly spent too much of their summer locked away in a building on Commercial Street…&lt;/p&gt;
-
-&lt;p&gt;Final projects start on Monday. How scary!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Wed, 05 Aug 2015 23:05:39 +0100</pubDate>
-        <link>http://natstar93.github.io//week9/2015/08/05/day-43.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week9/2015/08/05/day-43.html</guid>
         
         
         <category>week9</category>
