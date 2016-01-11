@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Jan 2016 23:33:13 +0000</pubDate>
-    <lastBuildDate>Sun, 03 Jan 2016 23:33:13 +0000</lastBuildDate>
+    <pubDate>Mon, 11 Jan 2016 20:07:21 +0000</pubDate>
+    <lastBuildDate>Mon, 11 Jan 2016 20:07:21 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -25,22 +25,24 @@
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;next &lt;em&gt;- (parameter)&lt;/em&gt;&lt;br /&gt;
-Explained &lt;a href=&quot;http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714&quot;&gt;here&lt;/a&gt; but it is an extra parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it’s sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you’re looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.&lt;/p&gt;
+Explained &lt;a href=&quot;http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714&quot;&gt;here&lt;/a&gt; but it is an extra node parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it’s sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you’re looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.&lt;/p&gt;
 
-    &lt;p&gt;router.get(‘/posts/:post/comments’, (req, res, next) =&amp;gt; {
-    Comment.find((err, comments) =&amp;gt; {
-      if(err) { return next(err); }
-      res.json(comments);
-    });
-  });&lt;/p&gt;
+    &lt;pre&gt;&lt;code&gt;router.get(&#39;/posts/:post/comments&#39;, (req, res, next) =&amp;gt; {
+  Comment.find((err, comments) =&amp;gt; {
+    if(err) { return next(err); }
+    res.json(comments);
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;exec() method&lt;br /&gt;
 The exec() method tests for a match in a string. It returns the matched text if it finds a match, otherwise it returns null. Shove this into your console:&lt;/p&gt;
 
-    &lt;p&gt;var str = ‘Hi Nat’;
-  patt = /Hi/g;
-  patt.exec(str);&lt;/p&gt;
+    &lt;pre&gt;&lt;code&gt;var str = &#39;Hi Nat&#39;;
+patt = /Hi/g;
+patt.exec(str);
+&lt;/code&gt;&lt;/pre&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 

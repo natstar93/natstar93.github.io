@@ -18,21 +18,21 @@ I restarted this tutorial with the aim of redoing the front end in React, which 
 **Stuff I have learnt by doing this tutorial** (Enough waffle, get to the technical bit)
 
 * next *- (parameter)*<br>
-Explained <a href='http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714'>here</a> but it is an extra parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it's sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you're looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.
+Explained <a href='http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714'>here</a> but it is an extra node parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it's sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you're looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.
 
-    router.get('/posts/:post/comments', (req, res, next) => {
-      Comment.find((err, comments) => {
-        if(err) { return next(err); }
-        res.json(comments);
+      router.get('/posts/:post/comments', (req, res, next) => {
+        Comment.find((err, comments) => {
+          if(err) { return next(err); }
+          res.json(comments);
+        });
       });
-    });
 
 * exec() method<br>
 The exec() method tests for a match in a string. It returns the matched text if it finds a match, otherwise it returns null. Shove this into your console:
 
-    var str = 'Hi Nat';
-    patt = /Hi/g;
-    patt.exec(str);
+      var str = 'Hi Nat';
+      patt = /Hi/g;
+      patt.exec(str);
 
 You should get back an array containing the matched text as a string. If you change the regex to something that's not in the string you should get back null. Cool huh?
 

@@ -91,22 +91,24 @@
 <ul>
   <li>
     <p>next <em>- (parameter)</em><br />
-Explained <a href="http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714">here</a> but it is an extra parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it’s sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you’re looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.</p>
+Explained <a href="http://stackoverflow.com/questions/10695629/what-is-the-parameter-next-used-for-in-express/10695714">here</a> but it is an extra node parameter passed in addition to the usual response and request params. It is used to call the next middleware function in the request response cycle, so it’s sort of a callback. You can use it to control flow by breaking out of the code in your route based on whether the condition you’re looking at is satisfied or causes an error. In my code below you can see that next is used to break out and take the error details with it.</p>
 
-    <p>router.get(‘/posts/:post/comments’, (req, res, next) =&gt; {
-    Comment.find((err, comments) =&gt; {
-      if(err) { return next(err); }
-      res.json(comments);
-    });
-  });</p>
+    <pre><code>router.get('/posts/:post/comments', (req, res, next) =&gt; {
+  Comment.find((err, comments) =&gt; {
+    if(err) { return next(err); }
+    res.json(comments);
+  });
+});
+</code></pre>
   </li>
   <li>
     <p>exec() method<br />
 The exec() method tests for a match in a string. It returns the matched text if it finds a match, otherwise it returns null. Shove this into your console:</p>
 
-    <p>var str = ‘Hi Nat’;
-  patt = /Hi/g;
-  patt.exec(str);</p>
+    <pre><code>var str = 'Hi Nat';
+patt = /Hi/g;
+patt.exec(str);
+</code></pre>
   </li>
 </ul>
 
