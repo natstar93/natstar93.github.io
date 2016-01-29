@@ -22,6 +22,6 @@ The problem was with the <iframe> element which wraps my banner code and is inse
       min-width: 100%;
     }
 
-Here the iframe width is set to 1px then overridden. This allows the iframe to achieve a lovely responsive 100% width on everthing. Happy days!
+Here the iframe width is set to 1px then overridden. This allows the iframe to achieve a lovely responsive 100% width on everything. Happy days!
 
 Nat x
