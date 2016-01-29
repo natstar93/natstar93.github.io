@@ -6,9 +6,40 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Jan 2016 20:07:21 +0000</pubDate>
-    <lastBuildDate>Mon, 11 Jan 2016 20:07:21 +0000</lastBuildDate>
+    <pubDate>Fri, 29 Jan 2016 23:35:06 +0000</pubDate>
+    <lastBuildDate>Fri, 29 Jan 2016 23:35:06 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>iframe iPhone 6 bugs and quirks</title>
+        <description>&lt;p&gt;A lot of my time over the past couple of days has been spent trying to work out why a &lt;a href=&quot;https://www.doubleclickbygoogle.com/solutions/revenue-management/&quot; target=&quot;_blank&quot;&gt;Google DFP banner&lt;/a&gt; was rendering perfectly and responsively on desktop browsers and most mobile phone devices but not on the iPhone 6 range.&lt;/p&gt;
+
+&lt;p&gt;DFP banners are normally used to display banner adverts, but at Trainline we use them to show messages relating to service disruptions e.g. ‘Tube strike on 4/5/16’.&lt;/p&gt;
+
+&lt;p&gt;Here is one of those banners on an iPhone 6S. It thinks it’s a desktop banner and is trying to escape off the side off the screen :(&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.natalie-akam.com/images/disruption.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem was with the &amp;lt;iframe&amp;gt; element which wraps my banner code and is inserted by DFP. Unfortunately just telling it to have a width of 100% doesn’t cut it for iPhone 6. Safari will allow the content to stretch and overflow outside the actual width of the screen. It took a while to diagnose the problem and find a workaround, but the below CSS hack fixed it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;iframe {
+  width: 1px;
+  min-width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here the iframe width is set to 1px then overridden. This allows the iframe to achieve a lovely responsive 100% width on everthing. Happy days!&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 29 Jan 2016 17:12:28 +0000</pubDate>
+        <link>http://natstar93.github.io//node/2016/01/29/iframe-bug.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//node/2016/01/29/iframe-bug.html</guid>
+        
+        
+        <category>node</category>
+        
+      </item>
     
       <item>
         <title>I love it when a plan goes completely wrong!</title>
@@ -368,40 +399,6 @@ console.log(&#39;Something else&#39;);
         
         
         <category>week10</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 45 | Week 9 learning plan</title>
-        <description>&lt;p&gt;&lt;strong&gt;Most Important Things I Learned:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Good communication in the most important thing in group project work&lt;br /&gt;
-• It’s often better to implement a sub-optimum solution to a difficult problem (e.g. database associations) and then let it lead you to a better solution to the same problem&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Things I Struggled With The Most:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Keeping track of what the 3 different pairs were doing and working out whether the constituent parts of the product were going to work together&lt;br /&gt;
-• Github.. merge conflicts, branches being accidentally merged into Master and rolling back commits&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Changes I Plan to Make Next Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Make sure everyone is clear on the Git process from day 1, and is using Waffle in the correct way. Ask for guidance if things like pull requests not closing the right issues occur again and document the process.&lt;br /&gt;
-• Regular stand ups at the same time every day. Nominating a leader for each stand up so they are more structured and useful&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Other Experiences or General Feedback This Week:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;• Looking forward to final projects and hoping we can make something awesome!&lt;br /&gt;
-• It was great having a much needed no-homework weekend! Thanks :) Think it’s a good idea to have this before we immerse ourselves in final projects.&lt;br /&gt;
-• I’ve decided to write more ‘how to’ blog posts as they are proving useful for myself and other to refer back to&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 07 Aug 2015 12:21:23 +0100</pubDate>
-        <link>http://natstar93.github.io//week9/2015/08/07/day-45.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week9/2015/08/07/day-45.html</guid>
-        
-        
-        <category>week9</category>
         
       </item>
     
