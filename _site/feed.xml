@@ -6,21 +6,87 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Jan 2016 23:35:06 +0000</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2016 23:35:06 +0000</lastBuildDate>
+    <pubDate>Tue, 02 Feb 2016 21:54:58 +0000</pubDate>
+    <lastBuildDate>Tue, 02 Feb 2016 21:54:58 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
+        <title>Render Testing and Debugging on Mobile Devices</title>
+        <description>&lt;p&gt;&lt;em&gt;Debug all the things!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve been spending quite a lot of time render checking and debugging various features recently. Unit and acceptance tests are essential for assessing the functionality of your application, but rendering is an important thing to check too and needs robust methods of testing. This post is an overview of each tool I used, culminating with instructions on how to use Charles Web Proxy Debugger to set conditions.&lt;/p&gt;
+
+&lt;h4 id=&quot;chrome-dev-tools&quot;&gt;Chrome Dev Tools&lt;/h4&gt;
+
+&lt;p&gt;This doesn’t really require any introduction but here’s one anyway for completeness. Chome Dev Tools provide a basic overview of how your app looks on a variety of smartphones, tablets and desktop screen sizes and are a developer’s best friend when it comes to diagnosing and fixing most CSS problems.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pros: Quick and easy to use, included with your browser already, easy to amend scripts using Fiddler/Charles web proxy, great for development.&lt;/li&gt;
+  &lt;li&gt;Cons: Not 100% accurate. You will need to test on actual devices or emulators if you want to be sure there are no problems before pushing to production.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;xcode-simulator&quot;&gt;Xcode Simulator&lt;/h4&gt;
+
+&lt;p&gt;This can be used to emulate a number of different Apple devices on all sorts of versions of OSX. So far the rendering seems to be true to life and the device applications are updated in real time so you know you’re using the most current versions (when Apple broke Safari the other day it also broke on the emulator, which was great fun). Since the simulator runs on your local machine you can just serve to localhost and go. It doesn’t take &lt;em&gt;that&lt;/em&gt; long to load, but it’s not exactly the quickest either. You can use Charles or Fiddler to proxy your scripts as you would in Chrome, too.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pros: Mirrors real device well, runs on local machine&lt;/li&gt;
+  &lt;li&gt;Cons: Load time can get annoying if you are having to re-render something frequently, supports Apple devices only&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;android-studio&quot;&gt;Android Studio&lt;/h4&gt;
+
+&lt;p&gt;I’d be lying if I said I knew a great deal about this tool. I was swiftly warned away from it by one of the developers in my team, who explained that the rendering is not necessarily representative of the device being emulated. The fact that the tool may not render things correctly made it unfit for purpose.&lt;/p&gt;
+
+&lt;h4 id=&quot;iphone--safari-on-mac&quot;&gt;iPhone + Safari on Mac&lt;/h4&gt;
+
+&lt;p&gt;Another Apple only solution (requires a Mac too). It allows you to debug your app on iPhone/iPad and comes with a Console and Network tab. It’s pretty easy to set up. First switch the Web Inspector on on your device by navigating to &lt;code&gt;Settings &amp;gt; Safari &amp;gt; Advanced&lt;/code&gt; and toggling Web Inspector to the On position. Load up the page you want to meddle with on your device. Then plug your device into the Mac using a lightning cable and open Safari. In the Safari menu go to &lt;code&gt;Develop &amp;gt; [Device Name] &amp;gt; [Name of page]&lt;/code&gt;. You will then be presented with the markup for your page, CSS rules and basically all the things you’d expect from Chrome dev tools. Change the code and watch your page update in real time :)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pros: Uses actual devices, debugging possible, breadth of tools that you would normally associate with Chrome&lt;/li&gt;
+  &lt;li&gt;Cons: CSS rules tricky to edit, not as intuitive as Chrome, Apple devices only, Apple product overload&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;any-device-you-like--charles-proxy-debugger&quot;&gt;Any Device You Like + Charles proxy debugger&lt;/h4&gt;
+
+&lt;p&gt;This setup will allow you to view a page on your device of choice and update its scripts. It means you can edit your test conditions (e.g. particular values for data being passed in) and view the outcome on any device you choose. Lovely stuff.&lt;/p&gt;
+
+&lt;p&gt;First, you need to &lt;a href=&quot;http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/&quot;&gt;download an SSL certificate&lt;/a&gt; for your particular device or OS. I used the &lt;a href=&quot;http://www.charlesproxy.com/documentation/additional/legacy-ssl-proxying/&quot;&gt;legacy certificate&lt;/a&gt; even though I’ve got the most up-to-date version of Charles and it worked just fine. Make sure both your device and your computer are on the same Wifi network. Then go to your phone’s Wifi settings and add a proxy. This is fairly straighforward on iPhone, but Android make it tricky by hiding things. If you’re on Android, hold down on the name of the Wifi network to make a dialogue box pop up, then click Modify Network. Select ‘Show advanced options’ and the proxy settings should appear. Enter your computer’s IP address and the port number Charles is using (more than likely to be 8888, but check in Charles at &lt;code&gt;Proxy &amp;gt; Proxy Settings &amp;gt; Proxies&lt;/code&gt;, and yes that is the real path).&lt;/p&gt;
+
+&lt;p&gt;Now you should have Charles up and running. Check that a) the page loads on your device and b) when said page loads, the Structure panel in Charles picks up the activity. If either of these don’t happen, check your device and computer are on the same Wifi network and that your proxy settings are correct.&lt;/p&gt;
+
+&lt;h5 id=&quot;charles-rewrite-tool&quot;&gt;&lt;em&gt;Charles Rewrite tool&lt;/em&gt;&lt;/h5&gt;
+
+&lt;p&gt;This is a very handy tool that lets you modify your requests and responses so you can double check everything is rendering correctly under different conditions. Open up &lt;code&gt;Tools &amp;gt; Rewrite&lt;/code&gt;. Here you can add a new ‘Set’ for each set of conditions you want to apply. In the Locations menu add the URL(s) of the page you want to modify and then start adding the Rules in. In my case I substituted the existing value of PortalName in a tag object, to allow a test banner to render for closer inspection on Android.&lt;/p&gt;
+
+&lt;h4 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h4&gt;
+
+&lt;p&gt;For simple rendering checks whilst developing, Chrome dev tools are awesome and BrowserStack has a huge suite of browsers and devices. If you want to make sure things look pixel perfect on every device, load up your test environment on real devices where possible and on emulators of the devices you don’t own. If you want to check elements that only appear when script modificaions are made, use Fiddler on Windows and Charles on Mac using the proxy instructions above.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Feb 2016 21:54:17 +0000</pubDate>
+        <link>http://natstar93.github.io//testing,/debugging/2016/02/02/render-testing.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//testing,/debugging/2016/02/02/render-testing.html</guid>
+        
+        
+        <category>testing,</category>
+        
+        <category>debugging</category>
+        
+      </item>
+    
+      <item>
         <title>iframe iPhone 6 bugs and quirks</title>
-        <description>&lt;p&gt;A lot of my time over the past couple of days has been spent trying to work out why a &lt;a href=&quot;https://www.doubleclickbygoogle.com/solutions/revenue-management/&quot; target=&quot;_blank&quot;&gt;Google DFP banner&lt;/a&gt; was rendering perfectly and responsively on desktop browsers and most mobile phone devices but not on the iPhone 6 range.&lt;/p&gt;
+        <description>&lt;p&gt;A lot of my time over the past couple of days has been spent trying to work out why a &lt;a href=&quot;https://www.doubleclickbygoogle.com/solutions/revenue-management/&quot; target=&quot;_blank&quot;&gt;Google DoubleClick for Publishers (DFP) banner&lt;/a&gt; was rendering perfectly and responsively on desktop browsers and most mobile phone devices but not on the iPhone 6 range.&lt;/p&gt;
 
-&lt;p&gt;DFP banners are normally used to display banner adverts, but at Trainline we use them to show messages relating to service disruptions e.g. ‘Tube strike on 4/5/16’.&lt;/p&gt;
+&lt;p&gt;DFP banners are normally used to display banner adverts, but at Trainline we use them to show messages relating to service disruptions e.g. ‘East Croydon station sucks and is experiencing massive delays’ (not a real disruption notification message).&lt;/p&gt;
 
-&lt;p&gt;Here is one of those banners on an iPhone 6S. It thinks it’s a desktop banner and is trying to escape off the side off the screen :(&lt;/p&gt;
+&lt;p&gt;Here is one of those banners on an iPhone 6S. It thinks it’s a desktop banner and is trying to escape off the side of the screen :(&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://www.natalie-akam.com/images/disruption.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The problem was with the &amp;lt;iframe&amp;gt; element which wraps my banner code and is inserted by DFP. Unfortunately just telling it to have a width of 100% doesn’t cut it for iPhone 6. Safari will allow the content to stretch and overflow outside the actual width of the screen. It took a while to diagnose the problem and find a workaround, but the below CSS hack fixed it:&lt;/p&gt;
+&lt;p&gt;The problem was with the &amp;lt;iframe&amp;gt; element which is inserted by DFP and wraps the user’s inserted banner code. Unfortunately just telling it to have a width of 100% doesn’t cut it for iPhone 6. Safari will allow the content to take on its full width and stretch the iframe banner out. But only for iPhone 6 devices. Weird. It took a while to diagnose the problem and find a workaround, but the below CSS hack fixed it:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;iframe {
   width: 1px;
@@ -28,7 +94,7 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Here the iframe width is set to 1px then overridden. This allows the iframe to achieve a lovely responsive 100% width on everthing. Happy days!&lt;/p&gt;
+&lt;p&gt;Here the iframe width is set to 1px then overridden. This works well on iPhone 6 and allows the iframe to achieve a lovely responsive 100% width on everything. Happy days!&lt;/p&gt;
 
 &lt;p&gt;Nat x&lt;/p&gt;
 </description>
@@ -375,27 +441,6 @@ console.log(&#39;Something else&#39;);
         <pubDate>Fri, 14 Aug 2015 20:22:34 +0100</pubDate>
         <link>http://natstar93.github.io//week10/2015/08/14/day-50.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//week10/2015/08/14/day-50.html</guid>
-        
-        
-        <category>week10</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 47 | Issue central</title>
-        <description>&lt;p&gt;All hell has broken loose. We’ve now started our final projects.&lt;/p&gt;
-
-&lt;p&gt;Day 1 was pretty much a disaster. Based on our initial discussions and research, not knowing if one team member was in or out and a general lack of excitement about the project theme we decided to completely change our project idea. It was good that these misgivings were out in the open early, and the win for the day was that when we left we had an idea we were excited about working on. However there was a lot of uncertainty about how many team members we would have and therefore how much be could plan to achieve. Plus if we were to be a four, would the fourth member be happy to work on the new idea? Not a good start.&lt;/p&gt;
-
-&lt;p&gt;We decided to create a smartphone app for children that’s based around the idea of an &lt;a href=&quot;https://en.wikipedia.org/wiki/I-Spy_(Michelin)&quot;&gt;iSpy book&lt;/a&gt; for the digital youth of today. It’s aimed at tourists or daytrippers who have children with them and want to give them a fun, educational, game-based activity to do to prevent them getting cranky and ruining the whole outing. I think the idea has a lot of potential and it’s interesting to be creating something for a different target market and on a mobile platform too.&lt;/p&gt;
-
-&lt;p&gt;Days 1-3 are research, prototyping and design days. We’re looking at Ionic and Cordova as our potential tools and I’ve been experimenting with a plugin that accesses the iPhone/Android camera. It’s quite satisfying when it works, but terrible to debug since you actually have to upload the app to your phone to test the camera function, so there goes the option of using your usual debugging tools e.g. the blimmin console. David and I have been debugging by outputting objects and values all over the shop, to try and keep a track of what’s doing what without a console. Natalia has used her Photoshop skills to create a design for the main view, which looks pretty amazing. We’re back to a four now but we’re a bit all over the place in terms of who’s doing what and crucially whether everyone is on the same page after our slightly unstructured discussions. Some things we disuss in detail seem to emerge completely different to what I thought had been agreed. This stuff is really hard. I’m nervous about whether we can pull this project off, but if we do it will be a very satisfying achievement.&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Wed, 12 Aug 2015 00:44:05 +0100</pubDate>
-        <link>http://natstar93.github.io//week10/2015/08/12/day-47.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week10/2015/08/12/day-47.html</guid>
         
         
         <category>week10</category>

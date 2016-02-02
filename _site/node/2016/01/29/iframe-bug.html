@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>iframe iPhone 6 bugs and quirks</title>
-  <meta name="description" content="A lot of my time over the past couple of days has been spent trying to work out why a Google DFP banner was rendering perfectly and responsively on desktop b...">
+  <meta name="description" content="A lot of my time over the past couple of days has been spent trying to work out why a Google DoubleClick for Publishers (DFP) banner was rendering perfectly ...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://natstar93.github.io//node/2016/01/29/iframe-bug.html">
@@ -78,15 +78,15 @@
 
   <article class="post-content">
    
-      <p>A lot of my time over the past couple of days has been spent trying to work out why a <a href="https://www.doubleclickbygoogle.com/solutions/revenue-management/" target="_blank">Google DFP banner</a> was rendering perfectly and responsively on desktop browsers and most mobile phone devices but not on the iPhone 6 range.</p>
+      <p>A lot of my time over the past couple of days has been spent trying to work out why a <a href="https://www.doubleclickbygoogle.com/solutions/revenue-management/" target="_blank">Google DoubleClick for Publishers (DFP) banner</a> was rendering perfectly and responsively on desktop browsers and most mobile phone devices but not on the iPhone 6 range.</p>
 
-<p>DFP banners are normally used to display banner adverts, but at Trainline we use them to show messages relating to service disruptions e.g. ‘Tube strike on 4/5/16’.</p>
+<p>DFP banners are normally used to display banner adverts, but at Trainline we use them to show messages relating to service disruptions e.g. ‘East Croydon station sucks and is experiencing massive delays’ (not a real disruption notification message).</p>
 
-<p>Here is one of those banners on an iPhone 6S. It thinks it’s a desktop banner and is trying to escape off the side off the screen :(</p>
+<p>Here is one of those banners on an iPhone 6S. It thinks it’s a desktop banner and is trying to escape off the side of the screen :(</p>
 
 <p><img src="http://www.natalie-akam.com/images/disruption.png" /></p>
 
-<p>The problem was with the &lt;iframe&gt; element which wraps my banner code and is inserted by DFP. Unfortunately just telling it to have a width of 100% doesn’t cut it for iPhone 6. Safari will allow the content to stretch and overflow outside the actual width of the screen. It took a while to diagnose the problem and find a workaround, but the below CSS hack fixed it:</p>
+<p>The problem was with the &lt;iframe&gt; element which is inserted by DFP and wraps the user’s inserted banner code. Unfortunately just telling it to have a width of 100% doesn’t cut it for iPhone 6. Safari will allow the content to take on its full width and stretch the iframe banner out. But only for iPhone 6 devices. Weird. It took a while to diagnose the problem and find a workaround, but the below CSS hack fixed it:</p>
 
 <pre><code>iframe {
   width: 1px;
@@ -94,7 +94,7 @@
 }
 </code></pre>
 
-<p>Here the iframe width is set to 1px then overridden. This allows the iframe to achieve a lovely responsive 100% width on everthing. Happy days!</p>
+<p>Here the iframe width is set to 1px then overridden. This works well on iPhone 6 and allows the iframe to achieve a lovely responsive 100% width on everything. Happy days!</p>
 
 <p>Nat x</p>
 
