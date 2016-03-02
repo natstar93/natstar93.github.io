@@ -1,13 +1,11 @@
 ---
 layout: post
-title:  "Render Testing and Debugging on Mobile Devices"
-date:   2016-02-02 21:54:17
-categories: Testing, Debugging
+title:  "Refactoring to ES6 and back again"
+date:   2016-03-02 12:50:13
+categories: Refactoring, JavaScript
 image:
 image-subtitle:
 ---
-
-Refactoring to ES6
 
 A couple of ways of refactoring an ES5 setTimeout function. It needed to be refactored because my linter (airbnb eslint) didn&#0027;t like it, and because it was the right thing to do.
 
