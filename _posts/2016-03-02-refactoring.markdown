@@ -11,6 +11,10 @@ A couple of ways of refactoring an ES5 setTimeout function. It needed to be refa
 
 ### Original code
 
+Error: func-name Missing function expression name<br>
+Changed it to a named function and got...<br>
+Error: prefer-arrow-callback Unexpected function expression<br>
+
     handleReconnect() {
       const reconnectMs = this.reconnectSeconds * 1000;
       console.log(`attempting to reconnect to rabbit. in ${reconnectMs}ms`);
@@ -18,10 +22,6 @@ A couple of ways of refactoring an ES5 setTimeout function. It needed to be refa
           this.internalConnect();
         }.bind(this), reconnectMs);
     }
-
-Error: func-name Missing function expression name
-Changed it to a named function and got...
-Error: prefer-arrow-callback Unexpected function expression
 
 ### Refactoring
 
