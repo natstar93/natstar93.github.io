@@ -7,13 +7,9 @@ image:
 image-subtitle:
 ---
 
-A couple of ways of refactoring an ES5 setTimeout function. It needed to be refactored because my linter (airbnb eslint) didn&#0027;t like it, and because it was the right thing to do.
+Here are a couple of ways of refactoring an ES5 setTimeout function.
 
-### Original code
-
-Error: func-name Missing function expression name<br>
-Changed it to a named function and got...<br>
-Error: prefer-arrow-callback Unexpected function expression<br>
+### Original ES5 code
 
     handleReconnect() {
       const reconnectMs = this.reconnectSeconds * 1000;
@@ -23,15 +19,22 @@ Error: prefer-arrow-callback Unexpected function expression<br>
         }.bind(this), reconnectMs);
     }
 
+I was using airbnb eslint to help me flag errors and remaining ES5 code.
+
+`Linting error: func-name Missing function expression name`<br>
+I changed it to a named function and got...<br>
+`Linting error: prefer-arrow-callback Unexpected function expression`<br>
+
+
 ### Refactoring
 
-Oook let&#0027;s use a fat arrow callback then.
+Oook let's use a fat arrow callback then.
 
-ES6 fat arrow functions automatically capture the value of *this* from the outer, parent function. The value of this *inside* an arrow function will always be the same as the value of *this* in the arrow’s enclosing function.
+ES6 fat arrow functions automatically capture the value of *this* from the outer, parent function. The value of *this* inside an arrow function will always be the same as the value of *this* in the arrow’s enclosing function.
 
 There is no need to use `const self = this`, and you can deeply nest arrow functions to preserve *this* through a series of asynchronous operations.
 
-So the above code can be simplified to the below. It is much easier to read and means we do not have to use the bind function to bind the value of this.
+So the above code can be simplified to the below ES6 function. It is much easier to read and means we do not have to use the bind function to bind the value of this.
 
     handleReconnect() {
       const reconnectMs = this.reconnectSeconds * 1000;
@@ -39,12 +42,14 @@ So the above code can be simplified to the below. It is much easier to read and 
       this.reconnect = setTimeout(() => this.internalConnect(), reconnectMs);
     }
 
-A <a href="https://about.me/riccardocoppola" target="_blank"/>senior dev on my team</a> pointed out that in this case since the internalConnect function was completely defined elsewhere in the file, a callback was not needed. We could just pass the function as an argument.
+Then... a <a href="https://about.me/riccardocoppola" target="_blank">senior dev on my team</a> pointed out that in this case since the internalConnect function was completely defined elsewhere in the file (and not changed by handleReconnect), a callback was not actually needed. We could just pass the function as an argument, remembering to bind *this* again since the fat arrow function was no longer being used.
 
     handleReconnect() {
       const reconnectMs = this.reconnectSeconds * 1000;
       console.log(`attempting to reconnect to rabbit. in ${reconnectMs}ms`);
       this.reconnect = setTimeout(this.internalConnect.bind(this), reconnectMs);
     }
+
+Either way is valid, but the second is a little neater.
 
 Nat x
