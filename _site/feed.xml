@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Mar 2016 22:17:18 +0000</pubDate>
-    <lastBuildDate>Thu, 03 Mar 2016 22:17:18 +0000</lastBuildDate>
+    <pubDate>Thu, 03 Mar 2016 22:26:49 +0000</pubDate>
+    <lastBuildDate>Thu, 03 Mar 2016 22:26:49 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -78,7 +78,9 @@
     
       <item>
         <title>Render Testing and Debugging on Mobile Devices</title>
-        <description>&lt;p&gt;&lt;em&gt;Debug all the things!&lt;/em&gt;&lt;/p&gt;
+        <description>&lt;p&gt;&lt;strong&gt;As featured on the &lt;a href=&quot;http://engineering.thetrainline.com/&quot; target=&quot;blank&quot;&gt;Trainline engineering blog&lt;/a&gt; :D&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Debug all the things!&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve been spending quite a lot of time render checking and debugging various features recently. Unit and acceptance tests are essential for assessing the functionality of your application, but rendering is an important thing to check too and needs robust methods of testing. This post is an overview of each tool I used, culminating with instructions on how to use Charles Web Proxy Debugger to set conditions.&lt;/p&gt;
 

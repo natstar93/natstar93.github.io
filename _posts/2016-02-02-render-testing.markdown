@@ -7,6 +7,8 @@ image:
 image-subtitle:
 ---
 
+**As featured on the <a href='http://engineering.thetrainline.com/' target="blank">Trainline engineering blog</a> :D**
+
 *Debug all the things!*
 
 I've been spending quite a lot of time render checking and debugging various features recently. Unit and acceptance tests are essential for assessing the functionality of your application, but rendering is an important thing to check too and needs robust methods of testing. This post is an overview of each tool I used, culminating with instructions on how to use Charles Web Proxy Debugger to set conditions.
