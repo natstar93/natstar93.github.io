@@ -7,7 +7,7 @@ image:
 image-subtitle:
 ---
 
-I've been doing a lot of linting on a repo we're upgrading to Node. This mainly involves changing things to the ES6 syntax. I used airbnb eslint to help me flag stylistic errors and remaining ES5 code.
+I've been doing a lot of linting on a repo that recently got upgraded to Node. This mainly involves changing things to the ES6 syntax since the code was written in ES5. I used airbnb eslint to help me flag stylistic errors and remaining ES5 code.
 
 Here are a couple of ways of refactoring an ES5 setTimeout function which I found particularly interesting.
 
