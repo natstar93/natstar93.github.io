@@ -6,13 +6,15 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Mar 2016 21:52:01 +0000</pubDate>
-    <lastBuildDate>Thu, 03 Mar 2016 21:52:01 +0000</lastBuildDate>
+    <pubDate>Thu, 03 Mar 2016 22:02:26 +0000</pubDate>
+    <lastBuildDate>Thu, 03 Mar 2016 22:02:26 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Refactoring to ES6 and back again</title>
-        <description>&lt;p&gt;Here are a couple of ways of refactoring an ES5 setTimeout function.&lt;/p&gt;
+        <description>&lt;p&gt;I’ve been doing a lot of linting on a repo we’re upgrading to Node. This mainly involves changing things to the ES6 syntax. I used airbnb eslint to help me flag stylistic errors and remaining ES5 code.&lt;/p&gt;
+
+&lt;p&gt;Here are a couple of ways of refactoring an ES5 setTimeout function which I found particularly interesting.&lt;/p&gt;
 
 &lt;h3 id=&quot;original-es5-code&quot;&gt;Original ES5 code&lt;/h3&gt;
 
@@ -25,11 +27,11 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I was using airbnb eslint to help me flag errors and remaining ES5 code.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Linting error: func-name Missing function expression name&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;Linting error: func-name Missing function expression name&lt;/code&gt;&lt;br /&gt;
-I changed it to a named function and got…&lt;br /&gt;
-&lt;code&gt;Linting error: prefer-arrow-callback Unexpected function expression&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;I changed it to a named function and got…&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Linting error: prefer-arrow-callback Unexpected function expression&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;refactoring&quot;&gt;Refactoring&lt;/h3&gt;
 
@@ -60,6 +62,8 @@ I changed it to a named function and got…&lt;br /&gt;
 &lt;p&gt;Either way is valid, but the second is a little neater.&lt;/p&gt;
 
 &lt;p&gt;Nat x&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ7ONJR-u9MiHrqeZpMzTqcaik9BrW-XskBAod45N6X1B2mXOGj&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 02 Mar 2016 12:50:13 +0000</pubDate>
         <link>http://natstar93.github.io//refactoring,/javascript/2016/03/02/refactoring.html</link>

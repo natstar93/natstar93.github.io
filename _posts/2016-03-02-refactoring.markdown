@@ -7,7 +7,9 @@ image:
 image-subtitle:
 ---
 
-Here are a couple of ways of refactoring an ES5 setTimeout function.
+I've been doing a lot of linting on a repo we're upgrading to Node. This mainly involves changing things to the ES6 syntax. I used airbnb eslint to help me flag stylistic errors and remaining ES5 code.
+
+Here are a couple of ways of refactoring an ES5 setTimeout function which I found particularly interesting.
 
 ### Original ES5 code
 
@@ -19,10 +21,10 @@ Here are a couple of ways of refactoring an ES5 setTimeout function.
         }.bind(this), reconnectMs);
     }
 
-I was using airbnb eslint to help me flag errors and remaining ES5 code.
-
 `Linting error: func-name Missing function expression name`<br>
+
 I changed it to a named function and got...<br>
+
 `Linting error: prefer-arrow-callback Unexpected function expression`<br>
 
 
@@ -53,3 +55,5 @@ Then... a <a href="https://about.me/riccardocoppola" target="_blank">senior dev 
 Either way is valid, but the second is a little neater.
 
 Nat x
+
+<img src='https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ7ONJR-u9MiHrqeZpMzTqcaik9BrW-XskBAod45N6X1B2mXOGj'/>

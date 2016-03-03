@@ -93,7 +93,7 @@
           <a class="post-link" href="/refactoring,/javascript/2016/03/02/refactoring.html">Refactoring to ES6 and back again</a>
         </h2>
         <p>
-          <p>Here are a couple of ways of refactoring an ES5 setTimeout function.</p> <h3 id="original-es5-code">Original ES5 code</h3> <pre><code>handleReconnect() { const reconnectMs = this.reconnectSeconds * 1000; console.log(`attempting to reconnect to rabbit. in ${reconnectMs}ms`); this.reconnect = setTimeout(function() { this.internalConnect(); }.bind(this), reconnectMs); } </code></pre> <p>I was using airbnb eslint...
+          <p>I’ve been doing a lot of linting on a repo we’re upgrading to Node. This mainly involves changing things to the ES6 syntax. I used airbnb eslint to help me flag stylistic errors and remaining ES5 code.</p> <p>Here are a couple of ways of refactoring...
         </p>
       </li>
     

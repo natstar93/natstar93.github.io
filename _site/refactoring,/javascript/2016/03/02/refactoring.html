@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Refactoring to ES6 and back again</title>
-  <meta name="description" content="Here are a couple of ways of refactoring an ES5 setTimeout function.">
+  <meta name="description" content="I’ve been doing a lot of linting on a repo we’re upgrading to Node. This mainly involves changing things to the ES6 syntax. I used airbnb eslint to help me f...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://natstar93.github.io//refactoring,/javascript/2016/03/02/refactoring.html">
@@ -78,7 +78,9 @@
 
   <article class="post-content">
    
-      <p>Here are a couple of ways of refactoring an ES5 setTimeout function.</p>
+      <p>I’ve been doing a lot of linting on a repo we’re upgrading to Node. This mainly involves changing things to the ES6 syntax. I used airbnb eslint to help me flag stylistic errors and remaining ES5 code.</p>
+
+<p>Here are a couple of ways of refactoring an ES5 setTimeout function which I found particularly interesting.</p>
 
 <h3 id="original-es5-code">Original ES5 code</h3>
 
@@ -91,11 +93,11 @@
 }
 </code></pre>
 
-<p>I was using airbnb eslint to help me flag errors and remaining ES5 code.</p>
+<p><code>Linting error: func-name Missing function expression name</code><br /></p>
 
-<p><code>Linting error: func-name Missing function expression name</code><br />
-I changed it to a named function and got…<br />
-<code>Linting error: prefer-arrow-callback Unexpected function expression</code><br /></p>
+<p>I changed it to a named function and got…<br /></p>
+
+<p><code>Linting error: prefer-arrow-callback Unexpected function expression</code><br /></p>
 
 <h3 id="refactoring">Refactoring</h3>
 
@@ -126,6 +128,8 @@ I changed it to a named function and got…<br />
 <p>Either way is valid, but the second is a little neater.</p>
 
 <p>Nat x</p>
+
+<p><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ7ONJR-u9MiHrqeZpMzTqcaik9BrW-XskBAod45N6X1B2mXOGj" /></p>
 
 
       <img src="">
