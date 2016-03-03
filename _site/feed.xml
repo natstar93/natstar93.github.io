@@ -6,9 +6,71 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Mar 2016 21:47:59 +0000</pubDate>
-    <lastBuildDate>Thu, 03 Mar 2016 21:47:59 +0000</lastBuildDate>
+    <pubDate>Thu, 03 Mar 2016 21:52:01 +0000</pubDate>
+    <lastBuildDate>Thu, 03 Mar 2016 21:52:01 +0000</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Refactoring to ES6 and back again</title>
+        <description>&lt;p&gt;Here are a couple of ways of refactoring an ES5 setTimeout function.&lt;/p&gt;
+
+&lt;h3 id=&quot;original-es5-code&quot;&gt;Original ES5 code&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;handleReconnect() {
+  const reconnectMs = this.reconnectSeconds * 1000;
+  console.log(`attempting to reconnect to rabbit. in ${reconnectMs}ms`);
+    this.reconnect = setTimeout(function() {
+      this.internalConnect();
+    }.bind(this), reconnectMs);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I was using airbnb eslint to help me flag errors and remaining ES5 code.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Linting error: func-name Missing function expression name&lt;/code&gt;&lt;br /&gt;
+I changed it to a named function and got…&lt;br /&gt;
+&lt;code&gt;Linting error: prefer-arrow-callback Unexpected function expression&lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;refactoring&quot;&gt;Refactoring&lt;/h3&gt;
+
+&lt;p&gt;Oook let’s use a fat arrow callback then.&lt;/p&gt;
+
+&lt;p&gt;ES6 fat arrow functions automatically capture the value of &lt;em&gt;this&lt;/em&gt; from the outer, parent function. The value of &lt;em&gt;this&lt;/em&gt; inside an arrow function will always be the same as the value of &lt;em&gt;this&lt;/em&gt; in the arrow’s enclosing function.&lt;/p&gt;
+
+&lt;p&gt;There is no need to use &lt;code&gt;const self = this&lt;/code&gt;, and you can deeply nest arrow functions to preserve &lt;em&gt;this&lt;/em&gt; through a series of asynchronous operations.&lt;/p&gt;
+
+&lt;p&gt;So the above code can be simplified to the below ES6 function. It is much easier to read and means we do not have to use the bind function to bind the value of this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;handleReconnect() {
+  const reconnectMs = this.reconnectSeconds * 1000;
+  console.log(`attempting to reconnect to rabbit. in ${reconnectMs}ms`);
+  this.reconnect = setTimeout(() =&amp;gt; this.internalConnect(), reconnectMs);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then… a &lt;a href=&quot;https://about.me/riccardocoppola&quot; target=&quot;_blank&quot;&gt;senior dev on my team&lt;/a&gt; pointed out that in this case since the internalConnect function was completely defined elsewhere in the file (and not changed by handleReconnect), a callback was not actually needed. We could just pass the function as an argument, remembering to bind &lt;em&gt;this&lt;/em&gt; again since the fat arrow function was no longer being used.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;handleReconnect() {
+  const reconnectMs = this.reconnectSeconds * 1000;
+  console.log(`attempting to reconnect to rabbit. in ${reconnectMs}ms`);
+  this.reconnect = setTimeout(this.internalConnect.bind(this), reconnectMs);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Either way is valid, but the second is a little neater.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Wed, 02 Mar 2016 12:50:13 +0000</pubDate>
+        <link>http://natstar93.github.io//refactoring,/javascript/2016/03/02/refactoring.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//refactoring,/javascript/2016/03/02/refactoring.html</guid>
+        
+        
+        <category>refactoring,</category>
+        
+        <category>javascript</category>
+        
+      </item>
     
       <item>
         <title>Render Testing and Debugging on Mobile Devices</title>
@@ -423,27 +485,6 @@ console.log(&#39;Something else&#39;);
         
         
         <category>week11</category>
-        
-      </item>
-    
-      <item>
-        <title>Day 50 | Final Project week 1 summary</title>
-        <description>&lt;p&gt;It’s been a funny old week. The reason these blog posts are getting so few and far between is that I am spending every waking moment planning, coding, testing, researching or at the very least thinking about this project.&lt;/p&gt;
-
-&lt;p&gt;We’ve had a number of setbacks already, all so different from the technical and version control issues experienced in previous projects. Team communication has not been fantastic for various reasons and a couple of other unexpected situations had to be dealt with. These elements are definitely so much harder than writing the actual code! However we’re not delivering work for a client here, we’re having a learning experience, so the best thing to do is to suck it up and do the best we can with whatever dire situation we’re presented with! The challenge is really to deal with whichever problems arise and deliver something that works despite them, not attempt to create the next Facebook in under two weeks. I find myself considering Dana’s attitude and general outlook a lot, as she really does have the right idea. In her yoga classes she talks a lot about being kind and forgiving with ourselves, and sort of encourages us to see positives rather than the negatives.&lt;/p&gt;
-
-&lt;p&gt;All things considered, I think we have got a reasonable collection of work together so far. The MVP may be looking very tiny but a lot of really good research has been done and I feel like once I sit down and pair with someone on building and test-driving more of the essential functionality we’ll be fairly pleased with what we’ve got! Then it will be a case of adding a couple of the features we have on our rather long list, based on which we think are the most achievable or appropriate. I hope we have faced most of the technical issues now, but I’m mentally preparing for some long nights ahead if not!&lt;/p&gt;
-
-&lt;p&gt;I’m enjoying Ionic a lot now. It uses Angular, which I love getting stuck into even when it means I spend my whole evening trying to bug fix. I learnt a lot about controllers and services this week, particularly that controllers operating across muliple views are not singletons, i.e. a new instance will be created for each view. So basically don’t try to share data using them like I did. That’s not really the role of an angular controller anyway, the job far better suited to a service (which is a singleton). We’ll try and smash out a test-driven working product by the end of the weekend and see what next week brings!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 14 Aug 2015 20:22:34 +0100</pubDate>
-        <link>http://natstar93.github.io//week10/2015/08/14/day-50.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//week10/2015/08/14/day-50.html</guid>
-        
-        
-        <category>week10</category>
         
       </item>
     

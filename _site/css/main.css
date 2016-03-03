@@ -64,15 +64,13 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #e32ba5;
+  color: #2a7ae2;
   text-decoration: none; }
   a:visited {
-    color: #e32ba5; 
-    text-decoration: none;
-  }
+    color: #1756a9; }
   a:hover {
     color: #111;
-    text-decoration: none; }
+    text-decoration: underline; }
 
 /**
  * Blockquotes
@@ -102,8 +100,7 @@ code {
 
 pre {
   padding: 8px 12px;
- /* overflow-x: scroll;*/
-}
+  overflow-x: scroll; }
   pre > code {
     border: 0;
     padding-right: 0;
