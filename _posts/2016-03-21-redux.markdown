@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "Redux Notes"
+date:   2016-03-21 22:05:15
+categories: Redux, JavaScript
+image:
+image-subtitle:
+---
+
+### Principles of redux
+
+Use pure functions (those which rely only upon the input args, do not mutate the input args and do not do anything else such as make a database call)
+
+State is kept in a single store
+
+State is read-only and can only be changed by actions
+
+## Actions
+
+Actions are objects which send data to the store. They are sent there using store.dispatch(). There is no other way of getting data to the store.
+
+They must include a 'type' e.g. 'ADD_TODO'.
+
+Pass as little data in each action as possible (single responsibility!)
+
+Action creators create the actions. All they do is return the action! Use the dispatch function to dispatch them.
+
+## Reducers
+
+Reducers describe how the state is updated in response to actions. It must be pure. That means it should not mutate arguments, call APIs or call non-pure functions. It just returns the new state.
+
+## Stores
+
+Stores store the state of the application. In redux a single store is used. Reducer composition can be used to split data handling logic.
+
+getState() allows access to state
+dispatch(action) lets state be updated
+subscribe(listener) registers listeners and returns a function to unsubscribe listeners
+
+Nat x
