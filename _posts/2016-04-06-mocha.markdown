@@ -1,0 +1,38 @@
+---
+layout: post
+title:  "Why isn’t mocha running all my tests?"
+date:   2016-04-06 20:29:15
+categories: mocha, testing
+image:
+image-subtitle:
+---
+
+I noticed earlier that only 3 of my tests were running :(
+
+Here is my npm test script:
+
+	"scripts": {
+	  "test": "babel-node --recursive test/**/*.spec.js"
+	}
+
+This bit: `` —-recursive test/**/*.spec.js`` is supposed to pick up all files ending in spec.js in all of the subdirectories of test, and anything in their subdirectories and so on. So how come ``test/server/index.spec.js`` was being picked up, but everything with the pattern ``test/common/[folder]/*.spec.js`` was not being picked up?
+
+### You need to use quotes when specifying a Mocha file path
+If quotes are omitted, you may not be able to run tests in subdirectories unless you are running them on Windows. This reference `test/**/*.spec.js` without quotes will only look for spec files in the *direct subdirectories* of test.
+
+I changed my script to (note the single quotes around the file path):
+
+	"scripts": {
+	  "test": "babel-node --recursive 'test/**/*.spec.js'”
+	}
+
+and all was well!
+
+### You don’t necessarily need to specify a file path
+Mocha automatically looks for a folder called test and runs anything in there that looks like a test file. So if you want your script to run all of your tests you don’t even need to reference a file path.
+
+Mystery solved!
+
+<img src='http://www.natalie-akam.com/Blog/images/squirrel.png'/>
+
+Nat x
