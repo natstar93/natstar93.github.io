@@ -31,6 +31,16 @@ and all was well!
 ### You don’t necessarily need to specify a file path
 Mocha automatically looks for a folder called test and runs anything in there that looks like a test file. So if you want your script to run all of your tests you don’t even need to reference a file path.
 
+### Windows is a pain in the arse
+
+If you need your test script to run on Windows too, the cli solution might not work. Pretty annoying. The best solution I've found to get around this is to separate your unit and functional tests into separate subdirectories of test (which is quite a nice and organised idea anyway) and just specify the following in your test script.
+
+"scripts": {
+	"test": "babel-node --recursive test/unit”
+}
+
+Easy, huh?
+
 Mystery solved!
 
 <img src='http://www.natalie-akam.com/Blog/images/squirrel.png'/>

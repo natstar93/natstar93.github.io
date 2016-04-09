@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Apr 2016 22:13:31 +0100</pubDate>
-    <lastBuildDate>Wed, 06 Apr 2016 22:13:31 +0100</lastBuildDate>
+    <pubDate>Sat, 09 Apr 2016 02:10:38 +0100</pubDate>
+    <lastBuildDate>Sat, 09 Apr 2016 02:10:38 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -37,6 +37,16 @@
 
 &lt;h3 id=&quot;you-dont-necessarily-need-to-specify-a-file-path&quot;&gt;You don’t necessarily need to specify a file path&lt;/h3&gt;
 &lt;p&gt;Mocha automatically looks for a folder called test and runs anything in there that looks like a test file. So if you want your script to run all of your tests you don’t even need to reference a file path.&lt;/p&gt;
+
+&lt;h3 id=&quot;windows-is-a-pain-in-the-arse&quot;&gt;Windows is a pain in the arse&lt;/h3&gt;
+
+&lt;p&gt;If you need your test script to run on Windows too, the cli solution might not work. Pretty annoying. The best solution I’ve found to get around this is to separate your unit and functional tests into separate subdirectories of test (which is quite a nice and organised idea anyway) and just specify the following in your test script.&lt;/p&gt;
+
+&lt;p&gt;“scripts”: {
+	“test”: “babel-node –recursive test/unit”
+}&lt;/p&gt;
+
+&lt;p&gt;Easy, huh?&lt;/p&gt;
 
 &lt;p&gt;Mystery solved!&lt;/p&gt;
 
