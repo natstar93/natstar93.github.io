@@ -35,9 +35,9 @@ Mocha automatically looks for a folder called test and runs anything in there th
 
 If you need your test script to run on Windows too, the cli solution might not work. Pretty annoying. The best solution I've found to get around this is to separate your unit and functional tests into separate subdirectories of test (which is quite a nice and organised idea anyway) and just specify the following in your test script.
 
-"scripts": {
-	"test": "babel-node --recursive test/unit”
-}
+	"scripts": {
+		"test": "babel-node --recursive test/unit”
+	}
 
 Easy, huh?
 

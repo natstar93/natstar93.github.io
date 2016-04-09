@@ -108,9 +108,10 @@
 
 <p>If you need your test script to run on Windows too, the cli solution might not work. Pretty annoying. The best solution I’ve found to get around this is to separate your unit and functional tests into separate subdirectories of test (which is quite a nice and organised idea anyway) and just specify the following in your test script.</p>
 
-<p>“scripts”: {
-	“test”: “babel-node –recursive test/unit”
-}</p>
+<pre><code>"scripts": {
+	"test": "babel-node --recursive test/unit”
+}
+</code></pre>
 
 <p>Easy, huh?</p>
 

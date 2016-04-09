@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Apr 2016 02:10:38 +0100</pubDate>
-    <lastBuildDate>Sat, 09 Apr 2016 02:10:38 +0100</lastBuildDate>
+    <pubDate>Sat, 09 Apr 2016 02:11:27 +0100</pubDate>
+    <lastBuildDate>Sat, 09 Apr 2016 02:11:27 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -42,9 +42,10 @@
 
 &lt;p&gt;If you need your test script to run on Windows too, the cli solution might not work. Pretty annoying. The best solution I’ve found to get around this is to separate your unit and functional tests into separate subdirectories of test (which is quite a nice and organised idea anyway) and just specify the following in your test script.&lt;/p&gt;
 
-&lt;p&gt;“scripts”: {
-	“test”: “babel-node –recursive test/unit”
-}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;scripts&quot;: {
+	&quot;test&quot;: &quot;babel-node --recursive test/unit”
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Easy, huh?&lt;/p&gt;
 
