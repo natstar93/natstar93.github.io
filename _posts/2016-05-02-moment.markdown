@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "A Moment in Timezone"
+date:   2016-05-02 22:53:20
+categories: moment, testing, BDD
+image:
+image-subtitle:
+---
+
+I noticed recently that an application in production was failing acceptance tests which checked that a user's selected date was correctly displayed. The root cause of this was that the BrowserStack server the tests were running on was an hour ahead of the timezone I was in. This was a fortunate catch since the tool currently does not allow timezone to be specified for testing purposes. Obviously I am lobbying them to introduce this feature! The issue will become more important as the company I work for ventures into Europe and allows users to book journeys which cross timezones.
+
+The application uses React and renders on the server side, which is set to the London/Lisbon timezone (UTC+1 at the time of writing). However, the selected date was being saved as a date object based on the timezone the user is in, which could be anywhere in the world.
+
+Clearly this fix needed a few unit tests to describe the different situations that should be checked out.
+
+Enter <a href='http://momentjs.com/timezone/'>Moment Timezone</a>, and a BDD-style approach!
+
+Nat x
