@@ -6,8 +6,8 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Jul 2016 22:37:32 +0100</pubDate>
-    <lastBuildDate>Sun, 17 Jul 2016 22:37:32 +0100</lastBuildDate>
+    <pubDate>Sun, 17 Jul 2016 22:41:19 +0100</pubDate>
+    <lastBuildDate>Sun, 17 Jul 2016 22:41:19 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -30,78 +30,6 @@
         
         
         <category>conferences</category>
-        
-      </item>
-    
-      <item>
-        <title>Async Await Awesome</title>
-        <description>&lt;p&gt;My new favourite toy is async await, a groovy new ES7 feature :)&lt;/p&gt;
-
-&lt;p&gt;The Javascript community in recent years has moved away from ugly, brackety callbacks and started to promisify everything in the hope of tidying code up and preventing &lt;a href=&quot;http://callbackhell.com/&quot;&gt;callback hell&lt;/a&gt;. This is much cleaner, but some situations will necessitate chains of promises which can be a little upsetting to people like myself who enjoy the neatness of the ES6 syntax, and are none too happy about the chains of &lt;em&gt;thens&lt;/em&gt; creeping in.&lt;/p&gt;
-
-&lt;p&gt;Original code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	function isMobileScreen() {
-		return browser
-			.getViewportSize(&#39;width&#39;)
-			.then((width) =&amp;gt; width &amp;lt; xsScreenWidthBoundary);
-	}
-
-	export function clickJourneyResultsCta() {
-		return browser
-		  .then(() =&amp;gt; isMobileScreen()
-			  .then((isMobile) =&amp;gt; (isMobile ? selectors.mobileResultCta : selectors.desktopResultCta))
-				.then((cta) =&amp;gt; browser.click(cta))
-			);
-	}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The above example worked but is a bit hard to follow. So I enabled async await by installing xxxx&lt;/p&gt;
-
-&lt;p&gt;New code&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	function isMobileScreen() {
-	  return browser
-	    .getViewportSize(&#39;width&#39;)
-	    .then((width) =&amp;gt; width &amp;lt; xsScreenWidthBoundary);
-	}
-
-	export **async** function clickJourneyResultsCta() {
-	  **const isMobile = await isMobileScreen();**
-	  return browser
-	    .then(() =&amp;gt; (isMobile ? selectors.mobileResultCta : selectors.desktopResultCta))
-	    .then((cta) =&amp;gt; browser.click(cta));
-	}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The function which calls the await function must be prefixed with ‘async’. In the above example the &lt;strong&gt;clickJourneyResultsCta()&lt;/strong&gt; function waits for the &lt;strong&gt;isMobileScreen()&lt;/strong&gt; function to execute and be assigned to the constant &lt;strong&gt;isMobile&lt;/strong&gt; before proceeding. This means the isMobile value is always correct now rather than returning a false positive in some cases. Hooray!&lt;/p&gt;
-
-&lt;h4 id=&quot;important-note-on-async-await-linting&quot;&gt;Important note on async await linting&lt;/h4&gt;
-
-&lt;p&gt;One more slight problem. The tests were all passing but my linter (eslint) wasn’t happy with the new way of doing things. The exact error was xxxx.&lt;/p&gt;
-
-&lt;p&gt;I installed babel-eslint and set it as the parser for the linter. I also had to add xxxx to the&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	{
-	  &quot;extends&quot;: &quot;trainline/test&quot;,
-	  &quot;parser&quot;: &quot;babel-eslint&quot;
-	}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 27 May 2016 00:22:15 +0100</pubDate>
-        <link>http://natstar93.github.io//testing,/es6,/es7,/babel/2016/05/27/async-await-awesome.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//testing,/es6,/es7,/babel/2016/05/27/async-await-awesome.html</guid>
-        
-        
-        <category>testing,</category>
-        
-        <category>es6,</category>
-        
-        <category>es7,</category>
-        
-        <category>babel</category>
         
       </item>
     
@@ -556,6 +484,55 @@ patt.exec(str);
         <link>http://natstar93.github.io//2016/01/01/New-year.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//2016/01/01/New-year.html</guid>
         
+        
+      </item>
+    
+      <item>
+        <title>Node Streams</title>
+        <description>&lt;p&gt;Streams are a way of inputting and outputting data. They can be readable or writable (or both) and can be paused and resumed.&lt;/p&gt;
+
+&lt;p&gt;Using the filesystem module we just saw, we can create a stream to read data as below. The data is read in in chunks, so the readStream on data event event is fired multiple times. A counter has been implemented which increments each time another chunk of data is received.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
+
+var readStream = fs.createReadStream(&#39;lorem.txt&#39;);
+readStream.setEncoding(&#39;utf8&#39;);
+
+var counter = 0;
+
+readStream.on(&#39;data&#39;, function(myData) {
+  counter ++;
+});
+
+readStream.on(&#39;end&#39;, function() {
+  console.log(counter);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Another event listener is listening for a signal that the data has finished being read, and at this point it outputs the value of the counter variable to the console. You can therefore see how many chunks the data was streamed in.&lt;/p&gt;
+
+&lt;p&gt;Write streams can be created as below&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var writeStream = fs.createWriteStream(&#39;copylorem.txt&#39;);
+
+writeStream.write(&#39;Hello world&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Some other useful commands you might like to use with streaming are&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;readStream.pipe(writeStream); // to pipe the data read in straight into the write stream
+
+readStream.pause(); // pauses the reading of the stream
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Oct 2015 20:14:52 +0100</pubDate>
+        <link>http://natstar93.github.io//node/2015/10/18/Node_streams.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//node/2015/10/18/Node_streams.html</guid>
+        
+        
+        <category>node</category>
         
       </item>
     
