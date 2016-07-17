@@ -1,109 +1,20 @@
 ---
 layout: post
-title:  "A Moment in Timezone"
-date:   2016-05-02 22:53:20
-categories: moment, testing, BDD, timezone, stubbing, sinon
+title:  "FullStack 2016 - the conference on JavaScript, Node & Internet of Things"
+date:   2016-07-16 22:53:20
+categories: conferences
 image:
 image-subtitle:
 ---
 
-I noticed recently that an application in production was failing acceptance tests which checked that a user's selected journey date was correctly displayed (and logged to the database). The root cause of this was that the BrowserStack server the tests were running on was an hour ahead of the timezone I was in. This was a fortunate catch since the tool currently does not allow timezone to be specified for testing purposes. Obviously I am now lobbying them to introduce this feature! The issue will become more important as the company I work for ventures into Europe and allows users to book journeys which cross timezones.
+**TL;DR: FullStack 2016 rocked, and OMG progressive web apps**
 
-The application uses React and renders on the server side, which is set to the London/Lisbon timezone (UTC+1 at the time of writing). However, the selected date was being saved as a date object based on the timezone the user is in, which could be anywhere in the world.
+I spent the last three days immersed in the world of <a href="https://skillsmatter.com/conferences/7278-fullstack-2016-the-conference-on-javascript-node-and-internet-of-things#overview">FullStack 2016 - the conference on JavaScript, Node & Internet of Things</a>. Broadly speaking, the sessions I attended covered new and future JavaScript features, principles of AWS Cloud and Lambda, an intro to Angular II, CSS & JS animations, React dev tools, React architecture & higher order components, how ELM inspired redux, JSON schema, a fun and light hearted Tessel 2 workshop and more. Even Ember. And there were a lot of Pokemon Go references. Most importantly, there was a LOT of excitement about progressive web apps (PWAs) and sessions about service workers, the tech that enables them. This stuff is the latest dev world bandwagon to be jumped upon and will be very big very soon. Watch out for my next blog post on PWAs coming soon to the Trainline Engineering blog :)
 
-Clearly this fix needed a few unit tests to describe the different situations that should be checked.
+The conference opened with a keynote speech from Chris Heilmann who works as a browser developer for Microsoft. The thing that struck me most about his talk was the emphasis on developing for accessibility and for users in developing nations who don't necessarily have a fast connection and may be limited to an older/more obscure browser. This theme continued though several other talks and really got me thinking. It's definitely something I will be considering more from now on and has also inspired me to think of ways to use my dev superpowers to help make the world a better place through tech. A sensible starting place for this is going to be attending some charity hacks soon.
 
-### Enter <a href='http://momentjs.com/timezone/'>Moment Timezone</a>, Sinon and a BDD-style approach!
+Another theme Chris spoke about was not trying to fight your browser! It was created the way it was for a good and sensible reason, so embrace the limitations and work with it rather than hacking your way into making things render nicely on the three browsers you actually bother to test stuff on. Because somewhere in the world someone will be looking at it on UC browser scratching their head and thinking 'well that looks pretty terrible, I bet they didn\'t mean to do that'. The star of the moment PWAs of course got a mention, as a way of bringing native apps back to the web and making content more accessible for more people. Very cool stuff indeed.
 
-Moment is awesome. Moment objects contain a lot of information about a particular datestamp and there exist a lot of different functions you can call on them to format and compare them. As such, moment is pretty widely used. What I needed though was an easy way of specifying the timezone of the test - a way of stubbing out the time and the timezone of the user or server running it.
-
-I used sinon to stub the time to a chosen datestamp (rather than hardcoding a test datestamp in which will eventually be a date in the past), and moment timezone to choose the client/user's timezone.
-
-I tested that
-1. The initial default date is selected correctly (as the current date in the UK)
-2. When a user selects a new date, the date updates correctly
-
-### 1. Initial default date selected correctly
-
-This test checks that the datestamp is correctly set in the initial state when the page loads, regardless of timezone. The datestamp is the current datestamp in the UK.
-
-<pre>
-  <code class="javascript">
-import sinon from 'sinon';
-
-describe('sets the departure date to current UK date', () => {
-	let sandbox;
-
-	beforeEach(() => {
-		sandbox = sinon.sandbox.create();
-	});
-
-	afterEach(() => {
-		sandbox.restore();
-	});
-
-	it('from a different timezone', (done) => {
-		const testDate = moment('2016-06-09T20:30:00-09:00');
-		sandbox.useFakeTimers((new Date(testDate)).getTime());
-		const request = {
-			email: '',
-			from: '',
-			to: '',
-			'depart-date': '2016-06-10T04:30:00+01:00',
-			'return-date': '',
-			errors: {},
-		};
-		const component = createComponent(<TicketAlert ticketAlertRequest={request} />);
-		expect(component.state['depart-date']).to.deep.equal('2016-06-10T04:30:00+01:00');
-		done();
-	});
-});
-</code>
-</pre>
-
-### 2. Date updates correctly
-
-The test essentially checks that when the user in the +1 timezone chooses a date, the program coverts the selected date to the correct datestamp using UTC time rather than the user's current timezone.
-
-`moment.tz.setDefault('Europe/Paris')` is used to choose the user's current timezone.
-<pre>
-  <code class="javascript">
-import sinon from 'sinon';
-
-describe('sets the return date to current UK date', () => {
-	let sandbox;
-
-	beforeEach(() => {
-		sandbox = sinon.sandbox.create();
-	});
-
-	afterEach(() => {
-		sandbox.restore();
-	});
-
-	it('from timezone 1 hour ahead of the UK', (done) => {
-		const testDate = moment('2016-12-10T08:30:00+00:00');  
-		sandbox.useFakeTimers((new Date(testDate)).getTime());  // sets test datestamp
-		moment.tz.setDefault('Europe/Paris');  // sets test timezone
-		const request = {
-			email: '',
-			from: '',
-			to: '',
-			'depart-date': '2016-12-10T08:30:00+00:00',
-			'return-date': '',
-			errors: {},
-		}; // this is just the initial prop that is passed in on page load
-		const component = createComponent(<TicketAlert ticketAlertRequest={request} />);
-		const selectedReturnDate = moment('2016-12-14T00:00:00+01:00', moment.ISO_8601);
-		component.onReturnChanged(selectedReturnDate);  // selects the chosen date
-		expect(component.state['return-date']).to.deep.equal('2016-12-14T00:00:00+00:00');
-		done();
-	});
-});
-	</code>
-</pre>
-The fix was a lot easier to write than the tests were! And that's the way development should be. It used moment timezone to check the user's timezone offset and incorporate it in the datestamp calculations.
-
-To be on the safe side (and ensure my system time was being stubbed out correctly in the tests) I hosted the updated application on my Mac and accessed it from a VM of which I had reset the system time to another timezone. The application performed as expected :)
+The conference overall was pretty amazing. The range of topics and quality of presentations was generally very good. Everything spoken about was on the cutting edge of current technology and we were all very excited and inspired by it all, not wanting the three days to end yet eager to get home and try some new things out. I met loads of amazing people over the three days too. Smart, friendly and enthusiastic developers from all over the world, some of whom had travelled a long way to be there and were only too happy to discuss, debate and predict the future. There was a common feeling that we're very lucky to be involved in a sector that is this exciting and progressive, and 2016 is perhaps the most exciting year for it so far. But 2017 is going to be even better. And no, try as it might, the crazy politics of these times is not going to hold us back. Because we're smart, we're young, we're international and we are going to change the world.
 
 Nat x
