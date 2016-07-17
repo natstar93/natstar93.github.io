@@ -2,7 +2,7 @@
 layout: post
 title:  "FullStack 2016 - the conference on JavaScript, Node & Internet of Things"
 date:   2016-07-17 22:53:20
-categories: conferences, ES6
+categories: conferences
 image:
 image-subtitle:
 ---
