@@ -6,9 +6,228 @@
 </description>
     <link>http://natstar93.github.io//</link>
     <atom:link href="http://natstar93.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Apr 2016 02:11:27 +0100</pubDate>
-    <lastBuildDate>Sat, 09 Apr 2016 02:11:27 +0100</lastBuildDate>
+    <pubDate>Sun, 17 Jul 2016 22:31:17 +0100</pubDate>
+    <lastBuildDate>Sun, 17 Jul 2016 22:31:17 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>FullStack 2016 - the conference on JavaScript, Node &amp; Internet of Things</title>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR: FullStack 2016 rocked, and OMG progressive web apps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I spent the last three days immersed in the world of &lt;a href=&quot;https://skillsmatter.com/conferences/7278-fullstack-2016-the-conference-on-javascript-node-and-internet-of-things#overview&quot;&gt;FullStack 2016 - the conference on JavaScript, Node &amp;amp; Internet of Things&lt;/a&gt;. Broadly speaking, the sessions I attended covered new and future JavaScript features, principles of AWS Cloud and Lambda, an intro to Angular II, CSS &amp;amp; JS animations, React dev tools, React architecture &amp;amp; higher order components, how ELM inspired redux, JSON schema, a fun and light hearted Tessel 2 workshop and more. Even Ember. And there were a lot of Pokemon Go references. Most importantly, there was a LOT of excitement about progressive web apps (PWAs) and sessions about service workers, the tech that enables them. This stuff is the latest dev world bandwagon to be jumped upon and will be very big very soon. Watch out for my next blog post on PWAs coming soon to the Trainline Engineering blog :)&lt;/p&gt;
+
+&lt;p&gt;The conference opened with a keynote speech from Chris Heilmann who works as a browser developer for Microsoft. The thing that struck me most about his talk was the emphasis on developing for accessibility and for users in developing nations who don’t necessarily have a fast connection and may be limited to an older/more obscure browser. This theme continued though several other talks and really got me thinking. It’s definitely something I will be considering more from now on and has also inspired me to think of ways to use my dev superpowers to help make the world a better place through tech. A sensible starting place for this is going to be attending some charity hacks soon.&lt;/p&gt;
+
+&lt;p&gt;Another theme Chris spoke about was not trying to fight your browser! It was created the way it was for a good and sensible reason, so embrace the limitations and work with it rather than hacking your way into making things render nicely on the three browsers you actually bother to test stuff on. Because somewhere in the world someone will be looking at it on UC browser scratching their head and thinking ‘well that looks pretty terrible, I bet they didn&#39;t mean to do that’. The star of the moment PWAs of course got a mention, as a way of bringing native apps back to the web and making content more accessible for more people. Very cool stuff indeed.&lt;/p&gt;
+
+&lt;p&gt;The conference overall was pretty amazing. The range of topics and quality of presentations was generally very good. Everything spoken about was on the cutting edge of current technology and we were all very excited and inspired by it all, not wanting the three days to end yet eager to get home and try some new things out. I met loads of amazing people over the three days too. Smart, friendly and enthusiastic developers from all over the world, some of whom had travelled a long way to be there and were only too happy to discuss, debate and predict the future. There was a common feeling that we’re very lucky to be involved in a sector that is this exciting and progressive, and 2016 is perhaps the most exciting year for it so far. But 2017 is going to be even better. And no, try as it might, the crazy politics of these times is not going to hold us back. Because we’re smart, we’re young, we’re international and we are going to change the world.&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Sun, 17 Jul 2016 23:53:20 +0100</pubDate>
+        <link>http://natstar93.github.io//conferences,/es6/2016/07/17/fullstack2016.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//conferences,/es6/2016/07/17/fullstack2016.html</guid>
+        
+        
+        <category>conferences,</category>
+        
+        <category>es6</category>
+        
+      </item>
+    
+      <item>
+        <title>Async Await Awesome</title>
+        <description>&lt;p&gt;My new favourite toy is async await, a groovy new ES7 feature :)&lt;/p&gt;
+
+&lt;p&gt;The Javascript community in recent years has moved away from ugly, brackety callbacks and started to promisify everything in the hope of tidying code up and preventing &lt;a href=&quot;http://callbackhell.com/&quot;&gt;callback hell&lt;/a&gt;. This is much cleaner, but some situations will necessitate chains of promises which can be a little upsetting to people like myself who enjoy the neatness of the ES6 syntax, and are none too happy about the chains of &lt;em&gt;thens&lt;/em&gt; creeping in.&lt;/p&gt;
+
+&lt;p&gt;Original code&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	function isMobileScreen() {
+		return browser
+			.getViewportSize(&#39;width&#39;)
+			.then((width) =&amp;gt; width &amp;lt; xsScreenWidthBoundary);
+	}
+
+	export function clickJourneyResultsCta() {
+		return browser
+		  .then(() =&amp;gt; isMobileScreen()
+			  .then((isMobile) =&amp;gt; (isMobile ? selectors.mobileResultCta : selectors.desktopResultCta))
+				.then((cta) =&amp;gt; browser.click(cta))
+			);
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The above example worked but is a bit hard to follow. So I enabled async await by installing xxxx&lt;/p&gt;
+
+&lt;p&gt;New code&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	function isMobileScreen() {
+	  return browser
+	    .getViewportSize(&#39;width&#39;)
+	    .then((width) =&amp;gt; width &amp;lt; xsScreenWidthBoundary);
+	}
+
+	export **async** function clickJourneyResultsCta() {
+	  **const isMobile = await isMobileScreen();**
+	  return browser
+	    .then(() =&amp;gt; (isMobile ? selectors.mobileResultCta : selectors.desktopResultCta))
+	    .then((cta) =&amp;gt; browser.click(cta));
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The function which calls the await function must be prefixed with ‘async’. In the above example the &lt;strong&gt;clickJourneyResultsCta()&lt;/strong&gt; function waits for the &lt;strong&gt;isMobileScreen()&lt;/strong&gt; function to execute and be assigned to the constant &lt;strong&gt;isMobile&lt;/strong&gt; before proceeding. This means the isMobile value is always correct now rather than returning a false positive in some cases. Hooray!&lt;/p&gt;
+
+&lt;h4 id=&quot;important-note-on-async-await-linting&quot;&gt;Important note on async await linting&lt;/h4&gt;
+
+&lt;p&gt;One more slight problem. The tests were all passing but my linter (eslint) wasn’t happy with the new way of doing things. The exact error was xxxx.&lt;/p&gt;
+
+&lt;p&gt;I installed babel-eslint and set it as the parser for the linter. I also had to add xxxx to the&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	{
+	  &quot;extends&quot;: &quot;trainline/test&quot;,
+	  &quot;parser&quot;: &quot;babel-eslint&quot;
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 May 2016 00:22:15 +0100</pubDate>
+        <link>http://natstar93.github.io//testing,/es6,/es7,/babel/2016/05/27/async-await-awesome.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//testing,/es6,/es7,/babel/2016/05/27/async-await-awesome.html</guid>
+        
+        
+        <category>testing,</category>
+        
+        <category>es6,</category>
+        
+        <category>es7,</category>
+        
+        <category>babel</category>
+        
+      </item>
+    
+      <item>
+        <title>A Moment in Timezone</title>
+        <description>&lt;p&gt;I noticed recently that an application in production was failing acceptance tests which checked that a user’s selected journey date was correctly displayed (and logged to the database). The root cause of this was that the BrowserStack server the tests were running on was an hour ahead of the timezone I was in. This was a fortunate catch since the tool currently does not allow timezone to be specified for testing purposes. Obviously I am now lobbying them to introduce this feature! The issue will become more important as the company I work for ventures into Europe and allows users to book journeys which cross timezones.&lt;/p&gt;
+
+&lt;p&gt;The application uses React and renders on the server side, which is set to the London/Lisbon timezone (UTC+1 at the time of writing). However, the selected date was being saved as a date object based on the timezone the user is in, which could be anywhere in the world.&lt;/p&gt;
+
+&lt;p&gt;Clearly this fix needed a few unit tests to describe the different situations that should be checked.&lt;/p&gt;
+
+&lt;h3 id=&quot;enter-a-hrefhttpmomentjscomtimezonemoment-timezonea-sinon-and-a-bdd-style-approach&quot;&gt;Enter &lt;a href=&quot;http://momentjs.com/timezone/&quot;&gt;Moment Timezone&lt;/a&gt;, Sinon and a BDD-style approach!&lt;/h3&gt;
+
+&lt;p&gt;Moment is awesome. Moment objects contain a lot of information about a particular datestamp and there exist a lot of different functions you can call on them to format and compare them. As such, moment is pretty widely used. What I needed though was an easy way of specifying the timezone of the test - a way of stubbing out the time and the timezone of the user or server running it.&lt;/p&gt;
+
+&lt;p&gt;I used sinon to stub the time to a chosen datestamp (rather than hardcoding a test datestamp in which will eventually be a date in the past), and moment timezone to choose the client/user’s timezone.&lt;/p&gt;
+
+&lt;p&gt;I tested that
+1. The initial default date is selected correctly (as the current date in the UK)
+2. When a user selects a new date, the date updates correctly&lt;/p&gt;
+
+&lt;h3 id=&quot;initial-default-date-selected-correctly&quot;&gt;1. Initial default date selected correctly&lt;/h3&gt;
+
+&lt;p&gt;This test checks that the datestamp is correctly set in the initial state when the page loads, regardless of timezone. The datestamp is the current datestamp in the UK.&lt;/p&gt;
+
+&lt;pre&gt;
+  &lt;code class=&quot;javascript&quot;&gt;
+import sinon from &#39;sinon&#39;;
+
+describe(&#39;sets the departure date to current UK date&#39;, () =&amp;gt; {
+	let sandbox;
+
+	beforeEach(() =&amp;gt; {
+		sandbox = sinon.sandbox.create();
+	});
+
+	afterEach(() =&amp;gt; {
+		sandbox.restore();
+	});
+
+	it(&#39;from a different timezone&#39;, (done) =&amp;gt; {
+		const testDate = moment(&#39;2016-06-09T20:30:00-09:00&#39;);
+		sandbox.useFakeTimers((new Date(testDate)).getTime());
+		const request = {
+			email: &#39;&#39;,
+			from: &#39;&#39;,
+			to: &#39;&#39;,
+			&#39;depart-date&#39;: &#39;2016-06-10T04:30:00+01:00&#39;,
+			&#39;return-date&#39;: &#39;&#39;,
+			errors: {},
+		};
+		const component = createComponent(&amp;lt;TicketAlert ticketAlertRequest={request} /&amp;gt;);
+		expect(component.state[&#39;depart-date&#39;]).to.deep.equal(&#39;2016-06-10T04:30:00+01:00&#39;);
+		done();
+	});
+});
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h3 id=&quot;date-updates-correctly&quot;&gt;2. Date updates correctly&lt;/h3&gt;
+
+&lt;p&gt;The test essentially checks that when the user in the +1 timezone chooses a date, the program coverts the selected date to the correct datestamp using UTC time rather than the user’s current timezone.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;moment.tz.setDefault(&#39;Europe/Paris&#39;)&lt;/code&gt; is used to choose the user’s current timezone.&lt;/p&gt;
+&lt;pre&gt;
+  &lt;code class=&quot;javascript&quot;&gt;
+import sinon from &#39;sinon&#39;;
+
+describe(&#39;sets the return date to current UK date&#39;, () =&amp;gt; {
+	let sandbox;
+
+	beforeEach(() =&amp;gt; {
+		sandbox = sinon.sandbox.create();
+	});
+
+	afterEach(() =&amp;gt; {
+		sandbox.restore();
+	});
+
+	it(&#39;from timezone 1 hour ahead of the UK&#39;, (done) =&amp;gt; {
+		const testDate = moment(&#39;2016-12-10T08:30:00+00:00&#39;);  
+		sandbox.useFakeTimers((new Date(testDate)).getTime());  // sets test datestamp
+		moment.tz.setDefault(&#39;Europe/Paris&#39;);  // sets test timezone
+		const request = {
+			email: &#39;&#39;,
+			from: &#39;&#39;,
+			to: &#39;&#39;,
+			&#39;depart-date&#39;: &#39;2016-12-10T08:30:00+00:00&#39;,
+			&#39;return-date&#39;: &#39;&#39;,
+			errors: {},
+		}; // this is just the initial prop that is passed in on page load
+		const component = createComponent(&amp;lt;TicketAlert ticketAlertRequest={request} /&amp;gt;);
+		const selectedReturnDate = moment(&#39;2016-12-14T00:00:00+01:00&#39;, moment.ISO_8601);
+		component.onReturnChanged(selectedReturnDate);  // selects the chosen date
+		expect(component.state[&#39;return-date&#39;]).to.deep.equal(&#39;2016-12-14T00:00:00+00:00&#39;);
+		done();
+	});
+});
+	&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The fix was a lot easier to write than the tests were! And that’s the way development should be. It used moment timezone to check the user’s timezone offset and incorporate it in the datestamp calculations.&lt;/p&gt;
+
+&lt;p&gt;To be on the safe side (and ensure my system time was being stubbed out correctly in the tests) I hosted the updated application on my Mac and accessed it from a VM of which I had reset the system time to another timezone. The application performed as expected :)&lt;/p&gt;
+
+&lt;p&gt;Nat x&lt;/p&gt;
+</description>
+        <pubDate>Mon, 02 May 2016 23:53:20 +0100</pubDate>
+        <link>http://natstar93.github.io//moment,/testing,/bdd,/timezone,/stubbing,/sinon/2016/05/02/moment.html</link>
+        <guid isPermaLink="true">http://natstar93.github.io//moment,/testing,/bdd,/timezone,/stubbing,/sinon/2016/05/02/moment.html</guid>
+        
+        
+        <category>moment,</category>
+        
+        <category>testing,</category>
+        
+        <category>bdd,</category>
+        
+        <category>timezone,</category>
+        
+        <category>stubbing,</category>
+        
+        <category>sinon</category>
+        
+      </item>
     
       <item>
         <title>Why isn’t mocha running all my tests?</title>
@@ -339,159 +558,6 @@ patt.exec(str);
         <link>http://natstar93.github.io//2016/01/01/New-year.html</link>
         <guid isPermaLink="true">http://natstar93.github.io//2016/01/01/New-year.html</guid>
         
-        
-      </item>
-    
-      <item>
-        <title>Node Streams</title>
-        <description>&lt;p&gt;Streams are a way of inputting and outputting data. They can be readable or writable (or both) and can be paused and resumed.&lt;/p&gt;
-
-&lt;p&gt;Using the filesystem module we just saw, we can create a stream to read data as below. The data is read in in chunks, so the readStream on data event event is fired multiple times. A counter has been implemented which increments each time another chunk of data is received.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
-
-var readStream = fs.createReadStream(&#39;lorem.txt&#39;);
-readStream.setEncoding(&#39;utf8&#39;);
-
-var counter = 0;
-
-readStream.on(&#39;data&#39;, function(myData) {
-  counter ++;
-});
-
-readStream.on(&#39;end&#39;, function() {
-  console.log(counter);
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Another event listener is listening for a signal that the data has finished being read, and at this point it outputs the value of the counter variable to the console. You can therefore see how many chunks the data was streamed in.&lt;/p&gt;
-
-&lt;p&gt;Write streams can be created as below&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var writeStream = fs.createWriteStream(&#39;copylorem.txt&#39;);
-
-writeStream.write(&#39;Hello world&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Some other useful commands you might like to use with streaming are&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;readStream.pipe(writeStream); // to pipe the data read in straight into the write stream
-
-readStream.pause(); // pauses the reading of the stream
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Sun, 18 Oct 2015 20:14:52 +0100</pubDate>
-        <link>http://natstar93.github.io//node/2015/10/18/Node_streams.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//node/2015/10/18/Node_streams.html</guid>
-        
-        
-        <category>node</category>
-        
-      </item>
-    
-      <item>
-        <title>Node fs Module</title>
-        <description>&lt;p&gt;File System (fs) is a very useful module that comes with the node installation by default. It can be used to read and write data from the file system on your computer.&lt;/p&gt;
-
-&lt;p&gt;Below is an example of how it can be used in an asynchronous way. Note the use of ‘utf8’ as a parameter. Node uses a datatype called buffer which represents data in binary. We need the data converted to utf-8 encoding for it to be interpreted properly, so that’s why ‘utf8’ need to be passed in as the encoding parameter. Try running the below without the encoding parameter and your text file will be represented as something like &amp;lt;Buffer 34 92 57 6c 6f 62&amp;gt; instead of nice normal text.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
-
-fs.readFile(&#39;text.txt&#39;, &#39;utf8&#39;, function(err, data) {
-  if(err) {
-    console.log(err.code);
-  }
-  console.log(data);
-});
-
-fs.writeFile(&#39;text2.txt&#39;, &#39;some text&#39;, &#39;utf8&#39;, function(err, data) {
-  if(err) {console.log(err)}
-  console.log(data);
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I think the above is quite self explanatory as far as explaining how the fs methods readFile and writeFile work, now that we know all about callbacks and asynchronous stuff.&lt;/p&gt;
-
-&lt;p&gt;Here’s an example of a synchronous way of doing the same thing&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var fs = require(&#39;fs&#39;);
-
-var myRead = fs.readFileSync(&#39;text.txt&#39;, &#39;utf8&#39;);
-console.log(myRead);
-
-var myWrite = fs.writeFileSync(&#39;text2.txt&#39;, &#39;text here&#39;, &#39;utf8&#39;);
-console.log(myWrite);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Well, that wasn’t too hard. I think we’re ready for &lt;a href=&quot;../18/Node_streams.html&quot;&gt;streams&lt;/a&gt; now.&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Sat, 17 Oct 2015 13:31:45 +0100</pubDate>
-        <link>http://natstar93.github.io//node/2015/10/17/Node_fs.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//node/2015/10/17/Node_fs.html</guid>
-        
-        
-        <category>node</category>
-        
-      </item>
-    
-      <item>
-        <title>Node Events</title>
-        <description>&lt;p&gt;Callbacks are great, but when there are more than two events and/or they need to be called multiple times, events are used. They’re more flexible and more powerful… Plus you can kind of switch them on and off as you please.&lt;/p&gt;
-
-&lt;p&gt;Instead of using asynchronous functions which execute upon the return of a result, a number of event listeners are set up to watch for certain signals or state changes. These listeners are also known as Observers. Node.js has a module called ‘events’ which needs to be required in order for this all to work.&lt;/p&gt;
-
-&lt;p&gt;Here’s an example of event handlers and emitters:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var events = require(&#39;events&#39;);
-var eventEmitter = new events.EventEmitter();
-
-var myFirstEventHandler = function first() {
-  console.log(&#39;First event handler fired&#39;);
-}
-
-eventEmitter.on(&#39;firstEvent&#39;, myFirstEventHandler);
-
-eventEmitter.emit(&#39;firstEvent&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Run that with node and see what happens…&lt;/p&gt;
-
-&lt;p&gt;Also, check out what gets returned here if you type each line into a REPL environment:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; eventEmitter.on(&#39;firstEvent&#39;, myFirstEventHandler);
-
-{ domain: null,
-  _events: { firstEvent: [Function: first] },
-  _maxListeners: 10 }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The event emitter is returned, so this can be used for chaining calls together.&lt;/p&gt;
-
-&lt;p&gt;Event listeners can be added and removed from the array of event listeners using methods such as &lt;code&gt;eventEmitter.addListener(event, listener)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Here’s an example of removeAllListeners in use.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;if(counter === 15) {
-  readStream.removeAllListeners(&#39;data&#39;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For a full list please see the &lt;a href=&quot;https://nodejs.org/api/events.html&quot;&gt;docs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Next up, the &lt;a href=&quot;../17/Node_fs.html&quot;&gt;file system module&lt;/a&gt;!&lt;/p&gt;
-
-&lt;p&gt;Nat x&lt;/p&gt;
-</description>
-        <pubDate>Fri, 16 Oct 2015 18:31:45 +0100</pubDate>
-        <link>http://natstar93.github.io//node/2015/10/16/Node_Events.html</link>
-        <guid isPermaLink="true">http://natstar93.github.io//node/2015/10/16/Node_Events.html</guid>
-        
-        
-        <category>node</category>
         
       </item>
     
